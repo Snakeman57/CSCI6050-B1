@@ -13,14 +13,14 @@
     <link href="style.css" rel="stylesheet" />
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <title>B1 Cinemas</title>
+    <title>Cinemaster</title>
 </head>
 
 <body>
     <!-- Navbar component -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a href="index.html" class="navbar-brand">B1 Cinemas</a>
+            <a href="index.html" class="navbar-brand">Cinemaster</a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -56,22 +56,35 @@
     <div class="container border p-3 mt-4 form-horizontal">
         <div class="row">
             <h2 class="text-center">Login</h2>
-            <h5 class="text-muted text-center">Please complete the form below.</h5>
+            <h5 class="text-muted text-center">Enter your details.</h5>
             <br>
             <br>
             <form>
                 <!-- Warning Alert (shown upon login failure) -->
                 <div id="alert-message"></div>
                 <!-- Login Prompt -->
-                <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3 mx-auto">
-                    <label class="form-label" for="firstName">Username</label>
-                    <input type="text" class="form-control" id="inputUsername" placeholder="Username">
+                <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
+                    <label class="form-label" for="firstName">Email</label>
+                    <input type="text" class="form-control" id="inputUsername" placeholder="Email">
                 </div>
-                <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3 mx-auto">
+                <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
                     <label class="form-label" for="password">Password</label>
                     <input name="password" type="password" class="form-control" id="password" placeholder="Password">
                 </div>
             </form>
+            <div class="d-flex justify-content-around align-items-center mb-4 mx-auto">
+                <!-- Checkbox -->
+                <div class="form-check">
+                  <input
+                    class="form-check-input"
+                    type="checkbox"
+                    value=""
+                    checked
+                  />
+                  <label class="form-check-label"> Remember me </label>
+                </div>
+                <a href="#!">Forgot password?</a>
+              </div>
             <button id="test-alert-btn" type="submit" class="btn btn-primary col-3 mx-auto">Login</button>
         </div>
     </div>
@@ -95,7 +108,7 @@
             </div>
         </section>
         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-            The Coffee Shop © 2022 Copyright
+            Cinemaster © 2022 Copyright
         </div>
     </footer>
     <!-- Footer -->

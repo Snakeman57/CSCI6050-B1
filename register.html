@@ -13,14 +13,14 @@
     <link href="style.css" rel="stylesheet" />
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-    <title>B1 Cinemas</title>
+    <title>Cinemaster</title>
 </head>
 
 <body>
     <!-- Navbar component -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a href="index.html" class="navbar-brand">B1 Cinemas</a>
+            <a href="index.html" class="navbar-brand">Cinemaster</a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -57,6 +57,7 @@
         <div class="row">
             <h2 class="text-center">Create an Account!</h2>
             <h5 class="text-muted text-center">Please complete the form below.</h5>
+            <h6 id="required-fields">*All fields are required</h6>
             <br>
             <br>
             <form>
@@ -68,6 +69,10 @@
                     <label class="form-label" for="lastName">Last Name</label>
                     <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
                 </div>
+                <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3 mx-auto">
+                    <label class="form-label" for="username">Username</label>
+                    <input type="text" class="form-control" id="inputUsername" placeholder="Username">
+                </div>
                 <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
                     <label class="form-label" for="inputEmail">Email</label>
                     <input type="email" class="form-control" id="inputEmail" placeholder="Email">
@@ -75,7 +80,11 @@
                 <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
                     <label class="form-label" for="inputPassword">Password</label>
                     <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
-                    
+                </div>
+                <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
+                    <label class="form-label" for="confirmPassword">Confirm Password</label>
+                    <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Confirm Password">
+
                     <button type="submit" class="col-12 btn btn-primary mt-3">Submit</button>
                 </div>
                 <!-- <div class="col-md-6 col-lg-5 col-xl-3 mb-3">
@@ -97,7 +106,7 @@
                         </h6>
                         <p>Athens, GA</p>
                         <p>
-                            youremail@coffe.com
+                            youremail@cinemaster.com
                         </p>
                         <p>(123) 555-5555</p>
                     </div>
@@ -105,7 +114,7 @@
             </div>
         </section>
         <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
-            The Coffee Shop © 2022 Copyright
+            Cinemaster © 2022 Copyright
         </div>
     </footer>
     <!-- Footer -->
