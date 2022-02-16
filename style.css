@@ -15,12 +15,12 @@
 
 /* Style for Movie Carousel */
 .movie_card{
-			padding: 0 !important;
-			width: 15rem;
-			margin:14px; 
-			border-radius: 10px;
-			box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
-		}
+    padding: 0 !important;
+    width: 15rem;
+    margin:14px; 
+    border-radius: 10px;
+    box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
+}
 .movie_card img{
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -108,3 +108,44 @@
     text-align: center;
 }
 
+#movieTimes {
+    margin-left: 2vw;
+    border: 3px;
+    border-style: solid;
+    border-color: rgb(49, 103, 219);
+    border-radius: 20px;
+    padding: 1em;
+    width: 650px;
+    box-sizing: border-box;
+}
+#movieTitle {
+    text-align: center;
+    position: relative;
+    top: 20px;
+    margin-bottom: 50px;
+}
+
+#theater-name {
+    text-align: left;
+    /* margin-top: 35px; */
+}
+#moviePoster {
+    margin-left: 60vw;
+    margin-top: -630px;
+    margin-bottom: 40px;
+}
+
+#showTimes {
+    padding-top: 20px;
+}
+
+.divider{
+    width:2vw;
+    height:auto;
+    display:inline-block;
+}
+.divider2{
+    width:auto;
+    height:20px;
+    display:inline-block;
+}
