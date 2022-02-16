@@ -29,11 +29,21 @@
                     <a href="admin-home.html" class="nav-item nav-link">Home</a>
                     <a href="admin-manage-promotions.html" class="nav-item nav-link">Manage Promotions</a>
                     <a href="admin-manage-movies.html" class="nav-item nav-link active">Manage Movies</a>
-                    <a href="admin-manage-users.html" class="nav-item nav-link active">Manage Users</a>
+                    <a href="admin-manage-users.html" class="nav-item nav-link">Manage Users</a>
                 </div>
                 <div class="navbar-nav ms-auto">
-                    <p class="nav-item nav-link my-0">You are logged in as [admin-user-email]</p>
-                    <a href="#" class="nav-item nav-link" style="text-decoration: underline;">Logout</a>
+                    <!-- Login Dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Welcome, Username
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="editprofile.html">Edit Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                    <!-- Login Dropdown -->
                 </div>
             </div>
         </div>
@@ -62,7 +72,7 @@
                     <td>
                         <button class="btn bg-primary text-white">Edit</button>
                         <button class="btn bg-primary text-white">Remove</button>
-                        <button class="btn bg-primary text-white">Schedule</button>
+                        <a href="admin-sched-movie.html"><button class="btn bg-primary text-white">Schedule</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -71,7 +81,7 @@
                     <td>
                         <button class="btn bg-primary text-white">Edit</button>
                         <button class="btn bg-primary text-white">Remove</button>
-                        <button class="btn bg-primary text-white">Schedule</button>
+                        <a href="admin-sched-movie.html"><button class="btn bg-primary text-white">Schedule</button></a>
                     </td>
                 </tr>
                 <tr>
@@ -79,23 +89,57 @@
                     <td>In Theaters</td>
                     <td>
                         <button class="btn bg-primary text-white">Edit</button>
-                        <button class="btn bg-primary text-white">Remove</button>
+                        <a href="admin-sched-movie.html"><button class="btn bg-primary text-white">Remove</button></a>
                         <button class="btn bg-primary text-white">Schedule</button>
                     </td>
                 </tr>
             </tbody>
         </table>
-        <button class="btn bg-success text-white">Add Movie</button>
+        <a href="admin-add-movie.html"><button class="btn bg-success text-white">Add Movie</button></a>
     </div>
     <!-- All Movies -->
 
-    <br>
+    <br> <br>
 
-    <!-- Current Movie Schedule -->
+    <!-- Current Movie Schedule -->    
     <div class="container">
         <h2>Current Movie Schedule</h2>
-        
-    </div>    
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Movie Title</th>
+                    <th scope="col">Schedule Time</th>
+                    <th scop="col">Room</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Uncharted</td>
+                    <td>February 20, 2022, 12:00pm</td>
+                    <td>3</td>
+                    <td>
+                        <button class="btn bg-primary text-white">Remove</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>John Wick 4</td>
+                    <td>February 20, 2022, 12:30pm</td>
+                    <td>1</td>
+                    <td>
+                        <button class="btn bg-primary text-white">Remove</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Nightmare Alley</td>
+                    <td>February 21, 2022, 6:30pm</td>
+                    <td>2</td>
+                    <td>
+                        <button class="btn bg-primary text-white">Remove</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <!-- Current Movie Schedule -->
 
     <br>

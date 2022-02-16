@@ -27,9 +27,9 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
                     <a href="admin-home.html" class="nav-item nav-link">Home</a>
-                    <a href="admin-manage-promotions.html" class="nav-item nav-link">Manage Promotions</a>
+                    <a href="admin-manage-promotions.html" class="nav-item nav-link active">Manage Promotions</a>
                     <a href="admin-manage-movies.html" class="nav-item nav-link">Manage Movies</a>
-                    <a href="admin-manage-users.html" class="nav-item nav-link active">Manage Users</a>
+                    <a href="admin-manage-users.html" class="nav-item nav-link">Manage Users</a>
                 </div>
                 <div class="navbar-nav ms-auto">
                     <!-- Login Dropdown -->
@@ -50,10 +50,32 @@
     </nav>
     <!-- Navbar -->
 
-    <h1 class="text-center mt-4" style="font-weight: 700;">Manage Users</h1>
-    <h3 class="text-center"><small class="text-muted text-center">Add, Delete, or Edit a Movie.</small></h3>
-
-
+    <!-- Add Promotion -->
+    <div class="container border p-3 mt-4 form-horizontal">
+        <div class="row">
+            <h2 class="text-start">Add a Promotion</h2>
+            <h5 class="text-muted text-start">Please complete the form below to add a promotion.</h5>
+            <br><br>
+            <form>
+                <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3">
+                    <label class="form-label" for="inputDeal"><strong>Deal</strong></label>
+                    <input type="text" class="form-control" id="inputDeal" placeholder="">
+                </div>
+                <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3">
+                    <label class="form-label" for="inputPromoCode"><strong>Code</strong></label>
+                    <input type="text" class="form-control" id="inputPromoCode" placeholder="">
+                </div>
+                <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3">
+                    <label class="form-label" for="inputPercentOff"><strong>Percent Off</strong></label>
+                    <input type="text" class="form-control" id="inputPercentOff" placeholder="">
+                </div>
+                <div class="col-md-6 col-lg-5 col-xl-5 mb-3">
+                    <button type="submit" class="col-12 btn btn-primary mt-3">Add Movie</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- Add Promotion -->
 
     <br>
     <!-- Footer -->

@@ -32,8 +32,18 @@
                     <a href="admin-manage-users.html" class="nav-item nav-link">Manage Users</a>
                 </div>
                 <div class="navbar-nav ms-auto">
-                    <p class="nav-item nav-link my-0">You are logged in as [admin-user-email]</p>
-                    <a href="#" class="nav-item nav-link" style="text-decoration: underline;">Logout</a>
+                    <!-- Login Dropdown -->
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                            aria-expanded="false">
+                            Welcome, Username
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item" href="editprofile.html">Edit Profile</a></li>
+                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                        </ul>
+                    </div>
+                    <!-- Login Dropdown -->
                 </div>
             </div>
         </div>
@@ -44,9 +54,7 @@
 
     <!-- Customer Stats --> 
     <div class="container">
-        <h2 class="text-start" style="font-weight: 600;">Site Statistics</h2>
-        <br>
-        <h4 class="text-start">Customer Count</h4>
+        <h3 class="text-start">Customer Count</h3>
         <table class="table">
             <thead>
                 <tr>
@@ -70,7 +78,7 @@
     <br>
     <!-- Ticket Stats -->
     <div class="container">
-        <h4 class="text-start">Ticket Sales</h4>
+        <h3 class="text-start">Ticket Sales</h3>
         <table class="table">
             <thead>
                 <tr>
@@ -95,7 +103,7 @@
     <!-- Movie Stats -->
     <!-- Maybe add column that tracks ticket count for each movie? -->
     <div class="container">
-        <h4 class="text-start">Movies Currently Showing</h4>
+        <h3 class="text-start">Movies Currently Showing</h3>
         <table class="table">
             <thead>
                 <tr>
