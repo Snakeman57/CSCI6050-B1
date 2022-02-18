@@ -163,3 +163,12 @@
     margin-left: 11vw;
     margin-top: -4.5vw;
 }
+
+.checkout-container {
+    max-width: 1350px;
+    margin-left: 35px;
+}
+
+.checkout-title {
+    text-align: center;
+}
