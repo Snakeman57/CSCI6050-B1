@@ -149,3 +149,12 @@
     height:20px;
     display:inline-block;
 }
+
+.order-summary-text {
+    text-align: center;
+    margin-top: 1.5vw;
+}
+
+#remove {
+    margin-right: -60px;
+}
