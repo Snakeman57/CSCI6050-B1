@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="spring" url="https://www.springframework.org/tags"%>
 <html lang="en">
 
 <head>
@@ -28,8 +29,8 @@
                 <div class="navbar-nav">
                     <a href="admin-home.html" class="nav-item nav-link">Home</a>
                     <a href="admin-manage-promotions.html" class="nav-item nav-link">Manage Promotions</a>
-                    <a href="admin-manage-movies.html" class="nav-item nav-link active">Manage Movies</a>
-                    <a href="admin-manage-users.html" class="nav-item nav-link">Manage Users</a>
+                    <a href="admin-manage-movies.html" class="nav-item nav-link">Manage Movies</a>
+                    <a href="admin-manage-users.html" class="nav-item nav-link active">Manage Users</a>
                 </div>
                 <div class="navbar-nav ms-auto">
                     <!-- Login Dropdown -->
@@ -50,97 +51,10 @@
     </nav>
     <!-- Navbar -->
 
-    <h1 class="text-center mt-4" style="font-weight: 700;">Manage Movies</h1>
+    <h1 class="text-center mt-4" style="font-weight: 700;">Manage Users</h1>
     <h3 class="text-center"><small class="text-muted text-center">Add, Delete, or Edit a Movie.</small></h3>
 
-    <!-- All Movies -->
-    <div class="container">
-        <br>
-        <h2 class="text-start">All Movies</h2>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Movie Title</th>
-                    <th scope="col">Status</th>
-                    <th scop="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Uncharted</td>
-                    <td>In Theaters</td>
-                    <td>
-                        <button class="btn bg-primary text-white">Edit</button>
-                        <button class="btn bg-primary text-white">Remove</button>
-                        <a href="admin-sched-movie.html"><button class="btn bg-primary text-white">Schedule</button></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>John Wick 4</td>
-                    <td>Coming Soon</td>
-                    <td>
-                        <button class="btn bg-primary text-white">Edit</button>
-                        <button class="btn bg-primary text-white">Remove</button>
-                        <a href="admin-sched-movie.html"><button class="btn bg-primary text-white">Schedule</button></a>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nightmare Alley</td>
-                    <td>In Theaters</td>
-                    <td>
-                        <button class="btn bg-primary text-white">Edit</button>
-                        <a href="admin-sched-movie.html"><button class="btn bg-primary text-white">Remove</button></a>
-                        <button class="btn bg-primary text-white">Schedule</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        <a href="admin-add-movie.html"><button class="btn bg-success text-white">Add Movie</button></a>
-    </div>
-    <!-- All Movies -->
 
-    <br> <br>
-
-    <!-- Current Movie Schedule -->    
-    <div class="container">
-        <h2>Current Movie Schedule</h2>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Movie Title</th>
-                    <th scope="col">Schedule Time</th>
-                    <th scop="col">Room</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Uncharted</td>
-                    <td>February 20, 2022, 12:00pm</td>
-                    <td>3</td>
-                    <td>
-                        <button class="btn bg-primary text-white">Remove</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>John Wick 4</td>
-                    <td>February 20, 2022, 12:30pm</td>
-                    <td>1</td>
-                    <td>
-                        <button class="btn bg-primary text-white">Remove</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>Nightmare Alley</td>
-                    <td>February 21, 2022, 6:30pm</td>
-                    <td>2</td>
-                    <td>
-                        <button class="btn bg-primary text-white">Remove</button>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <!-- Current Movie Schedule -->
 
     <br>
     <!-- Footer -->

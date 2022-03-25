@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="spring" url="https://www.springframework.org/tags"%>
 <html lang="en">
 
 <head>
@@ -52,40 +53,46 @@
             </form>
         </div>
     </div>
-
-    <div class="container border p-3 mt-4 form-horizontal">
+    
+    <div class="container border p-3 mt-4 form-horizontal">        
         <div class="row">
-            <h2 class="text-center">Login</h2>
-            <h5 class="text-muted text-center">Enter your details.</h5>
+            <h2 class="text-center">Create an Account!</h2>
+            <h5 class="text-muted text-center">Please complete the form below.</h5>
+            <h6 id="required-fields">*All fields are required</h6>
             <br>
             <br>
             <form>
-                <!-- Warning Alert (shown upon login failure) -->
-                <div id="alert-message"></div>
-                <!-- Login Prompt -->
-                <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
-                    <label class="form-label" for="firstName">Email</label>
-                    <input type="text" class="form-control" id="inputUsername" placeholder="Email">
+                <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3 mx-auto">
+                    <label class="form-label" for="firstName">First Name</label>
+                    <input type="text" class="form-control" id="inputFirstName" placeholder="First Name">                    
                 </div>
-                <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
-                    <label class="form-label" for="password">Password</label>
-                    <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+                <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3 mx-auto">
+                    <label class="form-label" for="lastName">Last Name</label>
+                    <input type="text" class="form-control" id="inputLastName" placeholder="Last Name">
                 </div>
+                <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3 mx-auto">
+                    <label class="form-label" for="username">Username</label>
+                    <input type="text" class="form-control" id="inputUsername" placeholder="Username">
+                </div>
+                <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
+                    <label class="form-label" for="inputEmail">Email</label>
+                    <input type="email" class="form-control" id="inputEmail" placeholder="Email">
+                </div>
+                <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
+                    <label class="form-label" for="inputPassword">Password</label>
+                    <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
+                </div>
+                <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
+                    <label class="form-label" for="confirmPassword">Confirm Password</label>
+                    <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Confirm Password">
+
+                    <button type="submit" class="col-12 btn btn-primary mt-3">Submit</button>
+                </div>
+                <!-- <div class="col-md-6 col-lg-5 col-xl-3 mb-3">
+                    <img src="images/recaptcha-placeholder.png" style="width: 19rem;"></img>
+                </div>                 -->
+                <!-- <button type="submit" class="btn btn-primary">Submit</button> -->
             </form>
-            <div class="d-flex justify-content-around align-items-center mb-4 mx-auto">
-                <!-- Checkbox -->
-                <div class="form-check">
-                  <input
-                    class="form-check-input"
-                    type="checkbox"
-                    value=""
-                    checked
-                  />
-                  <label class="form-check-label"> Remember me </label>
-                </div>
-                <a href="#!">Forgot password?</a>
-              </div>
-            <button id="test-alert-btn" type="submit" class="btn btn-primary col-3 mx-auto">Login</button>
         </div>
     </div>
     <br>
@@ -100,7 +107,7 @@
                         </h6>
                         <p>Athens, GA</p>
                         <p>
-                            b1-cinemas@movie.com
+                            b1-cinemas@cinemaster.com
                         </p>
                         <p>(123) 555-5555</p>
                     </div>
@@ -113,10 +120,10 @@
     </footer>
     <!-- Footer -->
 
-    <!-- Required Bootstrap Bundle with Popper -->    
+    <!-- Required Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>        
+        crossorigin="anonymous"></script>
     <script src="index.js"></script>
 </body>
 

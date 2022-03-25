@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="spring" url="https://www.springframework.org/tags"%>
 <html lang="en">
 
 <head>
@@ -10,13 +11,14 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
     <!-- Custom CSS -->
-    <link href="style.css" rel="stylesheet"/>
+    <link href="style.css" rel="stylesheet" />
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
     <title>B1 Cinemas</title>
 </head>
 
 <body>
+    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
             <a href="index.html" class="navbar-brand">B1 Cinemas</a>
@@ -76,74 +78,80 @@
             </div>
             <div class="carousel-inner mt-2 mb-2">
                 <div class="carousel-item active ratio ratio-21x9">
-                    <iframe src="https://www.youtube.com/embed/dZOaI_Fn5o4" title="YouTube video player"
-                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    <iframe src="https://www.youtube.com/embed/dZOaI_Fn5o4" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                     </iframe>
                 </div>
                 <div class="carousel-item ratio ratio-21x9">
-                    <iframe src="https://www.youtube.com/embed/JfVOs4VSpmA" title="YouTube video player"
-                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    <iframe src="https://www.youtube.com/embed/JfVOs4VSpmA" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                     </iframe>
                 </div>
                 <div class="carousel-item ratio ratio-21x9">
-                    <iframe src="https://www.youtube.com/embed/CaimKeDcudo" title="YouTube video player"
-                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    <iframe src="https://www.youtube.com/embed/CaimKeDcudo" title="YouTube video player" frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                         allowfullscreen>
                     </iframe>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="prev">
                 <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Previous</span>
             </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
+                data-bs-slide="next">
                 <span class="carousel-control-next-icon" aria-hidden="true"></span>
                 <span class="visually-hidden">Next</span>
             </button>
             <button class="btn2">Buy Tickets Now!</button>
-        </div>         
+        </div>
         <!-- Movie Trailer Carousel -->
     </div>
 
-    <!-- Currently Showing -->
+    <!-- Coming Soon -->
     <nav class="px-2 pt-3 pb-1 bg-dark" aria-label="Coming soon movies">
         <ul class="pagination pagination-lg justify-content-center">
-            <li class="page-item active"><a class="page-link" href="index.html">Currently Showing</a></li>
-            <li class="page-item"><a class="page-link" href="coming-soon.html">Coming Soon</a></li>
+            <li class="page-item"><a class="page-link" href="index.html">Currently Showing</a></li>
+            <li class="page-item active"><a class="page-link" href="coming-soon.html">Coming Soon</a></li>
         </ul>
     </nav>
     <div class="container mt-2">
         <div class="row g-3 justify-content-center">
             <div class="card col-md-6 col-lg-4 col-xl-3 px-0 mx-2 movie_card">
-                <img src="images/uncharted.jpg" class="card-img-top" alt="...">
+                <img src="images/john-wick-4.jpg" class="card-img-top" alt="...">
                 <div class="card-body text-center">
-                    <h5 class="card-title">Uncharted</h5>
+                    <h5 class="card-title">John Wick 4</h5>
+                    <!-- <p class="card-text">Optional description text</p> -->
                     <a href="#" class="btn btn-primary">Buy Ticket</a>
                 </div>
             </div>
             <div class="card col-md-6 col-lg-4 col-xl-3 px-0 mx-2 movie_card">
-                <img src="images/nightmare-alley.jpg" class="card-img-top" alt="...">
+                <img src="images/the-batman.jpg" class="card-img-top" alt="...">
                 <div class="card-body text-center">
-                    <h5 class="card-title">Nightmare Alley</h5>
+                    <h5 class="card-title">The Batman</h5>
+                    <!-- <p class="card-text">Optional description text</p> -->
                     <a href="#" class="btn btn-primary">Buy Ticket</a>
                 </div>
             </div>
             <div class="card col-md-6 col-lg-4 col-xl-3 px-0 mx-2 movie_card">
-                <img src="images/kingsman.jpeg" class="card-img-top" alt="...">
+                <img src="images/dr-strange.jpeg" class="card-img-top" alt="...">
                 <div class="card-body text-center">
-                    <h5 class="card-title">The Kingsman</h5>
+                    <h5 class="card-title">Doctor Strainge in the Multiverse of Madness</h5>
+                    <!-- <p class="card-text">Optional description text</p> -->
                     <a href="#" class="btn btn-primary">Buy Ticket</a>
                 </div>
             </div>
             <div class="card col-md-6 col-lg-4 col-xl-3 px-0 mx-2 movie_card">
-                <img src="images/dune.jpeg" class="card-img-top" alt="...">
+                <img src="images/jurrasic-world-dominion.jpeg" class="card-img-top" alt="...">
                 <div class="card-body text-center">
-                    <h5 class="card-title">Dune</h5>
+                    <h5 class="card-title">Jurassic World Dominion</h5>
+                    <!-- <p class="card-text">Optional description text</p> -->
                     <a href="#" class="btn btn-primary">Buy Ticket</a>
                 </div>
-            </div>
+            </div>            
         </div>
         <div class="container mt-5 text-center">
             <div class="row">
@@ -153,8 +161,8 @@
             </div>
         </div>
     </div>
-    <!-- Currently Showing -->
-    
+    <!-- Coming Soon -->
+
     <br>
     <!-- Footer -->
     <footer class="text-center text-lg-start bg-light text-muted">
@@ -167,7 +175,7 @@
                         </h6>
                         <p>Athens, GA</p>
                         <p>
-                            b1-cinemas@cinemaster.com
+                            b1-cinemas@movie.com
                         </p>
                         <p>(123) 555-5555</p>
                     </div>

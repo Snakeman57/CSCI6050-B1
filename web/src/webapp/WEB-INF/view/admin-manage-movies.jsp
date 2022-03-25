@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="spring" url="https://www.springframework.org/tags"%>
 <html lang="en">
 
 <head>
@@ -26,16 +27,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
-                    <a href="admin-home.html" class="nav-item nav-link active">Home</a>
+                    <a href="admin-home.html" class="nav-item nav-link">Home</a>
                     <a href="admin-manage-promotions.html" class="nav-item nav-link">Manage Promotions</a>
-                    <a href="admin-manage-movies.html" class="nav-item nav-link">Manage Movies</a>
+                    <a href="admin-manage-movies.html" class="nav-item nav-link active">Manage Movies</a>
                     <a href="admin-manage-users.html" class="nav-item nav-link">Manage Users</a>
                 </div>
                 <div class="navbar-nav ms-auto">
                     <!-- Login Dropdown -->
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                            aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown" aria-expanded="false">
                             Welcome, Username
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -50,83 +51,97 @@
     </nav>
     <!-- Navbar -->
 
-    <h1 class="text-center mt-4 mb-5" style="font-weight: 700;">Admin Home</h1>
+    <h1 class="text-center mt-4" style="font-weight: 700;">Manage Movies</h1>
+    <h3 class="text-center"><small class="text-muted text-center">Add, Delete, or Edit a Movie.</small></h3>
 
-    <!-- Customer Stats --> 
+    <!-- All Movies -->
     <div class="container">
-        <h3 class="text-start">Customer Count</h3>
+        <br>
+        <h2 class="text-start">All Movies</h2>
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">Adults</th>
-                    <th scope="col">Children</th>
-                    <th scope="col">Seniors</th>
-                    <th scope="col">Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>15</td>
-                    <td>4</td>
-                    <td>7</td>
-                    <td>26</td>
-                </tr>                
-            </tbody>
-        </table>
-    </div>
-    <!-- Customer Stats -->
-    <br>
-    <!-- Ticket Stats -->
-    <div class="container">
-        <h3 class="text-start">Ticket Sales</h3>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Adults</th>
-                    <th scope="col">Children</th>
-                    <th scope="col">Seniors</th>
-                    <th scope="col">Total</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>8</td>
-                    <td>3</td>
-                    <td>4</td>
-                    <td>15</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-    <!-- Ticket Stats -->
-    <br>
-    <!-- Movie Stats -->
-    <!-- Maybe add column that tracks ticket count for each movie? -->
-    <div class="container">
-        <h3 class="text-start">Movies Currently Showing</h3>
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">Titles</th>
+                    <th scope="col">Movie Title</th>
+                    <th scope="col">Status</th>
+                    <th scop="col">Action</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
                     <td>Uncharted</td>
+                    <td>In Theaters</td>
+                    <td>
+                        <button class="btn bg-primary text-white">Edit</button>
+                        <button class="btn bg-primary text-white">Remove</button>
+                        <a href="admin-sched-movie.html"><button class="btn bg-primary text-white">Schedule</button></a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>John Wick 4</td>
+                    <td>Coming Soon</td>
+                    <td>
+                        <button class="btn bg-primary text-white">Edit</button>
+                        <button class="btn bg-primary text-white">Remove</button>
+                        <a href="admin-sched-movie.html"><button class="btn bg-primary text-white">Schedule</button></a>
+                    </td>
                 </tr>
                 <tr>
                     <td>Nightmare Alley</td>
+                    <td>In Theaters</td>
+                    <td>
+                        <button class="btn bg-primary text-white">Edit</button>
+                        <a href="admin-sched-movie.html"><button class="btn bg-primary text-white">Remove</button></a>
+                        <button class="btn bg-primary text-white">Schedule</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="admin-add-movie.html"><button class="btn bg-success text-white">Add Movie</button></a>
+    </div>
+    <!-- All Movies -->
+
+    <br> <br>
+
+    <!-- Current Movie Schedule -->    
+    <div class="container">
+        <h2>Current Movie Schedule</h2>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Movie Title</th>
+                    <th scope="col">Schedule Time</th>
+                    <th scop="col">Room</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Uncharted</td>
+                    <td>February 20, 2022, 12:00pm</td>
+                    <td>3</td>
+                    <td>
+                        <button class="btn bg-primary text-white">Remove</button>
+                    </td>
                 </tr>
                 <tr>
-                    <td>The Kingsman</td>
+                    <td>John Wick 4</td>
+                    <td>February 20, 2022, 12:30pm</td>
+                    <td>1</td>
+                    <td>
+                        <button class="btn bg-primary text-white">Remove</button>
+                    </td>
                 </tr>
                 <tr>
-                    <td>Dune</td>
+                    <td>Nightmare Alley</td>
+                    <td>February 21, 2022, 6:30pm</td>
+                    <td>2</td>
+                    <td>
+                        <button class="btn bg-primary text-white">Remove</button>
+                    </td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <!-- Movie Stats -->
+    <!-- Current Movie Schedule -->
 
     <br>
     <!-- Footer -->
@@ -140,7 +155,7 @@
                         </h6>
                         <p>Athens, GA</p>
                         <p>
-                            B1-cinemas@movie.com
+                            b1-cinemas@movie.com
                         </p>
                         <p>(123) 555-5555</p>
                     </div>

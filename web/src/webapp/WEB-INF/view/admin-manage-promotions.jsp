@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="spring" url="https://www.springframework.org/tags"%>
 <html lang="en">
 
 <head>
@@ -27,32 +28,62 @@
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
                     <a href="admin-home.html" class="nav-item nav-link">Home</a>
-                    <a href="admin-manage-promotions.html" class="nav-item nav-link">Manage Promotions</a>
+                    <a href="admin-manage-promotions.html" class="nav-item nav-link active">Manage Promotions</a>
                     <a href="admin-manage-movies.html" class="nav-item nav-link">Manage Movies</a>
-                    <a href="admin-manage-users.html" class="nav-item nav-link active">Manage Users</a>
+                    <a href="admin-manage-users.html" class="nav-item nav-link">Manage Users</a>
                 </div>
-                <div class="navbar-nav ms-auto">
-                    <!-- Login Dropdown -->
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Welcome, Username
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="editprofile.html">Edit Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
-                        </ul>
-                    </div>
-                    <!-- Login Dropdown -->
+            <div class="navbar-nav ms-auto">
+                <!-- Login Dropdown -->
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                        Welcome, Username
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        <li><a class="dropdown-item" href="editprofile.html">Edit Profile</a></li>
+                        <li><a class="dropdown-item" href="#">Logout</a></li>
+                    </ul>
                 </div>
+                <!-- Login Dropdown -->
+            </div>
             </div>
         </div>
     </nav>
     <!-- Navbar -->
 
-    <h1 class="text-center mt-4" style="font-weight: 700;">Manage Users</h1>
-    <h3 class="text-center"><small class="text-muted text-center">Add, Delete, or Edit a Movie.</small></h3>
-
+    <!-- Current Promotions -->
+    <h1 class="text-center mt-4 mb-5" style="font-weight: 700;">Manage Promotions</h1>
+    <div class="container">
+        <br>
+        <h4 class="text-start">Current Promotions</h4>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Deal</th>
+                    <th scope="col">Code</th>
+                    <th scope="col"></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>15% Off Uncharted</td>
+                    <td>15OFF!</td>
+                    <td>
+                        <button class="btn bg-primary text-white">Remove</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>50% Off John Wick 4</td>
+                    <td>50OFFWOW!</td>
+                    <td>
+                        <button class="btn bg-primary text-white">Remove</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+        <a href="admin-add-promotion.html"><button class="btn bg-success text-white">Add Promotion</button></a>
+    </div>
+    <!-- Current Promotions -->
 
 
     <br>

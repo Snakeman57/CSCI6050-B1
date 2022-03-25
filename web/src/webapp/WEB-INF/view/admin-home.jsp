@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<%@ taglib prefix="spring" url="https://www.springframework.org/tags"%>
 <html lang="en">
 
 <head>
@@ -26,16 +27,16 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
-                    <a href="admin-home.html" class="nav-item nav-link">Home</a>
-                    <a href="admin-manage-promotions.html" class="nav-item nav-link active">Manage Promotions</a>
+                    <a href="admin-home.html" class="nav-item nav-link active">Home</a>
+                    <a href="admin-manage-promotions.html" class="nav-item nav-link">Manage Promotions</a>
                     <a href="admin-manage-movies.html" class="nav-item nav-link">Manage Movies</a>
                     <a href="admin-manage-users.html" class="nav-item nav-link">Manage Users</a>
                 </div>
                 <div class="navbar-nav ms-auto">
                     <!-- Login Dropdown -->
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1"
-                            data-bs-toggle="dropdown" aria-expanded="false">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
+                            aria-expanded="false">
                             Welcome, Username
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
@@ -50,32 +51,83 @@
     </nav>
     <!-- Navbar -->
 
-    <!-- Add Promotion -->
-    <div class="container border p-3 mt-4 form-horizontal">
-        <div class="row">
-            <h2 class="text-start">Add a Promotion</h2>
-            <h5 class="text-muted text-start">Please complete the form below to add a promotion.</h5>
-            <br><br>
-            <form>
-                <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3">
-                    <label class="form-label" for="inputDeal"><strong>Deal</strong></label>
-                    <input type="text" class="form-control" id="inputDeal" placeholder="">
-                </div>
-                <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3">
-                    <label class="form-label" for="inputPromoCode"><strong>Code</strong></label>
-                    <input type="text" class="form-control" id="inputPromoCode" placeholder="">
-                </div>
-                <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3">
-                    <label class="form-label" for="inputPercentOff"><strong>Percent Off</strong></label>
-                    <input type="text" class="form-control" id="inputPercentOff" placeholder="">
-                </div>
-                <div class="col-md-6 col-lg-5 col-xl-5 mb-3">
-                    <button type="submit" class="col-12 btn btn-primary mt-3">Add Movie</button>
-                </div>
-            </form>
-        </div>
+    <h1 class="text-center mt-4 mb-5" style="font-weight: 700;">Admin Home</h1>
+
+    <!-- Customer Stats --> 
+    <div class="container">
+        <h3 class="text-start">Customer Count</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Adults</th>
+                    <th scope="col">Children</th>
+                    <th scope="col">Seniors</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>15</td>
+                    <td>4</td>
+                    <td>7</td>
+                    <td>26</td>
+                </tr>                
+            </tbody>
+        </table>
     </div>
-    <!-- Add Promotion -->
+    <!-- Customer Stats -->
+    <br>
+    <!-- Ticket Stats -->
+    <div class="container">
+        <h3 class="text-start">Ticket Sales</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Adults</th>
+                    <th scope="col">Children</th>
+                    <th scope="col">Seniors</th>
+                    <th scope="col">Total</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>8</td>
+                    <td>3</td>
+                    <td>4</td>
+                    <td>15</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- Ticket Stats -->
+    <br>
+    <!-- Movie Stats -->
+    <!-- Maybe add column that tracks ticket count for each movie? -->
+    <div class="container">
+        <h3 class="text-start">Movies Currently Showing</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Titles</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Uncharted</td>
+                </tr>
+                <tr>
+                    <td>Nightmare Alley</td>
+                </tr>
+                <tr>
+                    <td>The Kingsman</td>
+                </tr>
+                <tr>
+                    <td>Dune</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- Movie Stats -->
 
     <br>
     <!-- Footer -->
@@ -89,7 +141,7 @@
                         </h6>
                         <p>Athens, GA</p>
                         <p>
-                            b1-cinemas@cinemaster.com
+                            B1-cinemas@movie.com
                         </p>
                         <p>(123) 555-5555</p>
                     </div>
