@@ -1,2 +1,1 @@
-# CSCI6050-B1
-Term Project Repository
+This is an archival branch of an old version of the site attempting to use the Spring Boot framework that wouldn't connect properly
