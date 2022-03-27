@@ -1,9 +1,0 @@
-<!-- Update user information -->
-<update id="userUpdate" parameterType="com.cinema.web.editProfile">
-    UPDATE TBL_USER SET
-    USER_PASSWORD = #{password},
-    USER_FIRSTNAME = #{firstName},
-    USER_LASTNAME = #{lastName},
-    USER_PAYMENT = #{cardNumber}
-    WHERE USER_ID = #{userId}
-</update>
