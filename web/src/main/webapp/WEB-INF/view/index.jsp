@@ -20,13 +20,13 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a href="index.html" class="navbar-brand">B1 Cinemas</a>
+            <a href="/" class="navbar-brand">B1 Cinemas</a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="/" class="nav-item nav-link active">Home</a>
                     <a href="#" class="nav-item nav-link">Showtimes</a>
                     <a href="#" class="nav-item nav-link">Promotions</a>
                     <a href="#" class="nav-item nav-link">Contact</a>
@@ -45,7 +45,7 @@
                         Welcome, Username
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="editprofile.html">Edit Profile</a></li>
+                        <li><a class="dropdown-item" href="editprofile">Edit Profile</a></li>
                         <li><a class="dropdown-item" href="#">Logout</a></li>
                     </ul>
                 </div>
@@ -111,8 +111,8 @@
     <!-- Currently Showing -->
     <nav class="px-2 pt-3 pb-1 bg-dark" aria-label="Coming soon movies">
         <ul class="pagination pagination-lg justify-content-center">
-            <li class="page-item active"><a class="page-link" href="index.html">Currently Showing</a></li>
-            <li class="page-item"><a class="page-link" href="coming-soon.html">Coming Soon</a></li>
+            <li class="page-item active"><a class="page-link" href="index">Currently Showing</a></li>
+            <li class="page-item"><a class="page-link" href="coming-soon">Coming Soon</a></li>
         </ul>
     </nav>
     <div class="container mt-2">

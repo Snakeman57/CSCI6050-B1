@@ -34,4 +34,11 @@ public class MainController {
 
         return model;
     }
+
+    @RequestMapping("/admin")
+    public ModelAndView ahome(ModelAndView model){
+        model.setViewName("admin-home");
+
+        return model;
+    }
 }

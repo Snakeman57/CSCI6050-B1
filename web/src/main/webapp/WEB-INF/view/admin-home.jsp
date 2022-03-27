@@ -21,16 +21,16 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a href="admin-home.html" class="navbar-brand">B1 Cinemas - Admin Portal</a>
+            <a href="admin-home" class="navbar-brand">B1 Cinemas - Admin Portal</a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
-                    <a href="admin-home.html" class="nav-item nav-link active">Home</a>
-                    <a href="admin-manage-promotions.html" class="nav-item nav-link">Manage Promotions</a>
-                    <a href="admin-manage-movies.html" class="nav-item nav-link">Manage Movies</a>
-                    <a href="admin-manage-users.html" class="nav-item nav-link">Manage Users</a>
+                    <a href="admin-home" class="nav-item nav-link active">Home</a>
+                    <a href="admin-manage-promotions" class="nav-item nav-link">Manage Promotions</a>
+                    <a href="admin-manage-movies" class="nav-item nav-link">Manage Movies</a>
+                    <a href="admin-manage-users" class="nav-item nav-link">Manage Users</a>
                 </div>
                 <div class="navbar-nav ms-auto">
                     <!-- Login Dropdown -->
@@ -40,7 +40,7 @@
                             Welcome, Username
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="editprofile.html">Edit Profile</a></li>
+                            <li><a class="dropdown-item" href="editprofile">Edit Profile</a></li>
                             <li><a class="dropdown-item" href="#">Logout</a></li>
                         </ul>
                     </div>
