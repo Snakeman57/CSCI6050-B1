@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<%@ taglib prefix="spring" url="https://www.springframework.org/tags"%>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <html lang="en">
 
 <head>
