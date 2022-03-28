@@ -17,6 +17,7 @@ include "server.php";
     <link href="editprofile.css" rel="stylesheet" />
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <script src="register.js"></script>
     <title>B1 Cinemas</title>
 </head>
 
@@ -99,15 +100,18 @@ include "server.php";
                         <form method="post">
                           <?php
                             if (isset($_POST['editProfile'])) {
-                              $id = $_SESSION['email'];
+                              $email = $_SESSION['email'];
                               //$userName = trim($_POST['userName']);
                               $firstName = trim($_POST['firstName']);
                               $lastName = trim($_POST['lastName']);
                               $favMovieTheater = trim($_POST['favMovieTheater']);
                               $phoneNumber = trim($_POST['phoneNumber']);
                               $birthday = trim($_POST['birthday']);
-                              $promo = trim($_POST['promo']);
+                              $promo = $_POST['promo'];
+                              $pass = trim($_POST['password']);
+                              $passc = trim($_POST['passwordc']);
                               $delta = false;
+                              echo $delta;
                               // change fname
                               if($firstName != ''){
                                 $updt = "UPDATE customer SET firstName = ? WHERE customer.email = ?";
@@ -127,6 +131,26 @@ include "server.php";
                                 $stmt->execute();
                                 $stmt->close();
                                 $delta = true;
+                              }
+                              // change password
+                              if($pass != ''){
+                                $stmt = $con->prepare("SELECT * FROM user WHERE email = ? AND password = ?");
+                                $stmt->bind_param("ss", $email, $passc);
+                                $stmt->execute();
+                                $result = $stmt->get_result();
+                                $stmt->close();
+                                if ($result->num_rows > 0) {
+                                  $updt = "UPDATE customer SET lastName = ? WHERE customer.email = ?";
+                                  $stmt = $con->prepare($updt);
+                                  $stmt->bind_param("ss", $lastName, $email);
+                                  //var_dump($stmt);
+                                  $stmt->execute();
+                                  $stmt->close();
+                                  $delta = true;
+                                }
+                                else{
+                                  echo "<script>alert(\"Password could not be changed as old password was inavlid\");</script>";
+                                }
                               }
                               // change movie
                               if($favMovieTheater != ''){
@@ -165,45 +189,100 @@ include "server.php";
                               //var_dump($stmt);
                               $stmt->execute();
                               $stmt->close();
-                              if($delta) echo "<script>alert(\"Changes Saved!\")</script>";
+                              if($delta){
+                                echo "<script>window.location.replace(\"editprofile-success.php\");</script>";
+                              }
+                              else{
+                                echo "<script>window.location.replace(\"editprofile-failure.php\");</script>";
+                              }
                             }
                           ?>
-                          <!-- Form Group (username)-->
-                          <!-- <div class="mb-3">
-                              <label class="small mb-1" for="inputUsername">Username (how your name will appear to other users on the site)</label>
-                              <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="username" name="userName">
-                          </div> -->
                           <!-- Form Row-->
                           <div class="row gx-3 mb-3">
                               <!-- Form Group (first name)-->
                               <div class="col-md-6">
                                   <label class="small mb-1" for="inputFirstName">First name</label>
-                                  <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="Valerie" name="firstName">
+                                  <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="firstName">
                               </div>
                               <!-- Form Group (last name)-->
                               <div class="col-md-6">
                                   <label class="small mb-1" for="inputLastName">Last name</label>
-                                  <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="Luna" name="lastName">
+                                  <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" name="lastName">
                               </div>
                           </div>
                           <!-- Form Row        -->
                           <div class="row gx-3 mb-3">
-                              <!-- Form Group (organization name)-->
                               <div class="mb-3">
-                                  <label class="small mb-1" for="inputOrgName">Preffered Movie Theater</label>
-                                  <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your preffered location" value="AMC Athens" name="favMovieTheater">
+                                  <label class="small mb-1" for="password">Password</label>
+                                  <input class="form-control" id="password" type="text" placeholder="New Password" name="password">
+                                  <br/>
+                                  <input class="form-control" id="passwordc" type="text" placeholder="Confirm Old Password" name="passwordc">
                               </div>
-                              <!-- Form Group (location)-->
-                              <!-- <div class="col-md-6">
-                                  <label class="small mb-1" for="inputLocation">Zip Code</label>
-                                  <input class="form-control" id="inputLocation" type="text" placeholder="XXXXX" value="30605" name="zipCode">
-                              </div> -->
                           </div>
-                          <!-- Form Group (email address)-->
-                          <!-- <div class="mb-3">
-                              <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                              <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
-                          </div> -->
+                          <div class="row gx-3 mb-3">
+                            <div class="mb-3">
+                              <input type="checkbox" id="pay1" name="pay1" value=1>
+                              <label class="form-label" for="pay1">Add Payment Card</label>
+                            </div>
+                            <div class="mb-3" id="pay1-ct" style="display:none">
+                              <label class="form-label" for="pay1-addr">Card Number</label>    
+                              <input type="password" class="form-control" id="pay1-num" placeholder="Card Number" name="pay1-num" disabled=pay1.checked>
+                              <br/>
+                              <label class="form-label" for="pay1-addr">Billing Address</label>
+                              <input type="text" class="form-control" id="pay1-addr-str" placeholder="Street" name="pay1-addr-str" disabled=true>
+                              <input type="text" class="form-control" id="pay1-addr-city" placeholder="City" name="pay1-addr-city" disabled=true>
+                              <input type="text" class="form-control" id="pay1-addr-state" placeholder="State" name="pay1-addr-state" disabled=true>
+                              <input type="number" class="form-control" id="pay1-addr-zip" placeholder="Zip" name="pay1-addr-zip" disabled=true>
+                              <br/>
+                              <label class="form-label" for="pay1-addr">Expiration Date</label>    
+                              <input type="text" class="form-control" id="pay1-ex" placeholder="Expiration Date" name="pay1-ex" disabled=true>
+                            </div>
+                          </div>
+                          <div class="row gx-3 mb-3">
+                            <div class="mb-3">
+                              <input type="checkbox" id="pay2" name="pay2" value=1>
+                              <label class="form-label" for="pay2">Add Payment Card</label>
+                            </div>
+                            <div class="mb-3" id="pay2-ct" style="display:none">
+                              <label class="form-label" for="pay2-addr">Card Number</label>    
+                              <input type="password" class="form-control" id="pay2-num" placeholder="Card Number" name="pay2-num" disabled=pay2.checked>
+                              <br/>
+                              <label class="form-label" for="pay2-addr">Billing Address</label>
+                              <input type="text" class="form-control" id="pay2-addr-str" placeholder="Street" name="pay2-addr-str" disabled=true>
+                              <input type="text" class="form-control" id="pay2-addr-city" placeholder="City" name="pay2-addr-city" disabled=true>
+                              <input type="text" class="form-control" id="pay2-addr-state" placeholder="State" name="pay2-addr-state" disabled=true>
+                              <input type="number" class="form-control" id="pay2-addr-zip" placeholder="Zip" name="pay2-addr-zip" disabled=true>
+                              <br/>
+                              <label class="form-label" for="pay2-addr">Expiration Date</label>    
+                              <input type="text" class="form-control" id="pay2-ex" placeholder="Expiration Date" name="pay2-ex" disabled=true>
+                            </div>
+                          </div>
+                          <div class="row gx-3 mb-3">
+                            <div class="mb-3">
+                              <input type="checkbox" id="pay3" name="pay3" value=1>
+                              <label class="form-label" for="pay3">Add Payment Card</label>
+                            </div>
+                            <div class="mb-3" id="pay3-ct" style="display:none">
+                              <label class="form-label" for="pay3-addr">Card Number</label>    
+                              <input type="password" class="form-control" id="pay3-num" placeholder="Card Number" name="pay3-num" disabled=pay3.checked>
+                              <br/>
+                              <label class="form-label" for="pay3-addr">Billing Address</label>
+                              <input type="text" class="form-control" id="pay3-addr-str" placeholder="Street" name="pay3-addr-str" disabled=true>
+                              <input type="text" class="form-control" id="pay3-addr-city" placeholder="City" name="pay3-addr-city" disabled=true>
+                              <input type="text" class="form-control" id="pay3-addr-state" placeholder="State" name="pay3-addr-state" disabled=true>
+                              <input type="number" class="form-control" id="pay3-addr-zip" placeholder="Zip" name="pay3-addr-zip" disabled=true>
+                              <br/>
+                              <label class="form-label" for="pay3-addr">Expiration Date</label>    
+                              <input type="text" class="form-control" id="pay3-ex" placeholder="Expiration Date" name="pay3-ex" disabled=true>
+                            </div>
+                          </div>
+                          <!-- Form Row        -->
+                          <div class="row gx-3 mb-3">
+                            <div class="mb-3">
+                              <label class="small mb-1" for="inputOrgName">Preffered Movie Theater</label>
+                              <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your preffered location" name="favMovieTheater">
+                            </div>
+                          </div>
                           <!-- Form Row-->
                           <div class="row gx-3 mb-3">
                               <!-- Form Group (phone number)-->
@@ -226,6 +305,7 @@ include "server.php";
                           <!-- Save changes button-->
                           <button id="editProfile" class="btn btn-primary" type="submit" name="editProfile">Save changes</button>
                         </form>
+                        <script>startPay();</script>
                     </div>
                 </div>
             </div>
