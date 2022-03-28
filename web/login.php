@@ -107,7 +107,8 @@
                       $msg = "Please enter username &amp; password";
                     }
                   }
-                if($msg != "")echo "<div class=\"alert alert-danger alert-dismissible\" role=\"alert\">". $msg . "<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>" ?>
+                  if($msg != "")echo "<div class=\"alert alert-danger alert-dismissible\" role=\"alert\">". $msg . "<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>"
+                ?>
                 <!-- Login Prompt -->
                 <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
                     <label class="form-label" for="firstName">Email</label>
@@ -130,7 +131,7 @@
                   </div> -->
                   <a href="forgot.php">Forgot password?</a>
                 </div>
-                <button id="login" type="submit" class="btn btn-primary col-3 mx-auto" name="login">Login</button>
+                <button id="login" type="submit" class="btn btn-primary col-3 mx-auto" name="login" style="horizantal-align:center">Login</button>
             </form>
         </div>
     </div>

@@ -73,9 +73,15 @@
                       $result = $stmt->get_result();
                       $stmt->close();
                       if ($result->num_rows > 0) {
-                        echo "<script>
-                          alert(\"Email Sent!\")
-                        </script>";
+                        //$message = $result.mysqli_fetch_column();
+                        //if(mail($email, "Password Recovery", $message))
+                          echo "<script>
+                            alert(\"Email Sent!\")
+                            window.location.replace(\"login.php\")
+                          </script>";/*
+                          else "<script>
+                            alert(\"Email Failed to Send!\")
+                          </script>";*/
                       }
                       else {
                         $stmt = $con->prepare("SELECT * FROM user WHERE email = ? AND sqAnswer = ?");

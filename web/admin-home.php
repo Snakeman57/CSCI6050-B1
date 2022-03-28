@@ -35,16 +35,22 @@
                 </div>
                 <div class="navbar-nav ms-auto">
                     <!-- Login Dropdown -->
-                    <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                            aria-expanded="false">
-                            Welcome, Username
-                        </button>
-                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                            <li><a class="dropdown-item" href="editprofile.html">Edit Profile</a></li>
-                            <li><a class="dropdown-item" href="#">Logout</a></li>
+                  <?php
+                    if(isset($_SESSION['email'])){
+                      echo "<div class=\"dropdown\">
+                        <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton1\"
+                          data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+                          Welcome," . $_SESSION['email'] .
+                        "</button>
+                        <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton1\">
+                          <li><a class=\"dropdown-item\" href=\"logout.php\">Logout</a></li>
                         </ul>
-                    </div>
+                      </div>";
+                    }
+                    else{
+                      echo "<script>window.location.replace(\"index.php\")</script>";
+                    }
+                  ?>
                     <!-- Login Dropdown -->
                 </div>
             </div>

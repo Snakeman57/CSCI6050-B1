@@ -41,7 +41,7 @@
                 </div>
                 <!-- Login Dropdown -->
                   <?php
-                    if($_SESSION['valid']){
+                    if(isset($_SESSION['email'])){
                       echo "<div class=\"dropdown\">
                         <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton1\"
                           data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
@@ -55,10 +55,7 @@
                     }
                     else{
                       echo "<div class=\"dropdown\">
-                        <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton1\"
-                          data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-                          Login
-                        </button>
+                        <button class=\"btn btn-secondary\" type=\"button\" id=\"dropdownMenuButton1\" onclick=window.location.replace(\"login.php\")>Login</button>
                       </div>";
                     }
                   ?>

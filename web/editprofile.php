@@ -17,43 +17,6 @@ include "server.php";
     <link href="editprofile.css" rel="stylesheet" />
     <!-- Bootstrap Icons -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
-
-    <?php
-
-    session_start();
-    if (isset($_POST['editProfile'])) {
-        $id = $_SESSION['id'];
-        $userName = $_POST['userName'];
-        $firstName = $_POST['firstName'];
-        $lastName = $_POST['lastName'];
-        $favMovieTheater = $_POST['favMovieTheater'];
-        $zipCode = $_POST['zipCode'];
-        $phoneNumber = $_POST['phoneNumber'];
-        $birthday = $_POST['birthday'];
-
-        $select = "SELECT * FROM user WHERE id='$id'";
-        $sql = mysqli_query($conn, $select);
-        $row = mysqli_fetch_assoc($sql);
-        $res = $row['id'];
-        if ($res === $id) {
-
-            $update = "UPDATE users SET userName='$userName',firstName='$firstName',lastName='$lastName',faveMovieTheater='$favMovieTheater',zipCode='$zipCode',
-            phoneNumber='$phoneNumber',birthday='$birthday' where id='$id'";
-            $sql2 = mysqli_query($conn, $update);
-            if ($sql2) {
-                /*Successful*/
-                header('location:login.php');
-            } else {
-                /*sorry your profile is not update*/
-                header('location:editprofile.php');
-            }
-        } else {
-            /*sorry your id is not match*/
-            header('location:editprofile.php');
-        }
-    }
-    ?>
-
     <title>B1 Cinemas</title>
 </head>
 
@@ -79,15 +42,22 @@ include "server.php";
                     </a>
                 </div>
                 <!-- Dropdown -->
-                <div class="dropdown">
-                    <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        Welcome, Username
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="editprofile.html">Edit Profile</a></li>
-                        <li><a class="dropdown-item" href="#">Logout</a></li>
-                    </ul>
-                </div>
+                  <?php
+                    if(isset($_SESSION['email'])){
+                      echo "<div class=\"dropdown\">
+                        <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton1\"
+                          data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
+                          Welcome," . $_SESSION['email'] .
+                        "</button>
+                        <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton1\">
+                          <li><a class=\"dropdown-item\" href=\"logout.php\">Logout</a></li>
+                        </ul>
+                      </div>";
+                    }
+                    else{
+                      echo "<script>window.location.replace(\"index.php\")</script>";
+                    }
+                  ?>
             </div>
         </div>
     </nav>
@@ -126,58 +96,135 @@ include "server.php";
                 <div class="card mb-4">
                     <div class="card-header">Account Details</div>
                     <div class="card-body">
-                        <form>
-                            <!-- Form Group (username)-->
+                        <form method="post">
+                          <?php
+                            if (isset($_POST['editProfile'])) {
+                              $id = $_SESSION['email'];
+                              //$userName = trim($_POST['userName']);
+                              $firstName = trim($_POST['firstName']);
+                              $lastName = trim($_POST['lastName']);
+                              $favMovieTheater = trim($_POST['favMovieTheater']);
+                              $phoneNumber = trim($_POST['phoneNumber']);
+                              $birthday = trim($_POST['birthday']);
+                              $promo = trim($_POST['promo']);
+                              $delta = false;
+                              // change fname
+                              if($firstName != ''){
+                                $updt = "UPDATE customer SET firstName = ? WHERE customer.email = ?";
+                                $stmt = $con->prepare($updt);
+                                $stmt->bind_param("ss", $firstName, $email);
+                                //var_dump($stmt);
+                                $stmt->execute();
+                                $stmt->close();
+                                $delta = true;
+                              }
+                              // change lname
+                              if($lastName != ''){
+                                $updt = "UPDATE customer SET lastName = ? WHERE customer.email = ?";
+                                $stmt = $con->prepare($updt);
+                                $stmt->bind_param("ss", $lastName, $email);
+                                //var_dump($stmt);
+                                $stmt->execute();
+                                $stmt->close();
+                                $delta = true;
+                              }
+                              // change movie
+                              if($favMovieTheater != ''){
+                                $updt = "UPDATE customer SET favTheater = ? WHERE customer.email = ?";
+                                $stmt = $con->prepare($updt);
+                                $stmt->bind_param("ss", $favTheater, $email);
+                                //var_dump($stmt);
+                                $stmt->execute();
+                                $stmt->close();
+                                $delta = true;
+                              }
+                              // change phone
+                              if($phoneNumber != ''){
+                                $updt = "UPDATE customer SET phone = ? WHERE customer.email = ?";
+                                $stmt = $con->prepare($updt);
+                                $stmt->bind_param("ss", $phone, $email);
+                                //var_dump($stmt);
+                                $stmt->execute();
+                                $stmt->close();
+                                $delta = true;
+                              }
+                              // change bday
+                              if($birthday != ''){
+                                $updt = "UPDATE customer SET birthday = ? WHERE customer.email = ?";
+                                $stmt = $con->prepare($updt);
+                                $stmt->bind_param("ss", $birthday, $email);
+                                //var_dump($stmt);
+                                $stmt->execute();
+                                $stmt->close();
+                                $delta = true;
+                              }
+                              // change promo
+                              $updt = "UPDATE customer SET promo = ? WHERE customer.email = ?";
+                              $stmt = $con->prepare($updt);
+                              $stmt->bind_param("ss", $promo, $email);
+                              //var_dump($stmt);
+                              $stmt->execute();
+                              $stmt->close();
+                              if($delta) echo "<script>alert(\"Changes Saved!\")</script>";
+                            }
+                          ?>
+                          <!-- Form Group (username)-->
+                          <!-- <div class="mb-3">
+                              <label class="small mb-1" for="inputUsername">Username (how your name will appear to other users on the site)</label>
+                              <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="username" name="userName">
+                          </div> -->
+                          <!-- Form Row-->
+                          <div class="row gx-3 mb-3">
+                              <!-- Form Group (first name)-->
+                              <div class="col-md-6">
+                                  <label class="small mb-1" for="inputFirstName">First name</label>
+                                  <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="Valerie" name="firstName">
+                              </div>
+                              <!-- Form Group (last name)-->
+                              <div class="col-md-6">
+                                  <label class="small mb-1" for="inputLastName">Last name</label>
+                                  <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="Luna" name="lastName">
+                              </div>
+                          </div>
+                          <!-- Form Row        -->
+                          <div class="row gx-3 mb-3">
+                              <!-- Form Group (organization name)-->
+                              <div class="mb-3">
+                                  <label class="small mb-1" for="inputOrgName">Preffered Movie Theater</label>
+                                  <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your preffered location" value="AMC Athens" name="favMovieTheater">
+                              </div>
+                              <!-- Form Group (location)-->
+                              <!-- <div class="col-md-6">
+                                  <label class="small mb-1" for="inputLocation">Zip Code</label>
+                                  <input class="form-control" id="inputLocation" type="text" placeholder="XXXXX" value="30605" name="zipCode">
+                              </div> -->
+                          </div>
+                          <!-- Form Group (email address)-->
+                          <!-- <div class="mb-3">
+                              <label class="small mb-1" for="inputEmailAddress">Email address</label>
+                              <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
+                          </div> -->
+                          <!-- Form Row-->
+                          <div class="row gx-3 mb-3">
+                              <!-- Form Group (phone number)-->
+                              <div class="col-md-6">
+                                  <label class="small mb-1" for="inputPhone">Phone number</label>
+                                  <input class="form-control" id="inputPhone" type="tel" placeholder="555-123-4567" name="phoneNumber">
+                              </div>
+                              <!-- Form Group (birthday)-->
+                              <div class="col-md-6">
+                                  <label class="small mb-1" for="inputBirthday">Birthday</label>
+                                  <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="MM/DD/YYYY" name="birthday">
+                              </div>
+                          </div>
+                          <div class="row gx-3 mb-3">
                             <div class="mb-3">
-                                <label class="small mb-1" for="inputUsername">Username (how your name will appear to other users on the site)</label>
-                                <input class="form-control" id="inputUsername" type="text" placeholder="Enter your username" value="username" name="userName">
+                              <input type="checkbox" id="promo" name="promo" value=1>
+                              <label class="small mb-1" for="promo">Accept Promotional Emails</label>
                             </div>
-                            <!-- Form Row-->
-                            <div class="row gx-3 mb-3">
-                                <!-- Form Group (first name)-->
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="inputFirstName">First name</label>
-                                    <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" value="Valerie" name="firstName">
-                                </div>
-                                <!-- Form Group (last name)-->
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="inputLastName">Last name</label>
-                                    <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" value="Luna" name="lastName">
-                                </div>
-                            </div>
-                            <!-- Form Row        -->
-                            <div class="row gx-3 mb-3">
-                                <!-- Form Group (organization name)-->
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="inputOrgName">Preffered Movie Theater</label>
-                                    <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your preffered location" value="AMC Athens" name="favMovieTheater">
-                                </div>
-                                <!-- Form Group (location)-->
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="inputLocation">Zip Code</label>
-                                    <input class="form-control" id="inputLocation" type="text" placeholder="XXXXX" value="30605" name="zipCode">
-                                </div>
-                            </div>
-                            <!-- Form Group (email address)-->
-                            <div class="mb-3">
-                                <label class="small mb-1" for="inputEmailAddress">Email address</label>
-                                <input class="form-control" id="inputEmailAddress" type="email" placeholder="Enter your email address" value="name@example.com">
-                            </div>
-                            <!-- Form Row-->
-                            <div class="row gx-3 mb-3">
-                                <!-- Form Group (phone number)-->
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="inputPhone">Phone number</label>
-                                    <input class="form-control" id="inputPhone" type="tel" placeholder="555-123-4567" name="phoneNumber">
-                                </div>
-                                <!-- Form Group (birthday)-->
-                                <div class="col-md-6">
-                                    <label class="small mb-1" for="inputBirthday">Birthday</label>
-                                    <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="MM/DD/YYYY" name="birthday">
-                                </div>
-                            </div>
-                            <!-- Save changes button-->
-                            <button class="btn btn-primary" type="button" name="editProfile">Save changes</button>
+                          </div>
+                          <!-- Save changes button-->
+                          <button id="editProfile" class="btn btn-primary" type="submit" name="editProfile">Save changes</button>
                         </form>
                     </div>
                 </div>

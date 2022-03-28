@@ -1,4 +1,6 @@
 <?php
-  $_SESSION['valid'] = false;
-  echo "<script>window.location.replace(\"index.php\")</script>"
+  session_start();
+  unset($_SESSION["email"]);
+  unset($_SESSION["password"]);
+  echo "<script>alert(\"Logged out successfully!\");window.location.replace(\"index.php\")</script>"
 ?>
