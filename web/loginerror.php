@@ -24,21 +24,21 @@ include "server.php";
     <!-- Navbar component -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a href="index.html" class="navbar-brand">Cinemaster</a>
+            <a href="index.php" class="navbar-brand">Cinemaster</a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
-                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <a href="index.php" class="nav-item nav-link active">Home</a>
                     <a href="#" class="nav-item nav-link">Showtimes</a>
                     <a href="#" class="nav-item nav-link">Promotions</a>
                     <a href="#" class="nav-item nav-link">Contact</a>
                 </div>
                 <!-- Searh Bar -->
                 <div class="navbar-nav ms-auto">
-                    <a href="register.html" class="nav-item nav-link">Register</a>
-                    <a href="login.html" class="nav-item nav-link">Login</a>
+                    <a href="register.php" class="nav-item nav-link">Register</a>
+                    <a href="login.php" class="nav-item nav-link">Login</a>
                     <a class="btn btn-outline-success mx-2" data-bs-toggle="collapse" href="#collapseSearch" role="button"
                         aria-expanded="false" aria-controls="collapseSearch">
                         Search
