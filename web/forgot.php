@@ -52,51 +52,44 @@
             </form>
         </div>
     </div>
+
     <div class="container border p-3 mt-4 form-horizontal">
         <div class="row">
-            <h2 class="text-center">Login</h2>
-            <h5 class="text-muted text-center">Enter your details.</h5>
+            <h2 class="text-center">Forgot Password</h2>
+            <h5 class="text-muted text-center">What is the name of your first pet?</h5>
             <br>
             <br>
             <form method="post">
                 <?php
                   $msg = "";
-                  if(isset($_POST['login'])){
-                    if(!empty($_POST['email']) && !empty($_POST['password'])){
+                  if(isset($_POST['submit'])){
+                    if(!empty($_POST['email']) && !empty($_POST['name'])){
                       $email = trim($_POST['email']);
-                      $password = trim($_POST['password']);
+                      $name = trim($_POST['name']);
                       // Check if Email exists
-                      $stmt = $con->prepare("SELECT * FROM customer WHERE email = ? AND password = ?");
-                      $stmt->bind_param("ss", $email, $password);
+                      $stmt = $con->prepare("SELECT * FROM customer WHERE email = ? AND sqAnswer = ?");
+                      $stmt->bind_param("ss", $email, $name);
                       $stmt->execute();
                       $result = $stmt->get_result();
                       $stmt->close();
                       if ($result->num_rows > 0) {
-                        $_SESSION['valid'] = true;
-                        $_SESSION['timeout'] = time();
-                        $_SESSION['email'] = $email;
                         echo "<script>
-                          alert(\"Welcome Customer!\")
-                          window.location.replace(\"index.php\")
+                          alert(\"Email Sent!\")
                         </script>";
                       }
                       else {
-                        $stmt = $con->prepare("SELECT * FROM user WHERE email = ? AND password = ?");
-                        $stmt->bind_param("ss", $email, $password);
+                        $stmt = $con->prepare("SELECT * FROM user WHERE email = ? AND sqAnswer = ?");
+                        $stmt->bind_param("ss", $email, $name);
                         $stmt->execute();
                         $result = $stmt->get_result();
                         $stmt->close();
                         if ($result->num_rows > 0) {
-                          $_SESSION['valid'] = true;
-                          $_SESSION['timeout'] = time();
-                          $_SESSION['email'] = $email;
                         echo "<script>
-                          alert(\"Welcome Administrator!\")
-                          window.location.replace(\"admin-home.php\")
+                          alert(\"Email Sent!\")
                         </script>";
                         }
                         else{
-                          $msg = "Invalid username and/or password.";
+                          $msg = "Invalid email & response.";
                         }
                       }/*
                       $_SESSION['valid'] = true;
@@ -104,18 +97,18 @@
                       $_SESSION['email'] = 'tutorialspoint';*/
                     }
                     else{
-                      $msg = "Please enter username &amp; password";
+                      $msg = "Please enter email & response";
                     }
                   }
                 if($msg != "")echo "<div class=\"alert alert-danger alert-dismissible\" role=\"alert\">". $msg . "<button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"alert\" aria-label=\"Close\"></button></div>" ?>
-                <!-- Login Prompt -->
+                <!-- Security Question Prompt -->
                 <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
                     <label class="form-label" for="firstName">Email</label>
                     <input name="email" type="text" class="form-control" id="email" placeholder="Email">
                 </div>
                 <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
-                    <label class="form-label" for="password">Password</label>
-                    <input name="password" type="password" class="form-control" id="password" placeholder="Password">
+                    <label class="form-label" for="name">Name</label>
+                    <input name="name" type="text" class="form-control" id="name" placeholder="Name">
                 </div>
                 <div class="d-flex justify-content-around align-items-center mb-4 mx-auto">
                   <!-- Checkbox -->
@@ -128,9 +121,9 @@
                     />
                     <label class="form-check-label"> Remember me </label>
                   </div> -->
-                  <a href="forgot.php">Forgot password?</a>
+                  <a href="login.php">Return to Login</a>
                 </div>
-                <button id="login" type="submit" class="btn btn-primary col-3 mx-auto" name="login">Login</button>
+                <button id="submit" type="submit" class="btn btn-primary col-3 mx-auto" name="submit">Submit</button>
             </form>
         </div>
     </div>
