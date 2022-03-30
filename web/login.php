@@ -125,7 +125,7 @@
                             $_SESSION['email'] = $email;
                             echo "<script>
                               alert(\"Welcome Administrator!\")
-                              window.location.replace(\"index.php\")
+                              window.location.replace(\"admin-home.php\")
                             </script>";
                           }
                           else{

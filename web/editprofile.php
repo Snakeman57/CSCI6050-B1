@@ -230,6 +230,21 @@
                                   echo "<script>alert(\"Card 1 could not be changed because not all fields were filled.\")</script>";
                                 }
                                 else { // Check if card already exists
+                                  $stmt = $con->prepare("SELECT paymentCard FROM customer WHERE email = ?");
+                                  $stmt->bind_param("s", $email);
+                                  $stmt->execute();
+                                  $result = $stmt->get_result();
+                                  $stmt->close();
+                                  if ($result->num_rows > 0) {
+                                    foreach($result as $i){
+                                      $result = $i;
+                                      break;
+                                    }
+                                    $stmt = $con->prepare("DELETE FROM paymentcard WHERE number = ?");
+                                    $stmt->bind_param("s", $result);
+                                    $stmt->execute();
+                                    $stmt->close();
+                                  }
                                   $stmt = $con->prepare("SELECT * FROM paymentcard WHERE number = ?");
                                   $stmt->bind_param("s", $p1no);
                                   $stmt->execute();
@@ -239,7 +254,6 @@
                                     $stmt = $con->prepare("DELETE FROM paymentcard WHERE number = ?");
                                     $stmt->bind_param("s", $p1no);
                                     $stmt->execute();
-                                    $result = $stmt->get_result();
                                     $stmt->close();
                                   }
                                   $updt = "UPDATE customer SET paymentCard = ? WHERE customer.email = ?";
@@ -267,6 +281,21 @@
                                   echo "<script>alert(\"Card 2 could not be changed because not all fields were filled.\")</script>";
                                 }
                                 else { // Check if card already exists
+                                  $stmt = $con->prepare("SELECT paymentCard2 FROM customer WHERE email = ?");
+                                  $stmt->bind_param("s", $email);
+                                  $stmt->execute();
+                                  $result = $stmt->get_result();
+                                  $stmt->close();
+                                  if ($result->num_rows > 0) {
+                                    foreach($result as $i){
+                                      $result = $i;
+                                      break;
+                                    }
+                                    $stmt = $con->prepare("DELETE FROM paymentcard WHERE number = ?");
+                                    $stmt->bind_param("s", $result);
+                                    $stmt->execute();
+                                    $stmt->close();
+                                  }
                                   $stmt = $con->prepare("SELECT * FROM paymentcard WHERE number = ?");
                                   $stmt->bind_param("s", $p2no);
                                   $stmt->execute();
@@ -304,6 +333,21 @@
                                   echo "<script>alert(\"Card 3 could not be changed because not all fields were filled.\")</script>";
                                 }
                                 else { // Check if card already exists
+                                  $stmt = $con->prepare("SELECT paymentCard3 FROM customer WHERE email = ?");
+                                  $stmt->bind_param("s", $email);
+                                  $stmt->execute();
+                                  $result = $stmt->get_result();
+                                  $stmt->close();
+                                  if ($result->num_rows > 0) {
+                                    foreach($result as $i){
+                                      $result = $i;
+                                      break;
+                                    }
+                                    $stmt = $con->prepare("DELETE FROM paymentcard WHERE number = ?");
+                                    $stmt->bind_param("s", $result);
+                                    $stmt->execute();
+                                    $stmt->close();
+                                  }
                                   $stmt = $con->prepare("SELECT * FROM paymentcard WHERE number = ?");
                                   $stmt->bind_param("s", $p3no);
                                   $stmt->execute();
