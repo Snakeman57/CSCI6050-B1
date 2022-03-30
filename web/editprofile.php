@@ -1,4 +1,4 @@
-<?php include "server.php"; ?>
+<?php include "server.php"; error_reporting(E_ERROR); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -46,7 +46,7 @@
                       echo "<div class=\"dropdown\">
                         <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton1\"
                           data-bs-toggle=\"dropdown\" aria-expanded=\"false\">
-                          Welcome," . $_SESSION['email'] .
+                          Welcome, " . $_SESSION['email'] .
                         "</button>
                         <ul class=\"dropdown-menu\" aria-labelledby=\"dropdownMenuButton1\">
                           <li><a class=\"dropdown-item\" href=\"logout.php\">Logout</a></li>
@@ -97,6 +97,28 @@
                     <div class="card-body">
                         <form method="post">
                           <?php
+                            if(isset($_SESSION['email'])){
+                              $stmt = $con->prepare("SELECT firstName, lastName, paymentCard, paymentCard2, paymentCard3, favTheater, phone, birthday, promo FROM customer WHERE email = ?");
+                              $stmt->bind_param("s", $_SESSION['email']);
+                              $stmt->execute();
+                              $result = $stmt->get_result();
+                              $stmt->close();
+                              $res = mysqli_fetch_all($result, MYSQLI_ASSOC);
+                              //print_r($res);
+                              foreach($res as $i){
+                                $res = $i;
+                                break;
+                              }
+                              $firstName = $res['firstName'];
+                              $lastName = $res['lastName'];
+                              $pay1 = $res['paymentCard'];
+                              $pay2 = $res['paymentCard2'];
+                              $pay3 = $res['paymentCard3'];
+                              $favMovieTheater = $res['favTheater'];
+                              $phoneNumber = $res['phone'];
+                              $birthday = $res['birthday'];
+                              $promo = $res['promo'];
+                            }
                             if (isset($_POST['editProfile'])) {
                               $email = $_SESSION['email'];
                               //$userName = trim($_POST['userName']);
@@ -109,7 +131,6 @@
                               $pass = trim($_POST['password']);
                               $passc = trim($_POST['passwordc']);
                               $delta = false;
-                              echo $delta;
                               // change fname
                               if($firstName != ''){
                                 $updt = "UPDATE customer SET firstName = ? WHERE customer.email = ?";
@@ -147,14 +168,14 @@
                                   $delta = true;
                                 }
                                 else{
-                                  echo "<script>alert(\"Password could not be changed as old password was inavlid\");</script>";
+                                  echo "<script>alert(\"Password could not be changed as old password was inavlid.\");</script>";
                                 }
                               }
                               // change movie
                               if($favMovieTheater != ''){
                                 $updt = "UPDATE customer SET favTheater = ? WHERE customer.email = ?";
                                 $stmt = $con->prepare($updt);
-                                $stmt->bind_param("ss", $favTheater, $email);
+                                $stmt->bind_param("ss", $favMovieTheater, $email);
                                 //var_dump($stmt);
                                 $stmt->execute();
                                 $stmt->close();
@@ -164,7 +185,7 @@
                               if($phoneNumber != ''){
                                 $updt = "UPDATE customer SET phone = ? WHERE customer.email = ?";
                                 $stmt = $con->prepare($updt);
-                                $stmt->bind_param("ss", $phone, $email);
+                                $stmt->bind_param("ss", $phoneNumber, $email);
                                 //var_dump($stmt);
                                 $stmt->execute();
                                 $stmt->close();
@@ -187,6 +208,118 @@
                               //var_dump($stmt);
                               $stmt->execute();
                               $stmt->close();
+                              // Check payment cards
+                              $pay1 = trim($_POST['pay1']);
+                              if($pay1){
+                                $p1no = trim($_POST['pay1-num']);
+                                $p1a1 = trim($_POST['pay1-addr-str']);
+                                $p1a2 = trim($_POST['pay1-addr-city']);
+                                $p1a3 = trim($_POST['pay1-addr-state']);
+                                $p1a4 = trim($_POST['pay1-addr-zip']);
+                                $p1ex = trim($_POST['pay1-ex']);
+                                if ($p1no == '' || $p1a1 == '' || $p1a2 = ''|| $p1a3 == '' || $p1a4 == '' || $p1ex == '') { // Check fields are empty or not
+                                  echo "<script>alert(\"Card 1 could not be changed because not all fields were filled.\")</script>";
+                                }
+                                else { // Check if card already exists
+                                  $stmt = $con->prepare("SELECT * FROM paymentcard WHERE number = ?");
+                                  $stmt->bind_param("s", $p1no);
+                                  $stmt->execute();
+                                  $result = $stmt->get_result();
+                                  $stmt->close();
+                                  if ($result->num_rows > 0) {
+                                    $stmt = $con->prepare("DELETE FROM paymentcard WHERE number = ?");
+                                    $stmt->bind_param("s", $p1no);
+                                    $stmt->execute();
+                                    $result = $stmt->get_result();
+                                    $stmt->close();
+                                  }
+                                  $updt = "UPDATE customer SET paymentCard = ? WHERE customer.email = ?";
+                                  $stmt = $con->prepare($updt);
+                                  $stmt->bind_param("ss", $p1no, $email);
+                                  $stmt->execute();
+                                  $stmt->close();
+                                  $ins = "INSERT INTO paymentcard (number, street, city, state, zip, expireDate) values(?,?,?,?,?,?)";
+                                  $stmt = $con->prepare($ins);
+                                  $stmt->bind_param("ssssss", $p1no, $p1a1, $p1a2, $p1a3, $p1a4, $p1ex);
+                                  $stmt->execute();
+                                  $stmt->close();
+                                  $delta = true;
+                                }
+                              }
+                              $pay2 = trim($_POST['pay2']);
+                              if($pay2){
+                                $p2no = trim($_POST['pay2-num']);
+                                $p2a1 = trim($_POST['pay2-addr-str']);
+                                $p2a2 = trim($_POST['pay2-addr-city']);
+                                $p2a3 = trim($_POST['pay2-addr-state']);
+                                $p2a4 = trim($_POST['pay2-addr-zip']);
+                                $p2ex = trim($_POST['pay2-ex']);
+                                if ($p2no == '' || $p2a1 == '' || $p2a2 = ''|| $p2a3 == '' || $p2a4 == '' || $p2ex == '') { // Check fields are empty or not
+                                  echo "<script>alert(\"Card 2 could not be changed because not all fields were filled.\")</script>";
+                                }
+                                else { // Check if card already exists
+                                  $stmt = $con->prepare("SELECT * FROM paymentcard WHERE number = ?");
+                                  $stmt->bind_param("s", $p2no);
+                                  $stmt->execute();
+                                  $result = $stmt->get_result();
+                                  $stmt->close();
+                                  if ($result->num_rows > 0) {
+                                    $stmt = $con->prepare("DELETE FROM paymentcard WHERE number = ?");
+                                    $stmt->bind_param("s", $p2no);
+                                    $stmt->execute();
+                                    $result = $stmt->get_result();
+                                    $stmt->close();
+                                  }
+                                  $updt = "UPDATE customer SET paymentCard2 = ? WHERE customer.email = ?";
+                                  $stmt = $con->prepare($updt);
+                                  $stmt->bind_param("ss", $p2no, $email);
+                                  $stmt->execute();
+                                  $stmt->close();
+                                  $ins = "INSERT INTO paymentcard (number, street, city, state, zip, expireDate) values(?,?,?,?,?,?)";
+                                  $stmt = $con->prepare($ins);
+                                  $stmt->bind_param("ssssss", $p2no, $p2a1, $p2a2, $p2a3, $p2a4, $p2ex);
+                                  $stmt->execute();
+                                  $stmt->close();
+                                  $delta = true;
+                                }
+                              }
+                              $pay3 = trim($_POST['pay3']);
+                              if($pay3){
+                                $p3no = trim($_POST['pay3-num']);
+                                $p3a1 = trim($_POST['pay3-addr-str']);
+                                $p3a2 = trim($_POST['pay3-addr-city']);
+                                $p3a3 = trim($_POST['pay3-addr-state']);
+                                $p3a4 = trim($_POST['pay3-addr-zip']);
+                                $p3ex = trim($_POST['pay3-ex']);
+                                if ($p3no == '' || $p3a1 == '' || $p3a2 = ''|| $p3a3 == '' || $p3a4 == '' || $p3ex == '') { // Check fields are empty or not
+                                  echo "<script>alert(\"Card 3 could not be changed because not all fields were filled.\")</script>";
+                                }
+                                else { // Check if card already exists
+                                  $stmt = $con->prepare("SELECT * FROM paymentcard WHERE number = ?");
+                                  $stmt->bind_param("s", $p3no);
+                                  $stmt->execute();
+                                  $result = $stmt->get_result();
+                                  $stmt->close();
+                                  if ($result->num_rows > 0) {
+                                    $stmt = $con->prepare("DELETE FROM paymentcard WHERE number = ?");
+                                    $stmt->bind_param("s", $p3no);
+                                    $stmt->execute();
+                                    $result = $stmt->get_result();
+                                    $stmt->close();
+                                  }
+                                  $updt = "UPDATE customer SET paymentCard3 = ? WHERE customer.email = ?";
+                                  $stmt = $con->prepare($updt);
+                                  $stmt->bind_param("ss", $p3no, $email);
+                                  $stmt->execute();
+                                  $stmt->close();
+                                  $ins = "INSERT INTO paymentcard (number, street, city, state, zip, expireDate) values(?,?,?,?,?,?)";
+                                  $stmt = $con->prepare($ins);
+                                  $stmt->bind_param("ssssss", $p3no, $p3a1, $p3a2, $p3a3, $p3a4, $p3ex);
+                                  $stmt->execute();
+                                  $stmt->close();
+                                  $delta = true;
+                                }
+                              }
                               if($delta){
                                 echo "<script>window.location.replace(\"editprofile-success.php\");</script>";
                               }
@@ -200,12 +333,12 @@
                               <!-- Form Group (first name)-->
                               <div class="col-md-6">
                                   <label class="small mb-1" for="inputFirstName">First name</label>
-                                  <input class="form-control" id="inputFirstName" type="text" placeholder="Enter your first name" name="firstName">
+                                  <input class="form-control" id="inputFirstName" type="text" placeholder="<?php if($firstName != ''){ echo $firstName; }else{ echo "Enter your first name"; } ?>" name="firstName">
                               </div>
                               <!-- Form Group (last name)-->
                               <div class="col-md-6">
                                   <label class="small mb-1" for="inputLastName">Last name</label>
-                                  <input class="form-control" id="inputLastName" type="text" placeholder="Enter your last name" name="lastName">
+                                  <input class="form-control" id="inputLastName" type="text" placeholder="<?php if($lastName != ''){ echo $lastName; }else{ echo "Enter your last name"; } ?>" name="lastName">
                               </div>
                           </div>
                           <!-- Form Row        -->
@@ -220,7 +353,7 @@
                           <div class="row gx-3 mb-3">
                             <div class="mb-3">
                               <input type="checkbox" id="pay1" name="pay1" value=1>
-                              <label class="form-label" for="pay1">Add Payment Card</label>
+                              <label class="form-label" for="pay1"><?php if($pay1 != ''){ echo "Edit"; }else{ echo "Add"; } ?> Payment Card</label>
                             </div>
                             <div class="mb-3" id="pay1-ct" style="display:none">
                               <label class="form-label" for="pay1-addr">Card Number</label>    
@@ -239,7 +372,7 @@
                           <div class="row gx-3 mb-3">
                             <div class="mb-3">
                               <input type="checkbox" id="pay2" name="pay2" value=1>
-                              <label class="form-label" for="pay2">Add Payment Card</label>
+                              <label class="form-label" for="pay2"><?php if($pay2 != ''){ echo "Edit"; }else{ echo "Add"; } ?> Payment Card</label>
                             </div>
                             <div class="mb-3" id="pay2-ct" style="display:none">
                               <label class="form-label" for="pay2-addr">Card Number</label>    
@@ -258,7 +391,7 @@
                           <div class="row gx-3 mb-3">
                             <div class="mb-3">
                               <input type="checkbox" id="pay3" name="pay3" value=1>
-                              <label class="form-label" for="pay3">Add Payment Card</label>
+                              <label class="form-label" for="pay3"><?php if($pay3 != ''){ echo "Edit"; }else{ echo "Add"; } ?> Payment Card</label>
                             </div>
                             <div class="mb-3" id="pay3-ct" style="display:none">
                               <label class="form-label" for="pay3-addr">Card Number</label>    
@@ -278,7 +411,7 @@
                           <div class="row gx-3 mb-3">
                             <div class="mb-3">
                               <label class="small mb-1" for="inputOrgName">Preffered Movie Theater</label>
-                              <input class="form-control" id="inputOrgName" type="text" placeholder="Enter your preffered location" name="favMovieTheater">
+                              <input class="form-control" id="inputOrgName" type="text" placeholder="<?php if($favMovieTheater != ''){ echo $favMovieTheater; }else{ echo "Enter your preffered location"; } ?>" name="favMovieTheater">
                             </div>
                           </div>
                           <!-- Form Row-->
@@ -286,17 +419,17 @@
                               <!-- Form Group (phone number)-->
                               <div class="col-md-6">
                                   <label class="small mb-1" for="inputPhone">Phone number</label>
-                                  <input class="form-control" id="inputPhone" type="tel" placeholder="555-123-4567" name="phoneNumber">
+                                  <input class="form-control" id="inputPhone" type="tel" placeholder="<?php if($phoneNumber != ''){ echo $phoneNumber; }else{ echo "###-###-####"; } ?>" name="phoneNumber">
                               </div>
                               <!-- Form Group (birthday)-->
                               <div class="col-md-6">
                                   <label class="small mb-1" for="inputBirthday">Birthday</label>
-                                  <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="MM/DD/YYYY" name="birthday">
+                                  <input class="form-control" id="inputBirthday" type="text" name="birthday" placeholder="<?php if($birthday != ''){ echo $birthday; }else{ echo "YYYY-MM-DD"; } ?>" name="birthday">
                               </div>
                           </div>
                           <div class="row gx-3 mb-3">
                             <div class="mb-3">
-                              <input type="checkbox" id="promo" name="promo" value=1>
+                              <input type="checkbox" id="promo" name="promo" value=1 checked="<?php if($promo != 0){ echo "true"; }else{ echo "false"; } ?>">
                               <label class="small mb-1" for="promo">Accept Promotional Emails</label>
                             </div>
                           </div>

@@ -61,6 +61,9 @@
             <br>
             <form method="post">
                 <?php
+                  if(isset($_SESSION['email'])){
+                    echo "<script>window.location.replace(\"index.php\")</script>";
+                  }
                   $msg = "";
                   if(isset($_POST['submit'])){
                     if(!empty($_POST['email']) && !empty($_POST['name'])){

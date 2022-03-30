@@ -1,4 +1,4 @@
-<?php include "server.php" ?>
+<?php include "server.php"; error_reporting(E_ERROR); ?>
 <?php
   function redirect($msg){
     header("Location: register-success.php?msg=" . $msg);
@@ -100,9 +100,6 @@
               $message = "Card 1 already in use.";
           }
         }
-        if($isValid){ // store for later
-          $p1ad = $p1a1 . "\n" . $p1a2 . ", " . $p1a3 . " " . $p1a4;
-        }
       }
       $pay2 = trim($_POST['pay2']);
       if($pay2){
@@ -126,9 +123,6 @@
               $isValid = false;
               $message = "Card 2 already in use.";
           }
-        }
-        if($isValid){ // store for later
-          $p2ad = $p2a1 . "\n" . $p2a2 . ", " . $p2a3 . " " . $p2a4;
         }
       }
       $pay3 = trim($_POST['pay3']);
@@ -154,9 +148,6 @@
               $message = "Card 3 already in use.";
           }
         }
-        if($isValid){ // store for later
-          $p3ad = $p3a1 . "\n" . $p3a2 . ", " . $p3a3 . " " . $p3a4;
-        }
       }
       // Insert records
       if ($isValid) {
@@ -173,9 +164,9 @@
           var_dump($stmt);
           $stmt->execute();
           $stmt->close();
-          $ins = "INSERT INTO paymentcard (number, billingAddr, expireDate) values(?,?,?)";
+          $ins = "INSERT INTO paymentcard (number, street, city, state, zip, expireDate) values(?,?,?,?,?,?)";
           $stmt = $con->prepare($ins);
-          $stmt->bind_param("sss", $p1no, $p1ad, $p1ex);
+          $stmt->bind_param("ssssss", $p1no, $p1a1, $p1a2, $p1a3, $p1a4, $p1ex);
           var_dump($stmt);
           $stmt->execute();
           $stmt->close();
@@ -187,9 +178,9 @@
           var_dump($stmt);
           $stmt->execute();
           $stmt->close();
-          $ins = "INSERT INTO paymentcard (number, billingAddr, expireDate) values(?,?,?)";
+          $ins = "INSERT INTO paymentcard (number, street, city, state, zip, expireDate) values(?,?,?,?,?,?)";
           $stmt = $con->prepare($ins);
-          $stmt->bind_param("sss", $p2no, $p1ad, $p1ex);
+          $stmt->bind_param("ssssss", $p1no, $p2a1, $p2a2, $p2a3, $p2a4, $p2ex);
           var_dump($stmt);
           $stmt->execute();
           $stmt->close();
@@ -201,9 +192,9 @@
           var_dump($stmt);
           $stmt->execute();
           $stmt->close();
-          $ins = "INSERT INTO paymentcard (number, billingAddr, expireDate) values(?,?,?)";
+          $ins = "INSERT INTO paymentcard (number, street, city, state, zip, expireDate) values(?,?,?,?,?,?)";
           $stmt = $con->prepare($ins);
-          $stmt->bind_param("sss", $p3no, $p1ad, $p1ex);
+          $stmt->bind_param("ssssss", $p3no, $p3a1, $p3a2, $p3a3, $p3a4, $p3ex);
           var_dump($stmt);
           $stmt->execute();
           $stmt->close();

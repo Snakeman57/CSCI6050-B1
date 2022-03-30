@@ -37,6 +37,14 @@
                     <!-- Login Dropdown -->
                   <?php
                     if(isset($_SESSION['email'])){
+                      $stmt = $con->prepare("SELECT * FROM user WHERE email = ?");
+                      $stmt->bind_param("s", $_SESSION['email']);
+                      $stmt->execute();
+                      $result = $stmt->get_result();
+                      $stmt->close();
+                      if($result->num_rows == 0){
+                        echo "<script>window.location.replace(\"index.php\")</script>";
+                      }
                       echo "<div class=\"dropdown\">
                         <button class=\"btn btn-secondary dropdown-toggle\" type=\"button\" id=\"dropdownMenuButton1\"
                           data-bs-toggle=\"dropdown\" aria-expanded=\"false\">

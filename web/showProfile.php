@@ -18,9 +18,9 @@
     <script src="register.js"></script>
     <title>B1 Cinemas</title>
     <?php
-    if (isset($_GET['email'])) {
+    if (isset($_SESSION['email'])) {
         $email = $_SESSION['email'];
-        $pullData = 'SELECT firstName, lastName, state, favTheater, phone, birthday FROM Customer ORDER BY create_at';
+        $pullData = 'SELECT firstName, lastName, state, favTheater, phone, birthday FROM Customer';
 
         $result = mysqli_query($con, $pullData);
 
@@ -28,6 +28,12 @@
         mysqli_free_result($result);
         mysqli_close($con);
         print_r($displayProfile);
+        foreach($displayProfile as $i){
+          if($i['email'] = $email){
+            $displayProfile = $i;
+            break;
+          }
+        }
     }
     ?>
 </head>
