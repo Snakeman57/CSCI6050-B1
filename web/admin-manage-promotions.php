@@ -1,3 +1,7 @@
+<?php
+include "server.php";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -20,16 +24,16 @@
     <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container">
-            <a href="admin-home.html" class="navbar-brand">B1 Cinemas - Admin Portal</a>
+            <a href="admin-home.php" class="navbar-brand">B1 Cinemas - Admin Portal</a>
             <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <div class="navbar-nav">
-                    <a href="admin-home.html" class="nav-item nav-link">Home</a>
-                    <a href="admin-manage-promotions.html" class="nav-item nav-link active">Manage Promotions</a>
-                    <a href="admin-manage-movies.html" class="nav-item nav-link">Manage Movies</a>
-                    <a href="admin-manage-users.html" class="nav-item nav-link">Manage Users</a>
+                    <a href="admin-home.php" class="nav-item nav-link">Home</a>
+                    <a href="admin-manage-promotions.php" class="nav-item nav-link active">Manage Promotions</a>
+                    <a href="admin-manage-movies.php" class="nav-item nav-link">Manage Movies</a>
+                    <a href="admin-manage-users.php" class="nav-item nav-link">Manage Users</a>
                 </div>
             <div class="navbar-nav ms-auto">
                 <!-- Login Dropdown -->
@@ -39,7 +43,7 @@
                         Welcome, Username
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                        <li><a class="dropdown-item" href="editprofile.html">Edit Profile</a></li>
+                        <li><a class="dropdown-item" href="editprofile.php">Edit Profile</a></li>
                         <li><a class="dropdown-item" href="#">Logout</a></li>
                     </ul>
                 </div>
@@ -80,7 +84,7 @@
                 </tr>
             </tbody>
         </table>
-        <a href="admin-add-promotion.html"><button class="btn bg-success text-white">Add Promotion</button></a>
+        <a href="admin-add-promotion.php"><button class="btn bg-success text-white">Add Promotion</button></a>
     </div>
     <!-- Current Promotions -->
 
