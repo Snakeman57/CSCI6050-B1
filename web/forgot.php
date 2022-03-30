@@ -79,21 +79,21 @@
                         $result = $stmt->get_result();
                         $stmt->close();
                         $res = mysqli_fetch_all($result, MYSQLI_ASSOC);
-                        $pass = $res['password'];
-                        foreach($pas as $res){
-                          echo "<script>alert(\"" . $pas . "\")</script>";
-                        }
-                        if(mail($email, "Password Recovery", $pass)){
-                          echo "<script>
-                            alert(\"Email Sent!\")
-                            window.location.replace(\"login.php\")
-                          </script>";
-                        }
-                        else{
-                          echo "<script>
-                            alert(\"Password is " . $pass . "\")
-                            window.location.replace(\"login.php\")
-                          </script>"; 
+                        foreach($res as $i){
+                          $pass = $i['password'];
+                          //echo "<script>alert(\"" . $pass . "\")</script>";
+                          if(mail($email, "Password Recovery", $pass)){
+                            echo "<script>
+                              alert(\"Email Sent!\")
+                              window.location.replace(\"login.php\")
+                            </script>";
+                          }
+                          else{
+                            echo "<script>
+                              alert(\"Password is \'" . $pass . "\'\")
+                              window.location.replace(\"login.php\")
+                            </script>"; 
+                          }
                         }
                       }
                       else {
