@@ -108,27 +108,31 @@
                         }
                       }
                       else {
-                        $stmt = $con->prepare("SELECT * FROM user WHERE email = ? AND password = ?");
-                        $stmt->bind_param("ss", $email, $password);
+                        $stmt = $con->prepare("SELECT password FROM user WHERE email = ?");
+                        $stmt->bind_param("s", $email);
                         $stmt->execute();
                         $result = $stmt->get_result();
                         $stmt->close();
                         if ($result->num_rows > 0) {
-                          $_SESSION['valid'] = true;
-                          $_SESSION['timeout'] = time();
-                          $_SESSION['email'] = $email;
-                        echo "<script>
-                          alert(\"Welcome Administrator!\")
-                          window.location.replace(\"admin-home.php\")
-                        </script>";
+                          foreach($result as $i){
+                            $result = $i;
+                            break;
+                          }
+                          //echo "<script>alert(\"" . $password . "/" . $result['password'] . "/" . password_verify($password, $result['password']) . "\")</script>";
+                          if(password_verify($password, $result['password'])/*$password == $result['password']*/){
+                            $_SESSION['valid'] = true;
+                            $_SESSION['timeout'] = time();
+                            $_SESSION['email'] = $email;
+                            echo "<script>
+                              alert(\"Welcome Administrator!\")
+                              window.location.replace(\"index.php\")
+                            </script>";
+                          }
+                          else{
+                            $msg = "Invalid username and/or password.";
+                          }
                         }
-                        else{
-                          $msg = "Invalid username and/or password.";
-                        }
-                      }/*
-                      $_SESSION['valid'] = true;
-                      $_SESSION['timeout'] = time();
-                      $_SESSION['email'] = 'tutorialspoint';*/
+                      }
                     }
                     else{
                       $msg = "Please enter username &amp; password";
