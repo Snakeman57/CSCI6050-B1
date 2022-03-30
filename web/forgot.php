@@ -76,39 +76,44 @@
                       $result = $stmt->get_result();
                       $stmt->close();
                       if ($result->num_rows > 0) {
-                        $stmt = $con->prepare("SELECT password FROM customer WHERE email = ?");
-                        $stmt->bind_param("s", $email);
-                        $stmt->execute();
-                        $result = $stmt->get_result();
-                        $stmt->close();
-                        $res = mysqli_fetch_all($result, MYSQLI_ASSOC);
-                        foreach($res as $i){
-                          $pass = $i['password'];
-                          //echo "<script>alert(\"" . $pass . "\")</script>";
-                          if(mail($email, "Password Recovery", $pass)){
-                            echo "<script>
-                              alert(\"Email Sent!\")
-                              window.location.replace(\"login.php\")
-                            </script>";
-                          }
-                          else{
-                            echo "<script>
-                              alert(\"Password is \'" . $pass . "\'\")
-                              window.location.replace(\"login.php\")
-                            </script>"; 
-                          }
+                        $pass = trim($_POST['pass']);
+                        $passc = trim($_POST['passc']);
+                        if($pass == $passc){
+                          $updt = "UPDATE customer SET password = ? WHERE customer.email = ?";
+                          $stmt = $con->prepare($updt);
+                          $stmt->bind_param("ss", password_hash($pass, PASSWORD_DEFAULT), $email);
+                          //var_dump($stmt);
+                          $stmt->execute();
+                          $stmt->close();
+                          echo "<script>
+                            alert(\"Password updated!\")
+                            window.location.replace(\"login.php\")
+                          </script>";
                         }
+                        $msg = "Passwords do not match.";
                       }
                       else {
-                        $stmt = $con->prepare("SELECT * FROM user WHERE email = ? AND sqAnswer = ?");
+                        $stmt = $con->prepare("SELECT password FROM user WHERE email = ? AND sqAnswer = ?");
                         $stmt->bind_param("ss", $email, $name);
                         $stmt->execute();
                         $result = $stmt->get_result();
                         $stmt->close();
                         if ($result->num_rows > 0) {
-                        echo "<script>
-                          alert(\"Email Sent!\")
-                        </script>";
+                          foreach($result as $i){
+                            $pass = $i['password'];
+                            if(mail($email, "Password Recovery", $pass)){
+                              echo "<script>
+                                alert(\"Email Sent!\")
+                                window.location.replace(\"login.php\")
+                              </script>";
+                            }
+                            else{
+                              echo "<script>
+                                alert(\"Password is \'" . $pass . "\'\")
+                                window.location.replace(\"login.php\")
+                              </script>"; 
+                            }
+                          }
                         }
                         else{
                           $msg = "Invalid email & response.";
@@ -131,6 +136,14 @@
                 <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
                     <label class="form-label" for="name">Name</label>
                     <input name="name" type="text" class="form-control" id="name" placeholder="Name">
+                </div>
+                <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
+                    <label class="form-label" for="pass">New Password</label>
+                    <input name="pass" type="password" class="form-control" id="pass" placeholder="Password">
+                </div>
+                <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
+                    <label class="form-label" for="passc">Confirm Password</label>
+                    <input name="passc" type="password" class="form-control" id="passc" placeholder="Password">
                 </div>
                 <div class="d-flex justify-content-around align-items-center mb-4 mx-auto">
                   <!-- Checkbox -->

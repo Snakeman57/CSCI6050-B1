@@ -78,23 +78,33 @@
                       $email = trim($_POST['email']);
                       $password = trim($_POST['password']);
                       // Check if Email exists
-                      $stmt = $con->prepare("SELECT * FROM customer WHERE email = ? AND password = ?");
-                      $stmt->bind_param("ss", $email, $password);
+                      $stmt = $con->prepare("SELECT password FROM customer WHERE email = ?");
+                      $stmt->bind_param("s", $email);
                       $stmt->execute();
                       $result = $stmt->get_result();
                       $stmt->close();
                       if ($result->num_rows > 0) {
-                        if(is_active($email, $con)){
-                          $_SESSION['valid'] = true;
-                          $_SESSION['timeout'] = time();
-                          $_SESSION['email'] = $email;
-                          echo "<script>
-                            alert(\"Welcome Customer!\")
-                            window.location.replace(\"index.php\")
-                          </script>";
+                        foreach($result as $i){
+                          $result = $i;
+                          break;
+                        }
+                        //echo "<script>alert(\"" . $password . "/" . $result['password'] . "/" . password_verify($password, $result['password']) . "\")</script>";
+                        if(password_verify($password, $result['password'])/*$password == $result['password']*/){
+                          if(is_active($email, $con)){
+                            $_SESSION['valid'] = true;
+                            $_SESSION['timeout'] = time();
+                            $_SESSION['email'] = $email;
+                            echo "<script>
+                              alert(\"Welcome Customer!\")
+                              window.location.replace(\"index.php\")
+                            </script>";
+                          }
+                          else{
+                            $msg = "Account not active.";
+                          }
                         }
                         else{
-                          $msg = "Account not active.";
+                          $msg = "Invalid username and/or password.";
                         }
                       }
                       else {

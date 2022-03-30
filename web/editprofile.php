@@ -153,22 +153,31 @@
                               }
                               // change password
                               if($pass != ''){
-                                $stmt = $con->prepare("SELECT * FROM user WHERE email = ? AND password = ?");
-                                $stmt->bind_param("ss", $email, $passc);
+                                $stmt = $con->prepare("SELECT password FROM customer WHERE email = ?");
+                                $stmt->bind_param("s", $email);
                                 $stmt->execute();
                                 $result = $stmt->get_result();
                                 $stmt->close();
                                 if ($result->num_rows > 0) {
-                                  $updt = "UPDATE customer SET lastName = ? WHERE customer.email = ?";
-                                  $stmt = $con->prepare($updt);
-                                  $stmt->bind_param("ss", $lastName, $email);
-                                  //var_dump($stmt);
-                                  $stmt->execute();
-                                  $stmt->close();
-                                  $delta = true;
+                                  foreach($result as $i){
+                                    $result = $i;
+                                    break;
+                                  }
+                                  if(password_verify($passc, $result['password'])){
+                                    $updt = "UPDATE customer SET password = ? WHERE customer.email = ?";
+                                    $stmt = $con->prepare($updt);
+                                    $stmt->bind_param("ss", password_hash($pass, PASSWORD_DEFAULT), $email);
+                                    //var_dump($stmt);
+                                    $stmt->execute();
+                                    $stmt->close();
+                                    $delta = true;
+                                  }
+                                  else{
+                                    echo "<script>alert(\"Password could not be changed as old password was inavlid.\");</script>";
+                                  }
                                 }
                                 else{
-                                  echo "<script>alert(\"Password could not be changed as old password was inavlid.\");</script>";
+                                  echo "<script>alert(\"Password could not be changed as old password was missing.\");</script>";
                                 }
                               }
                               // change movie
@@ -345,9 +354,9 @@
                           <div class="row gx-3 mb-3">
                               <div class="mb-3">
                                   <label class="small mb-1" for="password">Password</label>
-                                  <input class="form-control" id="password" type="text" placeholder="New Password" name="password">
+                                  <input class="form-control" id="password" type="password" placeholder="New Password" name="password">
                                   <br/>
-                                  <input class="form-control" id="passwordc" type="text" placeholder="Confirm Old Password" name="passwordc">
+                                  <input class="form-control" id="passwordc" type="password" placeholder="Confirm Old Password" name="passwordc">
                               </div>
                           </div>
                           <div class="row gx-3 mb-3">

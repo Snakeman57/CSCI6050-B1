@@ -1,7 +1,12 @@
 <?php include "server.php"; error_reporting(E_ERROR); ?>
 <?php
   function redirect($msg){
-    header("Location: register-success.php?msg=" . $msg);
+    if($msg != ''){
+      header("Location: register-success.php?msg=" . $msg);
+    }
+    else{
+      header("Location: register-success.php");
+    }
     die();
   }
 ?>
@@ -151,12 +156,13 @@
       }
       // Insert records
       if ($isValid) {
-        $insertSQL = "INSERT INTO customer (password, firstName, lastName, email, promo) values(?,?,?,?,?)";
+        $insertSQL = "INSERT INTO customer (password, firstName, lastName, email, promo, sqAnswer) values(?,?,?,?,?,?)";
         $stmt = $con->prepare($insertSQL);
-        $stmt->bind_param("sssss", $password, $firstName, $lastName, $email, $promo);
+        $stmt->bind_param("ssssss", password_hash($password, PASSWORD_DEFAULT), $firstName, $lastName, $email, $promo, $secq);
         var_dump($stmt);
         $stmt->execute();
         $stmt->close();
+        
         if($pay1){
           $updt = "UPDATE customer SET paymentCard = ? WHERE customer.email = ?";
           $stmt = $con->prepare($updt);
@@ -202,7 +208,7 @@
         ini_set("SMTP","ssl://smtp.gmail.com");
         ini_set("smtp_port","587");
         if(mail($email, "Account Verification", "localhost/web/verify.php?email=" . $email, "From: no-reply@B1Cinemas.com")){
-          redirect();
+          redirect('');
         }
         else{
           redirect($email);
