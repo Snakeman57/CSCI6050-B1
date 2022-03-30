@@ -73,8 +73,17 @@
                       $result = $stmt->get_result();
                       $stmt->close();
                       if ($result->num_rows > 0) {
-                        $message = $result.mysqli_fetch_column();
-                        if(mail($email, "Password Recovery", $message)){
+                        $stmt = $con->prepare("SELECT password FROM customer WHERE email = ?");
+                        $stmt->bind_param("s", $email);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+                        $stmt->close();
+                        $res = mysqli_fetch_all($result, MYSQLI_ASSOC);
+                        $pass = $res['password'];
+                        foreach($pas as $res){
+                          echo "<script>alert(\"" . $pas . "\")</script>";
+                        }
+                        if(mail($email, "Password Recovery", $pass)){
                           echo "<script>
                             alert(\"Email Sent!\")
                             window.location.replace(\"login.php\")
@@ -82,7 +91,7 @@
                         }
                         else{
                           echo "<script>
-                            alert(\"Password is " . $message . "\")
+                            alert(\"Password is " . $pass . "\")
                             window.location.replace(\"login.php\")
                           </script>"; 
                         }
