@@ -1,5 +1,14 @@
 <?php include "server.php"; ?>
-
+<?php
+  function is_active($email, $con){
+    $stmt = $con->prepare("SELECT * FROM customer WHERE email = ? AND state = \"active\"");
+    $stmt->bind_param("s", $email);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $stmt->close();
+    return $result->num_rows > 0;
+  }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -72,13 +81,18 @@
                       $result = $stmt->get_result();
                       $stmt->close();
                       if ($result->num_rows > 0) {
-                        $_SESSION['valid'] = true;
-                        $_SESSION['timeout'] = time();
-                        $_SESSION['email'] = $email;
-                        echo "<script>
-                          alert(\"Welcome Customer!\")
-                          window.location.replace(\"index.php\")
-                        </script>";
+                        if(is_active($email, $con)){
+                          $_SESSION['valid'] = true;
+                          $_SESSION['timeout'] = time();
+                          $_SESSION['email'] = $email;
+                          echo "<script>
+                            alert(\"Welcome Customer!\")
+                            window.location.replace(\"index.php\")
+                          </script>";
+                        }
+                        else{
+                          $msg = "Account not active.";
+                        }
                       }
                       else {
                         $stmt = $con->prepare("SELECT * FROM user WHERE email = ? AND password = ?");

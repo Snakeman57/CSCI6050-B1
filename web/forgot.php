@@ -73,15 +73,19 @@
                       $result = $stmt->get_result();
                       $stmt->close();
                       if ($result->num_rows > 0) {
-                        //$message = $result.mysqli_fetch_column();
-                        //if(mail($email, "Password Recovery", $message))
+                        $message = $result.mysqli_fetch_column();
+                        if(mail($email, "Password Recovery", $message)){
                           echo "<script>
                             alert(\"Email Sent!\")
                             window.location.replace(\"login.php\")
-                          </script>";/*
-                          else "<script>
-                            alert(\"Email Failed to Send!\")
-                          </script>";*/
+                          </script>";
+                        }
+                        else{
+                          echo "<script>
+                            alert(\"Password is " . $message . "\")
+                            window.location.replace(\"login.php\")
+                          </script>"; 
+                        }
                       }
                       else {
                         $stmt = $con->prepare("SELECT * FROM user WHERE email = ? AND sqAnswer = ?");
@@ -129,7 +133,9 @@
                   </div> -->
                   <a href="login.php">Return to Login</a>
                 </div>
-                <button id="submit" type="submit" class="btn btn-primary col-3 mx-auto" name="submit">Submit</button>
+                <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
+                  <button id="submit" type="submit" class="btn btn-primary col-3 mx-auto" name="submit">Submit</button>
+                </div>
             </form>
         </div>
     </div>

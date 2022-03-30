@@ -1,7 +1,7 @@
 <?php include "server.php" ?>
 <?php
-  function redirect(){
-    header("Location: register-success.php");
+  function redirect($msg){
+    header("Location: register-success.php?msg=" . $msg);
     die();
   }
 ?>
@@ -208,7 +208,14 @@
           $stmt->execute();
           $stmt->close();
         }
-        redirect();
+        ini_set("SMTP","ssl://smtp.gmail.com");
+        ini_set("smtp_port","587");
+        if(mail($email, "Account Verification", "localhost/web/verify.php?email=" . $email, "From: no-reply@B1Cinemas.com")){
+          redirect();
+        }
+        else{
+          redirect($email);
+        }
       }
     }
     ?>
@@ -294,7 +301,7 @@
             </div>
             <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto" id="pay1-ct" style="display:none">
               <label class="form-label" for="pay1-addr">Card Number</label>    
-              <input type="password" class="form-control" id="pay1-num" placeholder="Card Number" name="pay1-num" disabled=pay1.checked>
+              <input type="password" class="form-control" id="pay1-num" placeholder="Card Number" name="pay1-num" disabled=true>
               <br/>
               <label class="form-label" for="pay1-addr">Billing Address</label>              
               <input type="text" class="form-control" id="pay1-addr-str" placeholder="Street" name="pay1-addr-str" disabled=true>
