@@ -162,7 +162,9 @@
                   </div> -->
                   <a href="forgot.php">Forgot password?</a>
                 </div>
-                <button id="login" type="submit" class="btn btn-primary col-3 mx-auto" name="login" style="horizantal-align:center">Login</button>
+                <div class="d-flex justify-content-around align-items-center mb-4 mx-auto">
+                  <button id="login" type="submit" class="btn btn-primary col-3 mx-auto" name="login" style="horizantal-align:center">Login</button>
+                </div>
             </form>
         </div>
     </div>
