@@ -296,3 +296,5 @@
 /Users/suggested/Projects/Web4050/CineWeb/bin/Debug/net6.0/EntityFramework.dll
 /Users/suggested/Projects/Web4050/CineWeb/bin/Debug/net6.0/Microsoft.AspNet.Identity.Core.dll
 /Users/suggested/Projects/Web4050/CineWeb/bin/Debug/net6.0/Microsoft.AspNet.Identity.EntityFramework.dll
+/Users/suggested/Projects/Web4050/CineWeb/bin/Debug/net6.0/SendGrid.dll
+/Users/suggested/Projects/Web4050/CineWeb/bin/Debug/net6.0/StarkbankEcdsa.dll

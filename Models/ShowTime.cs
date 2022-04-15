@@ -13,7 +13,7 @@ namespace CineWeb.Models
         public DateTime TimeStart { get; set; }
         public DateTime TimeEnd { get; set; }
         public Movie Movie { get; set; }
-        public List<Customer> Customers { get; set; }   //Max customer depends on seats in Theater
+        public List<User> Users { get; set; }   //Max customer depends on seats in Theater
         public Theater Theater { get; set; }
 
         public ShowTime(DateTime timeStart, Movie movie, Theater theater)
@@ -22,7 +22,7 @@ namespace CineWeb.Models
             Movie = movie;
             TimeEnd = TimeStart + Movie.RunningTime;
             Theater = theater;
-            Customers = new List<Customer>();
+            Users = new List<User>();
         }
 
         public ShowTime()
@@ -35,11 +35,11 @@ namespace CineWeb.Models
 
         public void BookSeats([Required, Range(1, 12)] int seatsRequested)
         {
-            if ((Theater.TheaterCapacity - Customers.Count) > seatsRequested)
+            if ((Theater.TheaterCapacity - Users.Count) > seatsRequested)
             {
                 for (int i = 0; i < seatsRequested; i++)
                 {
-                    Customers.Add(new Customer());
+                    Users.Add(new User());
                 }
             }
         }
@@ -51,7 +51,7 @@ namespace CineWeb.Models
 
         public int SeatsLeftNew()
         {
-            return (Theater.TheaterCapacity - Customers.Count);
+            return (Theater.TheaterCapacity - Users.Count);
         }
     }
 }

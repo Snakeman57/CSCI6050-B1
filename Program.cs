@@ -1,7 +1,10 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using CineWeb.Data;
-using CineWeb.Areas.Identity.Data;
+using Microsoft.AspNetCore.Identity.UI.Services;
+using WebPWrecover.Services;
+using CineWeb.Areas.Identity.Services;
+using CineWeb.Models;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
@@ -10,10 +13,23 @@ builder.Services.AddDbContext<WebContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<CineWebUser>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<WebContext>()
     .AddDefaultTokenProviders();
 builder.Services.AddControllersWithViews();
+builder.Services.AddAuthorization(options =>
+{
+    options.AddPolicy("AdminOnly",
+         policy => policy.RequireClaim("Admin"));
+});
+builder.Services.AddTransient<IEmailSender, EmailSender>();
+builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
+builder.Services.ConfigureApplicationCookie(o => {
+    o.ExpireTimeSpan = TimeSpan.FromDays(5);
+    o.SlidingExpiration = true;
+});
+
+
 
 // var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
 // builder.Services.AddDbContext<WebContext>(options =>

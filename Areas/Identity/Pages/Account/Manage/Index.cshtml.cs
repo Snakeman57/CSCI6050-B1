@@ -5,7 +5,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
-using CineWeb.Areas.Identity.Data;
+using CineWeb.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
@@ -14,12 +14,12 @@ namespace CineWeb.Areas.Identity.Pages.Account.Manage
 {
     public class IndexModel : PageModel
     {
-        private readonly UserManager<CineWebUser> _userManager;
-        private readonly SignInManager<CineWebUser> _signInManager;
+        private readonly UserManager<User> _userManager;
+        private readonly SignInManager<User> _signInManager;
 
         public IndexModel(
-            UserManager<CineWebUser> userManager,
-            SignInManager<CineWebUser> signInManager)
+            UserManager<User> userManager,
+            SignInManager<User> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -77,10 +77,10 @@ namespace CineWeb.Areas.Identity.Pages.Account.Manage
             public DateTime DOB { get; set; }
         }
 
-        private async Task LoadAsync(CineWebUser user)
+        private async Task LoadAsync(User users)
         {
-            var userName = await _userManager.GetUserNameAsync(user);
-            var phoneNumber = await _userManager.GetPhoneNumberAsync(user);
+            var userName = await _userManager.GetUserNameAsync(users);
+            var phoneNumber = await _userManager.GetPhoneNumberAsync(users);
 
             Username = userName;
 
@@ -88,11 +88,11 @@ namespace CineWeb.Areas.Identity.Pages.Account.Manage
             {
 
 
-                FirstName = user.FirstName,
-                LastName = user.LastName,
-                FavTheater = user.FavTheater,
+                FirstName = users.FirstName,
+                LastName = users.LastName,
+                FavTheater = users.FavTheater,
                 PhoneNumber = phoneNumber,
-                DOB = user.DOB
+                DOB = users.DOB
             };
         }
 
