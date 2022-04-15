@@ -1,5 +1,5 @@
-@using CineWeb.Areas.Identity.Data
-@inject SignInManager<CineWebUser> SignInManager
+@using CineWeb.Models
+@inject SignInManager<User> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }

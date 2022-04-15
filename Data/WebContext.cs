@@ -1,16 +1,18 @@
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using CineWeb.Models;
-using CineWeb.Areas.Identity.Data;
 
 namespace CineWeb.Data;
 
-public class WebContext : IdentityDbContext<CineWebUser>
+public class WebContext : IdentityDbContext<User>
 {
     public WebContext(DbContextOptions<WebContext> options)
         : base(options)
     {
     }
+    public DbSet<Movie> Movies { get; set; }
+    public DbSet<User> Users { get; set; }
+    public DbSet<Role> Roles { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
