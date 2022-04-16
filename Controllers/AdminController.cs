@@ -7,91 +7,88 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using CineWeb.Data;
 using CineWeb.Models;
-using Microsoft.AspNetCore.Authorization;
 
 namespace CineWeb.Controllers
-{  
-    // [Authorize(Policy = "Admin")]
-
-    public class MoviesController : Controller
+{
+    public class AdminController : Controller
     {
         private readonly WebContext _context;
 
-        public MoviesController(WebContext context)
+        public AdminController(WebContext context)
         {
             _context = context;
         }
 
-        // GET: Movies
+        // GET: Admin
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Movies.ToListAsync());
+            return View(await _context.Roles.ToListAsync());
         }
 
-        // GET: Movies/Details/5
-        public async Task<IActionResult> Details(int? id)
+        // GET: Admin/Details/5
+        public async Task<IActionResult> Details(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var movie = await _context.Movies
+            var role = await _context.Roles
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (movie == null)
+            if (role == null)
             {
                 return NotFound();
             }
 
-            return View(movie);
+            return View(role);
         }
 
-        // GET: Movies/Create
+        // GET: Admin/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Movies/Create
+        // POST: Admin/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,Category,Casts,Director,Producer,Synopsis,Review,Rating,RunningTime")] Movie movie)
+        public async Task<IActionResult> Create([Bind("Id,Roles")] Role role)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(movie);
+                _context.Add(role);
                 await _context.SaveChangesAsync();
                 return RedirectToAction(nameof(Index));
             }
-            return View(movie);
+            return View(role);
         }
 
-        // GET: Movies/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        // GET: Admin/Edit/5
+        public async Task<IActionResult> Edit(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var movie = await _context.Movies.FindAsync(id);
-            if (movie == null)
+            var role = await _context.Roles.FindAsync(id);
+            if (role == null)
             {
                 return NotFound();
             }
-            return View(movie);
+            return View(role);
         }
 
-        // POST: Movies/Edit/5
+        // POST: Admin/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Category,Casts,Director,Producer,Synopsis,Review,Rating,RunningTime")] Movie movie)
+        public async Task<IActionResult> Edit(string id, [Bind("Id,Roles")] Role role)
         {
-            if (id != movie.Id)
+            if (id != role.Id)
             {
                 return NotFound();
             }
@@ -100,12 +97,12 @@ namespace CineWeb.Controllers
             {
                 try
                 {
-                    _context.Update(movie);
+                    _context.Update(role);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MovieExists(movie.Id))
+                    if (!RoleExists(role.Id))
                     {
                         return NotFound();
                     }
@@ -116,41 +113,41 @@ namespace CineWeb.Controllers
                 }
                 return RedirectToAction(nameof(Index));
             }
-            return View(movie);
+            return View(role);
         }
 
-        // GET: Movies/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        // GET: Admin/Delete/5
+        public async Task<IActionResult> Delete(string id)
         {
             if (id == null)
             {
                 return NotFound();
             }
 
-            var movie = await _context.Movies
+            var role = await _context.Roles
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (movie == null)
+            if (role == null)
             {
                 return NotFound();
             }
 
-            return View(movie);
+            return View(role);
         }
 
-        // POST: Movies/Delete/5
+        // POST: Admin/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(string id)
         {
-            var movie = await _context.Movies.FindAsync(id);
-            _context.Movies.Remove(movie);
+            var role = await _context.Roles.FindAsync(id);
+            _context.Roles.Remove(role);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MovieExists(int id)
+        private bool RoleExists(string id)
         {
-            return _context.Movies.Any(e => e.Id == id);
+            return _context.Roles.Any(e => e.Id == id);
         }
     }
 }
