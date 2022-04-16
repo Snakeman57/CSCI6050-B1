@@ -1,7 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@using CineWeb.Models
-@inject SignInManager<User> SignInManager
-@inject UserManager<User> UserManager
+@using CineWeb.Data
+@inject SignInManager<CineWebUser> SignInManager
+@inject UserManager<CineWebUser> UserManager
 
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))

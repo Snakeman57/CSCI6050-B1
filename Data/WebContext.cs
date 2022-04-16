@@ -4,7 +4,7 @@ using CineWeb.Models;
 
 namespace CineWeb.Data;
 
-public class WebContext : IdentityDbContext<User>
+public class WebContext : IdentityDbContext<CineWebUser>
 {
     public WebContext(DbContextOptions<WebContext> options)
         : base(options)

@@ -5,6 +5,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using WebPWrecover.Services;
 using CineWeb.Areas.Identity.Services;
 using CineWeb.Models;
+using Microsoft.Extensions.DependencyInjection;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
@@ -13,20 +14,26 @@ builder.Services.AddDbContext<WebContext>(options =>
     options.UseSqlite(connectionString));
 builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 
-builder.Services.AddDefaultIdentity<User>(options => options.SignIn.RequireConfirmedAccount = true)
+builder.Services.AddIdentity<CineWebUser,IdentityRole>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<WebContext>()
     .AddDefaultTokenProviders();
-builder.Services.AddControllersWithViews();
+
 builder.Services.AddAuthorization(options =>
 {
     options.AddPolicy("AdminOnly",
          policy => policy.RequireClaim("Admin"));
 });
+
+builder.Services.AddControllersWithViews();
+
+
 builder.Services.AddTransient<IEmailSender, EmailSender>();
+
 builder.Services.Configure<AuthMessageSenderOptions>(builder.Configuration);
 builder.Services.ConfigureApplicationCookie(o => {
     o.ExpireTimeSpan = TimeSpan.FromDays(5);
     o.SlidingExpiration = true;
+    
 });
 
 
