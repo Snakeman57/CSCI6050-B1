@@ -5,6 +5,7 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
+using CineWeb.Data;
 using CineWeb.Models;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
@@ -14,12 +15,12 @@ namespace CineWeb.Areas.Identity.Pages.Account.Manage
 {
     public class IndexModel : PageModel
     {
-        private readonly UserManager<User> _userManager;
-        private readonly SignInManager<User> _signInManager;
+        private readonly UserManager<CineWebUser> _userManager;
+        private readonly SignInManager<CineWebUser> _signInManager;
 
         public IndexModel(
-            UserManager<User> userManager,
-            SignInManager<User> signInManager)
+            UserManager<CineWebUser> userManager,
+            SignInManager<CineWebUser> signInManager)
         {
             _userManager = userManager;
             _signInManager = signInManager;
@@ -77,7 +78,7 @@ namespace CineWeb.Areas.Identity.Pages.Account.Manage
             public DateTime DOB { get; set; }
         }
 
-        private async Task LoadAsync(User users)
+        private async Task LoadAsync(CineWebUser users)
         {
             var userName = await _userManager.GetUserNameAsync(users);
             var phoneNumber = await _userManager.GetPhoneNumberAsync(users);

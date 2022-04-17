@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "AYXZ2PwkmbWnE7t69fdqUtEJzYiQ5xuoeQKntAIwIb8=",
+  "Hash": "nE0ynmgg9aldOD5bBSYFnc+xrhsiwLspuimEUI/KBuc=",
   "Source": "CineWeb",
   "BasePath": "_content/CineWeb",
   "Mode": "Default",
@@ -1071,6 +1071,23 @@
       "OriginalItemSpec": "/Users/suggested/Projects/Web4050/CineWeb/obj/Debug/net6.0/scopedcss/projectbundle/CineWeb.bundle.scp.css"
     },
     {
+      "Identity": "/Users/suggested/Projects/Web4050/CineWeb/wwwroot/.DS_Store",
+      "SourceId": "CineWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/suggested/Projects/Web4050/CineWeb/wwwroot/",
+      "BasePath": "_content/CineWeb",
+      "RelativePath": ".DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/.DS_Store"
+    },
+    {
       "Identity": "/Users/suggested/Projects/Web4050/CineWeb/wwwroot/css/site.css",
       "SourceId": "CineWeb",
       "SourceType": "Discovered",
@@ -1120,6 +1137,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot/js/site.js"
+    },
+    {
+      "Identity": "/Users/suggested/Projects/Web4050/CineWeb/wwwroot/lib/.DS_Store",
+      "SourceId": "CineWeb",
+      "SourceType": "Discovered",
+      "ContentRoot": "/Users/suggested/Projects/Web4050/CineWeb/wwwroot/",
+      "BasePath": "_content/CineWeb",
+      "RelativePath": "lib/.DS_Store",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot/lib/.DS_Store"
     },
     {
       "Identity": "/Users/suggested/Projects/Web4050/CineWeb/wwwroot/lib/bootstrap/dist/css/bootstrap-grid.css",
