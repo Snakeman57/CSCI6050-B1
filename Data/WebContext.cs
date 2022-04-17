@@ -11,8 +11,9 @@ public class WebContext : IdentityDbContext<CineWebUser>
     {
     }
     public DbSet<Movie> Movies { get; set; }
-    public DbSet<User> Users { get; set; }
     public DbSet<Role> Roles { get; set; }
+    public DbSet<CineWebUser> User { get; set; }
+
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
@@ -20,4 +21,8 @@ public class WebContext : IdentityDbContext<CineWebUser>
         // For example, you can rename the ASP.NET Identity table names and more.
         // Add your customizations after calling base.OnModelCreating(builder);
     }
+
+    public DbSet<CineWeb.Models.ShowTime> ShowTime { get; set; }
+
+    public DbSet<CineWeb.Models.Theater> Theater { get; set; }
 }

@@ -10,7 +10,7 @@ using CineWeb.Models;
 using Microsoft.AspNetCore.Authorization;
 
 namespace CineWeb.Controllers
-{  
+{
     // [Authorize(Policy = "Admin")]
 
     public class MoviesController : Controller
@@ -23,9 +23,32 @@ namespace CineWeb.Controllers
         }
 
         // GET: Movies
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string movieCategory, string searchString)
         {
-            return View(await _context.Movies.ToListAsync());
+            // Use LINQ to get list of Category.
+            IQueryable<string> categoryQuery = from m in _context.Movies
+                                            orderby m.Category
+                                            select m.Category;
+            var movies = from m in _context.Movies
+                         select m;
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                movies = movies.Where(s => s.Title!.Contains(searchString));
+            }
+
+            if (!string.IsNullOrEmpty(movieCategory))
+            {
+                movies = movies.Where(x => x.Category == movieCategory);
+            }
+
+            var movieCategoryVM = new MovieCategoryView
+            {
+                Categories = new SelectList(await categoryQuery.Distinct().ToListAsync()),
+                Movies = await movies.ToListAsync()
+            };
+
+            return View(movieCategoryVM);
         }
 
         // GET: Movies/Details/5

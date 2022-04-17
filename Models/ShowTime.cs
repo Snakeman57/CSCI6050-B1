@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Threading.Tasks;
+using CineWeb.Data;
 
 namespace CineWeb.Models
 {
@@ -13,7 +14,7 @@ namespace CineWeb.Models
         public DateTime TimeStart { get; set; }
         public DateTime TimeEnd { get; set; }
         public Movie Movie { get; set; }
-        public List<User> Users { get; set; }   //Max customer depends on seats in Theater
+        public List<CineWebUser> Users { get; set; }   //Max customer depends on seats in Theater
         public Theater Theater { get; set; }
 
         public ShowTime(DateTime timeStart, Movie movie, Theater theater)
@@ -22,7 +23,7 @@ namespace CineWeb.Models
             Movie = movie;
             TimeEnd = TimeStart + Movie.RunningTime;
             Theater = theater;
-            Users = new List<User>();
+            Users = new List<CineWebUser>();
         }
 
         public ShowTime()
@@ -39,7 +40,7 @@ namespace CineWeb.Models
             {
                 for (int i = 0; i < seatsRequested; i++)
                 {
-                    Users.Add(new User());
+                    Users.Add(new CineWebUser());
                 }
             }
         }

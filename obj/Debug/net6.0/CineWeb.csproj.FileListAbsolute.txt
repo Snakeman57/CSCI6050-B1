@@ -1,7 +1,6 @@
 /Users/suggested/Projects/Web4050/CineWeb/bin/Debug/net6.0/appsettings.Development.json
 /Users/suggested/Projects/Web4050/CineWeb/bin/Debug/net6.0/appsettings.json
 /Users/suggested/Projects/Web4050/CineWeb/bin/Debug/net6.0/CineWeb.staticwebassets.runtime.json
-/Users/suggested/Projects/Web4050/CineWeb/bin/Debug/net6.0/app.db
 /Users/suggested/Projects/Web4050/CineWeb/bin/Debug/net6.0/CineWeb
 /Users/suggested/Projects/Web4050/CineWeb/bin/Debug/net6.0/CineWeb.deps.json
 /Users/suggested/Projects/Web4050/CineWeb/bin/Debug/net6.0/CineWeb.runtimeconfig.json
@@ -298,3 +297,4 @@
 /Users/suggested/Projects/Web4050/CineWeb/bin/Debug/net6.0/Microsoft.AspNet.Identity.EntityFramework.dll
 /Users/suggested/Projects/Web4050/CineWeb/bin/Debug/net6.0/SendGrid.dll
 /Users/suggested/Projects/Web4050/CineWeb/bin/Debug/net6.0/StarkbankEcdsa.dll
+/Users/suggested/Projects/Web4050/CineWeb/bin/Debug/net6.0/app.db

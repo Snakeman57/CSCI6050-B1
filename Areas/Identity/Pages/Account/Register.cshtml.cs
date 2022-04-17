@@ -133,6 +133,10 @@ namespace CineWeb.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = CreateUser();
+                user.FirstName= Input.FirstName;
+                user.LastName=Input.LastName;
+                user.FavTheater=Input.FavTheater;
+                user.DOB=Input.DOB;
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);

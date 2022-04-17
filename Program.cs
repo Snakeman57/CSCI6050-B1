@@ -1,11 +1,9 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
-using CineWeb.Data;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using WebPWrecover.Services;
 using CineWeb.Areas.Identity.Services;
-using CineWeb.Models;
-using Microsoft.Extensions.DependencyInjection;
+using CineWeb.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
