@@ -16328,6 +16328,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/Promo/Create.cshtml",
+      "TargetPath": "Views\\Promo\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Areas/Identity/Pages/_ViewStart.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
       "FileKind": "mvc"
@@ -16448,6 +16453,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/Promo/Details.cshtml",
+      "TargetPath": "Views\\Promo\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/Admin/Delete.cshtml",
       "TargetPath": "Views\\Admin\\Delete.cshtml",
       "FileKind": "mvc"
@@ -16493,6 +16503,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/Promo/Edit.cshtml",
+      "TargetPath": "Views\\Promo\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/Shared/_LoginPartial.cshtml",
       "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
       "FileKind": "mvc"
@@ -16533,8 +16548,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/Promo/Delete.cshtml",
+      "TargetPath": "Views\\Promo\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/Account/Index.cshtml",
       "TargetPath": "Views\\Account\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/Promo/Index.cshtml",
+      "TargetPath": "Views\\Promo\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
