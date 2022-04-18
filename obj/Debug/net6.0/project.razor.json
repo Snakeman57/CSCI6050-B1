@@ -16388,6 +16388,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/BookMovie/Delete.cshtml",
+      "TargetPath": "Views\\BookMovie\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/Home/Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
@@ -16403,8 +16408,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/Home/Privacy.cshtml",
-      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/BookMovie/Create.cshtml",
+      "TargetPath": "Views\\BookMovie\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16468,6 +16473,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/BookMovie/Index.cshtml",
+      "TargetPath": "Views\\BookMovie\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/Movies/Details.cshtml",
       "TargetPath": "Views\\Movies\\Details.cshtml",
       "FileKind": "mvc"
@@ -16498,6 +16508,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/BookMovie/Edit.cshtml",
+      "TargetPath": "Views\\BookMovie\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Areas/Identity/Pages/Account/_StatusMessage.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\_StatusMessage.cshtml",
       "FileKind": "mvc"
@@ -16510,6 +16525,11 @@
     {
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/Shared/_LoginPartial.cshtml",
       "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/BookMovie/Details.cshtml",
+      "TargetPath": "Views\\BookMovie\\Details.cshtml",
       "FileKind": "mvc"
     },
     {

@@ -27,4 +27,6 @@ public class WebContext : IdentityDbContext<CineWebUser>
     public DbSet<CineWeb.Models.Theater> Theater { get; set; }
 
     public DbSet<CineWeb.Models.MoviePromotion> MoviePromotion { get; set; }
+
+    public DbSet<CineWeb.Models.Booking> Booking { get; set; }
 }
