@@ -1,0 +1,193 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+/* Resizes images in cards on home page to be the same size */
+.card-img-top {
+  width: 100%;
+  height: 15vw;
+  object-fit: cover;
+}
+
+.toast {
+  opacity: 1;
+}
+
+.toast-body {
+  opacity: 1;
+}
+
+/* Style for Movie Carousel */
+.movie_card{
+  padding: 0 !important;
+  width: 15rem;
+  margin:14px; 
+  border-radius: 10px;
+  box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.2), 0 4px 15px 0 rgba(0, 0, 0, 0.19);
+}
+.movie_card img{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 20rem;
+}
+
+/* Buy Ticket Button Over Movie Carousel */
+/* Container needed to position the button. Adjust the width as needed */
+.carousel-btn {
+position: relative;
+}
+
+/* Style the button and place it in the middle of the container */
+.carousel-btn .btn2 {
+position: absolute;
+/* top: 50%; */
+/* left: 50%; */
+right: 0;
+bottom: 0;
+transform: translate(-50%, -50%);
+-ms-transform: translate(-50%, -50%);
+background-color: #5cb85c;
+color: white;
+font-size: 16px;
+font-weight: 500;
+padding: 10px 20px;
+border: none;
+cursor: pointer;
+border-radius: 5px;
+}
+
+.carousel-btn .btn2:hover {
+background-color: #3e8f3e;
+}
+
+/* Reduce width of carousel prev/next buttons so carousel-btn can be clicked */
+.carousel-control-prev {
+  width: 5%;
+}
+.carousel-control-next {
+  width: 5%;
+}
+
+/* Buy Ticket Button Over Movie Carousel */
+
+/* Media Queries */
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+  /* positions form in center of page */
+  .form-horizontal{
+      display:block;
+      width:50%;
+      margin:0 auto;
+  }
+
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+  /* positions form in center of page */
+  .form-horizontal{
+      display:block;
+      width:50%;
+      margin:0 auto;
+  }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+  /* positions form in center of page */
+  .form-horizontal{
+      display:block;
+      width:50%;
+      margin:0 auto;
+  }
+}
+
+#required-fields {
+  color: red;
+  text-align: center;
+}
+
+#movieTimes {
+  margin-left: 2vw;
+  border: 3px;
+  border-style: solid;
+  border-color: rgb(49, 103, 219);
+  border-radius: 20px;
+  padding: 1em;
+  width: 650px;
+  box-sizing: border-box;
+}
+#movieTitle {
+  text-align: center;
+  position: relative;
+  top: 20px;
+  margin-bottom: 50px;
+}
+
+#theater-name {
+  text-align: left;
+  /* margin-top: 35px; */
+}
+#moviePoster {
+  margin-left: 60vw;
+  margin-top: -630px;
+  margin-bottom: 40px;
+}
+
+#showTimes {
+  padding-top: 20px;
+}
+
+.divider{
+  width:2vw;
+  height:auto;
+  display:inline-block;
+}
+.divider2{
+  width:auto;
+  height:20px;
+  display:inline-block;
+}
+
+.order-summary-text {
+  text-align: center;
+  margin-top: 1.5vw;
+}
+
+#remove {
+  margin-right: -60px;
+}
+
+#add-tickets {
+  margin-left: 11vw;
+  margin-top: -4.5vw;
+}
+
+.checkout-container {
+  max-width: 1350px;
+  margin-left: 35px;
+}
+
+.checkout-title {
+  text-align: center;
+}

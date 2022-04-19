@@ -1,0 +1,35 @@
+@model CineWeb.Models.MoviePromotion
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1> @Html.DisplayFor(model => model.Promotion) Details</h1>
+
+<div>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Promotion)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Promotion)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PromoCode)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PromoCode)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PromoDeal)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PromoDeal)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id"><button class="btn bg-primary text-white">Edit</button></a>
+    <a asp-action="Index"><button class="btn bg-primary text-white">Back to List</button></a>
+</div>

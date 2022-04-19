@@ -1,0 +1,28 @@
+@model CineWeb.Models.ShowTime
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1> @Html.DisplayFor(model => model.Movie)</h1>
+
+<div>
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TimeStart)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TimeStart)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.TimeEnd)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.TimeEnd)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Id" class="btn bg-primary text-white">Edit</a>
+    <a asp-action="Index"class="btn bg-primary text-white">Back to List</a>
+</div>
