@@ -300,7 +300,6 @@
 /Users/suggested/Projects/Web4050/CineWeb/bin/Debug/net6.0/app.db
 C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\bin\Debug\net6.0\appsettings.json
-C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\bin\Debug\net6.0\app.db
 C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\bin\Debug\net6.0\CineWeb.staticwebassets.runtime.json
 C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\bin\Debug\net6.0\CineWeb.exe
 C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\bin\Debug\net6.0\CineWeb.deps.json
@@ -598,3 +597,4 @@ C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\obj\Debug\net6.0\refint\CineWeb.dll
 C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\obj\Debug\net6.0\CineWeb.pdb
 C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\obj\Debug\net6.0\CineWeb.genruntimeconfig.cache
 C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\obj\Debug\net6.0\ref\CineWeb.dll
+C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\bin\Debug\net6.0\app.db

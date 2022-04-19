@@ -16438,6 +16438,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Home\\Privacy.cshtml",
+      "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
       "FileKind": "mvc"
