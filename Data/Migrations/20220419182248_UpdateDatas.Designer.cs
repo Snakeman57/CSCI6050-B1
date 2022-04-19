@@ -3,6 +3,7 @@ using System;
 using CineWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CineWeb.Data.Migrations
 {
     [DbContext(typeof(WebContext))]
-    partial class WebContextModelSnapshot : ModelSnapshot
+    [Migration("20220419182248_UpdateDatas")]
+    partial class UpdateDatas
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.4");
@@ -147,8 +149,8 @@ namespace CineWeb.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("MoviePromotionId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("MoviePromotionId")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Producer")
                         .IsRequired()
@@ -183,15 +185,14 @@ namespace CineWeb.Data.Migrations
 
             modelBuilder.Entity("CineWeb.Models.MoviePromotion", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("PromoCode")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("PromoDeal")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("PromoDeal")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Promotion")
                         .HasColumnType("TEXT");
