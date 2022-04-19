@@ -4,10 +4,10 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+<h1>Movie List</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <a asp-action="Create"><button class="btn bg-success text-white">Add Movie</button></a>
 </p>
 <form asp-controller="Movies" asp-action="Index" method="get">
     <p>
@@ -27,13 +27,7 @@
                 @Html.DisplayNameFor(model => model.Movies[0].Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Movies[0].Description)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Movies[0].Category)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movies[0].Casts)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Movies[0].Director)
@@ -43,9 +37,6 @@
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Movies[0].Synopsis)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movies[0].Review)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Movies[0].Rating)
@@ -63,13 +54,7 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Description)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Category)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Casts)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Director)
@@ -81,18 +66,18 @@
                 @Html.DisplayFor(modelItem => item.Synopsis)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Review)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Rating)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.RunningTime)
             </td>
+             @* <td>
+               <img src="@item.MoviePicture" width="100" height="100" asp-append-version="true"/>
+            </td> *@
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.Id"><button class="btn bg-primary text-white">Edit</button></a> 
+                <a asp-action="Details" asp-route-id="@item.Id"><button class="btn bg-primary text-white">Details</button></a> 
+                <a asp-action="Delete" asp-route-id="@item.Id"><button class="btn bg-primary text-white">Delete</button></a>
             </td>
         </tr>
 }

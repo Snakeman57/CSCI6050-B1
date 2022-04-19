@@ -5,41 +5,97 @@
     ViewData["ActivePage"] = ManageNavPages.Index;
 }
 
-<h3>@ViewData["Title"]</h3>
-<partial name="_StatusMessage" for="StatusMessage" />
-<div class="row">
-    <div class="col-md-6">
-        <form id="profile-form" method="post">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="form-floating">
-                <input asp-for="Username" class="form-control" disabled />
-                <label asp-for="Username" class="form-label"></label>
+<!-- comment out <body> -->
+
+<body>
+    <div class="container-xl px-4 mt-4">
+        <div class="row">
+            <div class="col-xl-8">
+                <!-- Account details card-->
+                <div class="card mb-4">
+                    <div class="card-header">Account Details</div>
+                    <div class="card-body">
+                        <form id="profile-form" method="post">
+                            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                            <div class="form-floating">
+                                <input asp-for="Username" class="form-control" disabled />
+                                <label asp-for="Username" class="small mb-1"></label>
+                            </div>
+                            <div class="row gx-3 mb-3">
+                                <!-- Form Group (first name)-->
+                                <div class="col-md-6">
+                                    <label asp-for="Input.FirstName" class="form-control"></label>
+                                    <input asp-for="Input.FirstName" class="small mb-1" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Input.LastName" class="form-control"></label>
+                                    <input asp-for="Input.LastName" class="small mb-1" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Input.FavTheater" class="form-control"></label>
+                                    <input asp-for="Input.FavTheater" class="small mb-1" />
+                                </div>
+                                <div class="col-md-6">
+                                    <label asp-for="Input.DOB" class="form-control"></label>
+                                    <input asp-for="Input.DOB" class="small mb-1" />
+                                </div>
+                            </div>
+
+                            <div class="form-floating">
+                                <input asp-for="Input.PhoneNumber" class="form-control" />
+                                <label asp-for="Input.PhoneNumber" class="small mb-1"></label>
+                                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                            </div>
+                            <button id="update-profile-button" type="submit"
+                                class="w-100 btn btn-lg btn-primary">Save</button>
+                        </form>
+                        <br>
+                        <a class="w-100 btn btn-lg btn-primary" asp-area="Identity"
+                            asp-page="/Account/Manage/ChangePassword">Change Password Request</a>
+                        <!-- <script>startPay();</script> -->
+                    </div>
+                </div>
             </div>
-            <div class="form-group">
-                <label asp-for="Input.FirstName" class="form-control"></label>
-                <input asp-for="Input.FirstName" class="form-label" />
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.LastName" class="form-control"></label>
-                <input asp-for="Input.LastName" class="form-label" />
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.FavTheater" class="form-control"></label>
-                <input asp-for="Input.FavTheater" class="form-label" />
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.DOB" class="form-control"></label>
-                <input asp-for="Input.DOB" class="form-label" />
-            </div>
-            <div class="form-floating">
-                <input asp-for="Input.PhoneNumber" class="form-control" />
-                <label asp-for="Input.PhoneNumber" class="form-label"></label>
-                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
-            </div>
-            <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
-        </form>
+        </div>
     </div>
-</div>
+
+    <!-- Original index.cshtml code -->
+    <!-- <h3>@ViewData["Title"]</h3>
+    <partial name="_StatusMessage" for="StatusMessage" />
+    <div class="row">
+        <div class="col-md-6">
+            <form id="profile-form" method="post">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-floating">
+                    <input asp-for="Username" class="form-control" disabled />
+                    <label asp-for="Username" class="form-label"></label>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.FirstName" class="form-control"></label>
+                    <input asp-for="Input.FirstName" class="form-label" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.LastName" class="form-control"></label>
+                    <input asp-for="Input.LastName" class="form-label" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.FavTheater" class="form-control"></label>
+                    <input asp-for="Input.FavTheater" class="form-label" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.DOB" class="form-control"></label>
+                    <input asp-for="Input.DOB" class="form-label" />
+                </div>
+                <div class="form-floating">
+                    <input asp-for="Input.PhoneNumber" class="form-control" />
+                    <label asp-for="Input.PhoneNumber" class="form-label"></label>
+                    <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
+                </div>
+                <button id="update-profile-button" type="submit" class="w-100 btn btn-lg btn-primary">Save</button>
+            </form>
+        </div>
+    </div> -->
+</body>
 
 @section Scripts {
 <partial name="_ValidationScriptsPartial" />

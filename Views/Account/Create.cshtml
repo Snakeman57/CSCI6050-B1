@@ -4,9 +4,7 @@
     ViewData["Title"] = "Create";
 }
 
-<h1>Create</h1>
-
-<h4>CineWebUser</h4>
+<h1>Create New User w/o Registration</h1>
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -108,14 +106,14 @@
                 <span asp-validation-for="AccessFailedCount" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <input type="submit" value="Create" class="btn btn-primary" />
+                <input type="submit" value="Create" class="btn bg-primary text-white" />
             </div>
         </form>
     </div>
 </div>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="Index" class="btn bg-primary text-white">Back to List</a>
 </div>
 
 @section Scripts {
