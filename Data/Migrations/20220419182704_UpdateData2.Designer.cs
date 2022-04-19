@@ -3,6 +3,7 @@ using System;
 using CineWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CineWeb.Data.Migrations
 {
     [DbContext(typeof(WebContext))]
-    partial class WebContextModelSnapshot : ModelSnapshot
+    [Migration("20220419182704_UpdateData2")]
+    partial class UpdateData2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.4");
@@ -190,8 +192,8 @@ namespace CineWeb.Data.Migrations
                     b.Property<string>("PromoCode")
                         .HasColumnType("TEXT");
 
-                    b.Property<int>("PromoDeal")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("PromoDeal")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Promotion")
                         .HasColumnType("TEXT");
