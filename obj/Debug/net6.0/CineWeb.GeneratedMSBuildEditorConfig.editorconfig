@@ -123,29 +123,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQWRtaW4vSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-<<<<<<< HEAD
 [/Users/suggested/Projects/Web4050/CineWeb/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQ2FydC9JbmRleC5jc2h0bWw=
-=======
-[/Users/suggested/Projects/Web4050/CineWeb/Views/BookMovie/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9va01vdmllL0NyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/suggested/Projects/Web4050/CineWeb/Views/BookMovie/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9va01vdmllL0RlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/suggested/Projects/Web4050/CineWeb/Views/BookMovie/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9va01vdmllL0RldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/suggested/Projects/Web4050/CineWeb/Views/BookMovie/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9va01vdmllL0VkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/suggested/Projects/Web4050/CineWeb/Views/BookMovie/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvQm9va01vdmllL0luZGV4LmNzaHRtbA==
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
 build_metadata.AdditionalFiles.CssScope = 
 
 [/Users/suggested/Projects/Web4050/CineWeb/Views/Home/Index.cshtml]
@@ -204,29 +183,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hhcmVkL19WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-<<<<<<< HEAD
-=======
-[/Users/suggested/Projects/Web4050/CineWeb/Views/ShowTime/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hvd1RpbWUvQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/suggested/Projects/Web4050/CineWeb/Views/ShowTime/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hvd1RpbWUvRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/suggested/Projects/Web4050/CineWeb/Views/ShowTime/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hvd1RpbWUvRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/suggested/Projects/Web4050/CineWeb/Views/ShowTime/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hvd1RpbWUvRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[/Users/suggested/Projects/Web4050/CineWeb/Views/ShowTime/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3MvU2hvd1RpbWUvSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
 [/Users/suggested/Projects/Web4050/CineWeb/Views/Theater/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGhlYXRlci9DcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -247,13 +203,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGhlYXRlci9JbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-<<<<<<< HEAD
 [/Users/suggested/Projects/Web4050/CineWeb/Views/Ticket/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvVGlja2V0L0luZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-=======
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
 [/Users/suggested/Projects/Web4050/CineWeb/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3MvX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 

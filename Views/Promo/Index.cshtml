@@ -12,11 +12,7 @@
     <thead>
         <tr>
             <th>
-<<<<<<< HEAD
                 @Html.DisplayNameFor(model => model.PromoDescript)
-=======
-                @Html.DisplayNameFor(model => model.Promotion)
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.PromoCode)
@@ -31,11 +27,7 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-<<<<<<< HEAD
                 @Html.DisplayFor(modelItem => item.PromoDescript)
-=======
-                @Html.DisplayFor(modelItem => item.Promotion)
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.PromoCode)
@@ -44,15 +36,9 @@
                 @Html.DisplayFor(modelItem => item.PromoDeal)
             </td>
             <td>
-<<<<<<< HEAD
                 <a asp-action="Edit" asp-route-id="@item.ID" class="btn bg-primary text-white">Edit</a> 
                 <a asp-action="Details" asp-route-id="@item.ID" class="btn bg-primary text-white">Details</a> 
                 <a asp-action="Delete" asp-route-id="@item.ID" class="btn bg-primary text-white">Delete</a>
-=======
-                <a asp-action="Edit" asp-route-id="@item.Id" class="btn bg-primary text-white">Edit</a> 
-                <a asp-action="Details" asp-route-id="@item.Id" class="btn bg-primary text-white">Details</a> 
-                <a asp-action="Delete" asp-route-id="@item.Id" class="btn bg-primary text-white">Delete</a>
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
             </td>
         </tr>
 }

@@ -12,10 +12,7 @@
           "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore": "6.0.3",
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.3",
           "Microsoft.AspNetCore.Identity.UI": "6.0.3",
-<<<<<<< HEAD
           "Microsoft.AspNetCore.Session": "2.2.0",
-=======
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
           "Microsoft.EntityFrameworkCore.Design": "6.0.4",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.4",
           "Microsoft.EntityFrameworkCore.Sqlite": "6.0.4",
@@ -112,7 +109,6 @@
           }
         }
       },
-<<<<<<< HEAD
       "Microsoft.AspNetCore.DataProtection/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Cryptography.Internal": "6.0.3",
@@ -127,8 +123,6 @@
         }
       },
       "Microsoft.AspNetCore.DataProtection.Abstractions/2.2.0": {},
-=======
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
       "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/6.0.3": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "6.0.4"
@@ -140,7 +134,6 @@
           }
         }
       },
-<<<<<<< HEAD
       "Microsoft.AspNetCore.Hosting.Abstractions/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.Hosting.Server.Abstractions": "2.2.0",
@@ -165,8 +158,6 @@
           "Microsoft.Extensions.Primitives": "6.0.0"
         }
       },
-=======
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
       "Microsoft.AspNetCore.Identity.EntityFrameworkCore/6.0.3": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore.Relational": "6.0.4",
@@ -199,7 +190,6 @@
           }
         }
       },
-<<<<<<< HEAD
       "Microsoft.AspNetCore.Session/2.2.0": {
         "dependencies": {
           "Microsoft.AspNetCore.DataProtection": "2.2.0",
@@ -209,8 +199,6 @@
           "Microsoft.Extensions.Options": "6.0.0"
         }
       },
-=======
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
       "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
         "runtime": {
           "lib/netstandard2.1/Microsoft.Bcl.AsyncInterfaces.dll": {
@@ -1179,7 +1167,6 @@
           }
         }
       },
-<<<<<<< HEAD
       "Microsoft.Extensions.Hosting.Abstractions/2.2.0": {
         "dependencies": {
           "Microsoft.Extensions.Configuration.Abstractions": "6.0.0",
@@ -1188,8 +1175,6 @@
           "Microsoft.Extensions.Logging.Abstractions": "6.0.0"
         }
       },
-=======
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
       "Microsoft.Extensions.Identity.Core/6.0.3": {
         "dependencies": {
           "Microsoft.AspNetCore.Cryptography.KeyDerivation": "6.0.3",
@@ -2467,15 +2452,12 @@
           "runtime.native.System.Security.Cryptography.OpenSsl": "4.3.0"
         }
       },
-<<<<<<< HEAD
       "System.Security.Cryptography.Xml/4.5.0": {
         "dependencies": {
           "System.Security.Cryptography.Pkcs": "5.0.0",
           "System.Security.Permissions": "4.7.0"
         }
       },
-=======
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
       "System.Security.Permissions/4.7.0": {
         "dependencies": {
           "System.Security.AccessControl": "4.7.0",
@@ -2672,7 +2654,6 @@
       "path": "microsoft.aspnetcore.cryptography.keyderivation/6.0.3",
       "hashPath": "microsoft.aspnetcore.cryptography.keyderivation.6.0.3.nupkg.sha512"
     },
-<<<<<<< HEAD
     "Microsoft.AspNetCore.DataProtection/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -2687,8 +2668,6 @@
       "path": "microsoft.aspnetcore.dataprotection.abstractions/2.2.0",
       "hashPath": "microsoft.aspnetcore.dataprotection.abstractions.2.2.0.nupkg.sha512"
     },
-=======
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
     "Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore/6.0.3": {
       "type": "package",
       "serviceable": true,
@@ -2696,7 +2675,6 @@
       "path": "microsoft.aspnetcore.diagnostics.entityframeworkcore/6.0.3",
       "hashPath": "microsoft.aspnetcore.diagnostics.entityframeworkcore.6.0.3.nupkg.sha512"
     },
-<<<<<<< HEAD
     "Microsoft.AspNetCore.Hosting.Abstractions/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -2725,8 +2703,6 @@
       "path": "microsoft.aspnetcore.http.features/2.2.0",
       "hashPath": "microsoft.aspnetcore.http.features.2.2.0.nupkg.sha512"
     },
-=======
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
     "Microsoft.AspNetCore.Identity.EntityFrameworkCore/6.0.3": {
       "type": "package",
       "serviceable": true,
@@ -2748,7 +2724,6 @@
       "path": "microsoft.aspnetcore.razor.language/6.0.0",
       "hashPath": "microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512"
     },
-<<<<<<< HEAD
     "Microsoft.AspNetCore.Session/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -2756,8 +2731,6 @@
       "path": "microsoft.aspnetcore.session/2.2.0",
       "hashPath": "microsoft.aspnetcore.session.2.2.0.nupkg.sha512"
     },
-=======
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
     "Microsoft.Bcl.AsyncInterfaces/5.0.0": {
       "type": "package",
       "serviceable": true,
@@ -3052,7 +3025,6 @@
       "path": "microsoft.extensions.fileproviders.embedded/6.0.3",
       "hashPath": "microsoft.extensions.fileproviders.embedded.6.0.3.nupkg.sha512"
     },
-<<<<<<< HEAD
     "Microsoft.Extensions.Hosting.Abstractions/2.2.0": {
       "type": "package",
       "serviceable": true,
@@ -3060,8 +3032,6 @@
       "path": "microsoft.extensions.hosting.abstractions/2.2.0",
       "hashPath": "microsoft.extensions.hosting.abstractions.2.2.0.nupkg.sha512"
     },
-=======
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
     "Microsoft.Extensions.Identity.Core/6.0.3": {
       "type": "package",
       "serviceable": true,
@@ -3923,7 +3893,6 @@
       "path": "system.security.cryptography.x509certificates/4.3.0",
       "hashPath": "system.security.cryptography.x509certificates.4.3.0.nupkg.sha512"
     },
-<<<<<<< HEAD
     "System.Security.Cryptography.Xml/4.5.0": {
       "type": "package",
       "serviceable": true,
@@ -3931,8 +3900,6 @@
       "path": "system.security.cryptography.xml/4.5.0",
       "hashPath": "system.security.cryptography.xml.4.5.0.nupkg.sha512"
     },
-=======
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
     "System.Security.Permissions/4.7.0": {
       "type": "package",
       "serviceable": true,

@@ -1,10 +1,6 @@
 {
   "version": 2,
-<<<<<<< HEAD
   "dgSpecHash": "NWNxpx7oeVdNsERbwFYqurq6q6B6IdLDAQ/bSaGmn2yVoM07OnrvufUJkQew8jYKCBC7/dfS+bI134oxPwn7Gw==",
-=======
-  "dgSpecHash": "gMv3N1vXKK2342cNGv9M1u9tW3E+z4hLu/hCxnJxzrn2+aelRTj92DvIgkjv9ROs+ZeqllmI46DNY0R/quhslw==",
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
   "success": true,
   "projectFilePath": "/Users/suggested/Projects/Web4050/CineWeb/CineWeb.csproj",
   "expectedPackageFiles": [
@@ -17,7 +13,6 @@
     "/Users/suggested/.nuget/packages/microsoft.aspnet.identity.entityframework/2.2.3/microsoft.aspnet.identity.entityframework.2.2.3.nupkg.sha512",
     "/Users/suggested/.nuget/packages/microsoft.aspnetcore.cryptography.internal/6.0.3/microsoft.aspnetcore.cryptography.internal.6.0.3.nupkg.sha512",
     "/Users/suggested/.nuget/packages/microsoft.aspnetcore.cryptography.keyderivation/6.0.3/microsoft.aspnetcore.cryptography.keyderivation.6.0.3.nupkg.sha512",
-<<<<<<< HEAD
     "/Users/suggested/.nuget/packages/microsoft.aspnetcore.dataprotection/2.2.0/microsoft.aspnetcore.dataprotection.2.2.0.nupkg.sha512",
     "/Users/suggested/.nuget/packages/microsoft.aspnetcore.dataprotection.abstractions/2.2.0/microsoft.aspnetcore.dataprotection.abstractions.2.2.0.nupkg.sha512",
     "/Users/suggested/.nuget/packages/microsoft.aspnetcore.diagnostics.entityframeworkcore/6.0.3/microsoft.aspnetcore.diagnostics.entityframeworkcore.6.0.3.nupkg.sha512",
@@ -29,12 +24,6 @@
     "/Users/suggested/.nuget/packages/microsoft.aspnetcore.identity.ui/6.0.3/microsoft.aspnetcore.identity.ui.6.0.3.nupkg.sha512",
     "/Users/suggested/.nuget/packages/microsoft.aspnetcore.razor.language/6.0.0/microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
     "/Users/suggested/.nuget/packages/microsoft.aspnetcore.session/2.2.0/microsoft.aspnetcore.session.2.2.0.nupkg.sha512",
-=======
-    "/Users/suggested/.nuget/packages/microsoft.aspnetcore.diagnostics.entityframeworkcore/6.0.3/microsoft.aspnetcore.diagnostics.entityframeworkcore.6.0.3.nupkg.sha512",
-    "/Users/suggested/.nuget/packages/microsoft.aspnetcore.identity.entityframeworkcore/6.0.3/microsoft.aspnetcore.identity.entityframeworkcore.6.0.3.nupkg.sha512",
-    "/Users/suggested/.nuget/packages/microsoft.aspnetcore.identity.ui/6.0.3/microsoft.aspnetcore.identity.ui.6.0.3.nupkg.sha512",
-    "/Users/suggested/.nuget/packages/microsoft.aspnetcore.razor.language/6.0.0/microsoft.aspnetcore.razor.language.6.0.0.nupkg.sha512",
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
     "/Users/suggested/.nuget/packages/microsoft.bcl.asyncinterfaces/5.0.0/microsoft.bcl.asyncinterfaces.5.0.0.nupkg.sha512",
     "/Users/suggested/.nuget/packages/microsoft.build/17.0.0/microsoft.build.17.0.0.nupkg.sha512",
     "/Users/suggested/.nuget/packages/microsoft.build.framework/17.0.0/microsoft.build.framework.17.0.0.nupkg.sha512",
@@ -77,10 +66,7 @@
     "/Users/suggested/.nuget/packages/microsoft.extensions.dependencymodel/6.0.0/microsoft.extensions.dependencymodel.6.0.0.nupkg.sha512",
     "/Users/suggested/.nuget/packages/microsoft.extensions.fileproviders.abstractions/6.0.0/microsoft.extensions.fileproviders.abstractions.6.0.0.nupkg.sha512",
     "/Users/suggested/.nuget/packages/microsoft.extensions.fileproviders.embedded/6.0.3/microsoft.extensions.fileproviders.embedded.6.0.3.nupkg.sha512",
-<<<<<<< HEAD
     "/Users/suggested/.nuget/packages/microsoft.extensions.hosting.abstractions/2.2.0/microsoft.extensions.hosting.abstractions.2.2.0.nupkg.sha512",
-=======
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
     "/Users/suggested/.nuget/packages/microsoft.extensions.identity.core/6.0.3/microsoft.extensions.identity.core.6.0.3.nupkg.sha512",
     "/Users/suggested/.nuget/packages/microsoft.extensions.identity.stores/6.0.3/microsoft.extensions.identity.stores.6.0.3.nupkg.sha512",
     "/Users/suggested/.nuget/packages/microsoft.extensions.logging/6.0.0/microsoft.extensions.logging.6.0.0.nupkg.sha512",
@@ -204,10 +190,7 @@
     "/Users/suggested/.nuget/packages/system.security.cryptography.primitives/4.3.0/system.security.cryptography.primitives.4.3.0.nupkg.sha512",
     "/Users/suggested/.nuget/packages/system.security.cryptography.protecteddata/4.7.0/system.security.cryptography.protecteddata.4.7.0.nupkg.sha512",
     "/Users/suggested/.nuget/packages/system.security.cryptography.x509certificates/4.3.0/system.security.cryptography.x509certificates.4.3.0.nupkg.sha512",
-<<<<<<< HEAD
     "/Users/suggested/.nuget/packages/system.security.cryptography.xml/4.5.0/system.security.cryptography.xml.4.5.0.nupkg.sha512",
-=======
->>>>>>> 93e733a5530dca2056f78f76a71997e066823721
     "/Users/suggested/.nuget/packages/system.security.permissions/4.7.0/system.security.permissions.4.7.0.nupkg.sha512",
     "/Users/suggested/.nuget/packages/system.security.principal.windows/4.7.0/system.security.principal.windows.4.7.0.nupkg.sha512",
     "/Users/suggested/.nuget/packages/system.text.encoding/4.3.0/system.text.encoding.4.3.0.nupkg.sha512",
@@ -226,6 +209,12 @@
     "/Users/suggested/.nuget/packages/system.xml.xdocument/4.3.0/system.xml.xdocument.4.3.0.nupkg.sha512"
   ],
   "logs": [
+    {
+      "code": "Undefined",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Problem reading the cache file /Users/suggested/Projects/Web4050/CineWeb/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
+    },
     {
       "code": "NU1701",
       "level": "Warning",
