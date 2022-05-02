@@ -22,7 +22,8 @@ namespace CineWeb.Controllers
         // GET: Promo
         public async Task<IActionResult> Index()
         {
-            return View(await _context.MoviePromotion.ToListAsync());
+            
+            return View(await _context.Promotions.ToListAsync());
         }
 
         // GET: Promo/Details/5
@@ -33,8 +34,8 @@ namespace CineWeb.Controllers
                 return NotFound();
             }
 
-            var moviePromotion = await _context.MoviePromotion
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var moviePromotion = await _context.Promotions
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (moviePromotion == null)
             {
                 return NotFound();
@@ -54,7 +55,7 @@ namespace CineWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Promotion,PromoCode,PromoDeal")] MoviePromotion moviePromotion)
+        public async Task<IActionResult> Create([Bind("ID,PromoDescript,PromoCode,PromoDeal")] MoviePromotion moviePromotion)
         {
             if (ModelState.IsValid)
             {
@@ -73,7 +74,7 @@ namespace CineWeb.Controllers
                 return NotFound();
             }
 
-            var moviePromotion = await _context.MoviePromotion.FindAsync(id);
+            var moviePromotion = await _context.Promotions.FindAsync(id);
             if (moviePromotion == null)
             {
                 return NotFound();
@@ -86,9 +87,9 @@ namespace CineWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Promotion,PromoCode,PromoDeal")] MoviePromotion moviePromotion)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,PromoDescript,PromoCode,PromoDeal")] MoviePromotion moviePromotion)
         {
-            if (id != moviePromotion.Id)
+            if (id != moviePromotion.ID)
             {
                 return NotFound();
             }
@@ -102,7 +103,7 @@ namespace CineWeb.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MoviePromotionExists(moviePromotion.Id))
+                    if (!MoviePromotionExists(moviePromotion.ID))
                     {
                         return NotFound();
                     }
@@ -124,8 +125,8 @@ namespace CineWeb.Controllers
                 return NotFound();
             }
 
-            var moviePromotion = await _context.MoviePromotion
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var moviePromotion = await _context.Promotions
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (moviePromotion == null)
             {
                 return NotFound();
@@ -139,15 +140,15 @@ namespace CineWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var moviePromotion = await _context.MoviePromotion.FindAsync(id);
-            _context.MoviePromotion.Remove(moviePromotion);
+            var moviePromotion = await _context.Promotions.FindAsync(id);
+            _context.Promotions.Remove(moviePromotion);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool MoviePromotionExists(int id)
         {
-            return _context.MoviePromotion.Any(e => e.Id == id);
+            return _context.Promotions.Any(e => e.ID == id);
         }
     }
 }

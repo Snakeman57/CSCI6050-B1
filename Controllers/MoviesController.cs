@@ -27,8 +27,8 @@ namespace CineWeb.Controllers
         {
             // Use LINQ to get list of Category.
             IQueryable<string> categoryQuery = from m in _context.Movies
-                                            orderby m.Category
-                                            select m.Category;
+                                               orderby m.Category
+                                               select m.Category;
             var movies = from m in _context.Movies
                          select m;
 
@@ -60,7 +60,7 @@ namespace CineWeb.Controllers
             }
 
             var movie = await _context.Movies
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (movie == null)
             {
                 return NotFound();
@@ -80,7 +80,7 @@ namespace CineWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title,Description,Category,Casts,Director,Producer,Synopsis,Review,Rating,RunningTime")] Movie movie)
+        public async Task<IActionResult> Create([Bind("ID,Title,Description,Category,Casts,Director,Producer,Synopsis,Review,Rating,RunningTime")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -112,9 +112,9 @@ namespace CineWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title,Description,Category,Casts,Director,Producer,Synopsis,Review,Rating,RunningTime")] Movie movie)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Title,Description,Category,Casts,Director,Producer,Synopsis,Review,Rating,RunningTime")] Movie movie)
         {
-            if (id != movie.Id)
+            if (id != movie.ID)
             {
                 return NotFound();
             }
@@ -128,7 +128,7 @@ namespace CineWeb.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MovieExists(movie.Id))
+                    if (!MovieExists(movie.ID))
                     {
                         return NotFound();
                     }
@@ -151,7 +151,7 @@ namespace CineWeb.Controllers
             }
 
             var movie = await _context.Movies
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (movie == null)
             {
                 return NotFound();
@@ -173,7 +173,7 @@ namespace CineWeb.Controllers
 
         private bool MovieExists(int id)
         {
-            return _context.Movies.Any(e => e.Id == id);
+            return _context.Movies.Any(e => e.ID == id);
         }
     }
 }

@@ -1,0 +1,40 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <h3>Cart Page</h3>
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Option</th>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Price</th>
+            <th>Quantity</th>
+            <th>Sub Total</th>
+        </tr>
+        @foreach (var item in ViewBag.cart)
+        {
+            <tr>
+                <td><a asp-controller="cart" asp-action="remove" asp-route-id="@item.movieTicket.ID">Remove</a></td>
+                <td>@item.movieTicket.ID</td>
+                <td>@item.movieTicket.Movies</td>
+                <td>@item.movieTicket.price</td>
+                <td>@item.Quantity</td>
+                <td>@(item.movieTicket.price * item.Quantity)</td>
+            </tr>
+        }
+        <tr>
+            <td align="right" colspan="6">Sum</td>
+            <td>
+                @ViewBag.total
+            </td>
+        </tr>
+    </table>
+    <br>
+    <a asp-controller="product" asp-action="index">Continue Shopping</a>
+
+</body>
+</html>

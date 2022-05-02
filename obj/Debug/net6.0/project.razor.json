@@ -16298,6 +16298,14 @@
   "RootNamespace": "CineWeb",
   "Documents": [
     {
+<<<<<<< HEAD
+      "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/Cart/Index.cshtml",
+      "TargetPath": "Views\\Cart\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+=======
+>>>>>>> 93e733a5530dca2056f78f76a71997e066823721
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Areas/Identity/Pages/Account/ResetPassword.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\ResetPassword.cshtml",
       "FileKind": "mvc"
@@ -16313,11 +16321,14 @@
       "FileKind": "mvc"
     },
     {
+<<<<<<< HEAD
+=======
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/ShowTime/Edit.cshtml",
       "TargetPath": "Views\\ShowTime\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
+>>>>>>> 93e733a5530dca2056f78f76a71997e066823721
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Areas/Identity/Pages/Account/ForgotPassword.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\ForgotPassword.cshtml",
       "FileKind": "mvc"
@@ -16353,11 +16364,14 @@
       "FileKind": "mvc"
     },
     {
+<<<<<<< HEAD
+=======
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/ShowTime/Create.cshtml",
       "TargetPath": "Views\\ShowTime\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
+>>>>>>> 93e733a5530dca2056f78f76a71997e066823721
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/Account/Delete.cshtml",
       "TargetPath": "Views\\Account\\Delete.cshtml",
       "FileKind": "mvc"
@@ -16388,11 +16402,14 @@
       "FileKind": "mvc"
     },
     {
+<<<<<<< HEAD
+=======
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/BookMovie/Delete.cshtml",
       "TargetPath": "Views\\BookMovie\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
+>>>>>>> 93e733a5530dca2056f78f76a71997e066823721
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/Home/Index.cshtml",
       "TargetPath": "Views\\Home\\Index.cshtml",
       "FileKind": "mvc"
@@ -16408,11 +16425,14 @@
       "FileKind": "mvc"
     },
     {
+<<<<<<< HEAD
+=======
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/BookMovie/Create.cshtml",
       "TargetPath": "Views\\BookMovie\\Create.cshtml",
       "FileKind": "mvc"
     },
     {
+>>>>>>> 93e733a5530dca2056f78f76a71997e066823721
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\ResendEmailConfirmation.cshtml",
       "FileKind": "mvc"
@@ -16448,6 +16468,8 @@
       "FileKind": "mvc"
     },
     {
+<<<<<<< HEAD
+=======
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/ShowTime/Delete.cshtml",
       "TargetPath": "Views\\ShowTime\\Delete.cshtml",
       "FileKind": "mvc"
@@ -16458,6 +16480,7 @@
       "FileKind": "mvc"
     },
     {
+>>>>>>> 93e733a5530dca2056f78f76a71997e066823721
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/Promo/Details.cshtml",
       "TargetPath": "Views\\Promo\\Details.cshtml",
       "FileKind": "mvc"
@@ -16473,11 +16496,14 @@
       "FileKind": "mvc"
     },
     {
+<<<<<<< HEAD
+=======
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/BookMovie/Index.cshtml",
       "TargetPath": "Views\\BookMovie\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
+>>>>>>> 93e733a5530dca2056f78f76a71997e066823721
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/Movies/Details.cshtml",
       "TargetPath": "Views\\Movies\\Details.cshtml",
       "FileKind": "mvc"
@@ -16493,11 +16519,14 @@
       "FileKind": "mvc"
     },
     {
+<<<<<<< HEAD
+=======
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/ShowTime/Index.cshtml",
       "TargetPath": "Views\\ShowTime\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
+>>>>>>> 93e733a5530dca2056f78f76a71997e066823721
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Areas/Identity/Pages/Account/_ViewImports.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
       "FileKind": "mvc"
@@ -16508,11 +16537,14 @@
       "FileKind": "mvc"
     },
     {
+<<<<<<< HEAD
+=======
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/BookMovie/Edit.cshtml",
       "TargetPath": "Views\\BookMovie\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
+>>>>>>> 93e733a5530dca2056f78f76a71997e066823721
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Areas/Identity/Pages/Account/_StatusMessage.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\_StatusMessage.cshtml",
       "FileKind": "mvc"
@@ -16528,11 +16560,14 @@
       "FileKind": "mvc"
     },
     {
+<<<<<<< HEAD
+=======
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/BookMovie/Details.cshtml",
       "TargetPath": "Views\\BookMovie\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
+>>>>>>> 93e733a5530dca2056f78f76a71997e066823721
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\ResetPasswordConfirmation.cshtml",
       "FileKind": "mvc"
@@ -16543,6 +16578,14 @@
       "FileKind": "mvc"
     },
     {
+<<<<<<< HEAD
+      "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/Ticket/Index.cshtml",
+      "TargetPath": "Views\\Ticket\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+=======
+>>>>>>> 93e733a5530dca2056f78f76a71997e066823721
       "FilePath": "/Users/suggested/Projects/Web4050/CineWeb/Views/Theater/Details.cshtml",
       "TargetPath": "Views\\Theater\\Details.cshtml",
       "FileKind": "mvc"

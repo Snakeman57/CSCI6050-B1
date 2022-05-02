@@ -54,6 +54,13 @@
               "target": "Package",
               "version": "[6.0.3, )"
             },
+<<<<<<< HEAD
+            "Microsoft.AspNetCore.Session": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+=======
+>>>>>>> 93e733a5530dca2056f78f76a71997e066823721
             "Microsoft.EntityFrameworkCore.Design": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",

@@ -22,7 +22,7 @@ namespace CineWeb.Controllers
         // GET: Theater
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Theater.ToListAsync());
+            return View(await _context.Theaters.ToListAsync());
         }
 
         // GET: Theater/Details/5
@@ -33,8 +33,8 @@ namespace CineWeb.Controllers
                 return NotFound();
             }
 
-            var theater = await _context.Theater
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var theater = await _context.Theaters
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (theater == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace CineWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,TheaterCapacity,Row")] Theater theater)
+        public async Task<IActionResult> Create([Bind("ID,Name,TheaterCapacity,Row")] Theater theater)
         {
             if (ModelState.IsValid)
             {
@@ -73,7 +73,7 @@ namespace CineWeb.Controllers
                 return NotFound();
             }
 
-            var theater = await _context.Theater.FindAsync(id);
+            var theater = await _context.Theaters.FindAsync(id);
             if (theater == null)
             {
                 return NotFound();
@@ -86,9 +86,9 @@ namespace CineWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,TheaterCapacity,Row")] Theater theater)
+        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,TheaterCapacity,Row")] Theater theater)
         {
-            if (id != theater.Id)
+            if (id != theater.ID)
             {
                 return NotFound();
             }
@@ -102,7 +102,7 @@ namespace CineWeb.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TheaterExists(theater.Id))
+                    if (!TheaterExists(theater.ID))
                     {
                         return NotFound();
                     }
@@ -124,8 +124,8 @@ namespace CineWeb.Controllers
                 return NotFound();
             }
 
-            var theater = await _context.Theater
-                .FirstOrDefaultAsync(m => m.Id == id);
+            var theater = await _context.Theaters
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (theater == null)
             {
                 return NotFound();
@@ -139,15 +139,15 @@ namespace CineWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
         {
-            var theater = await _context.Theater.FindAsync(id);
-            _context.Theater.Remove(theater);
+            var theater = await _context.Theaters.FindAsync(id);
+            _context.Theaters.Remove(theater);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
         private bool TheaterExists(int id)
         {
-            return _context.Theater.Any(e => e.Id == id);
+            return _context.Theaters.Any(e => e.ID == id);
         }
     }
 }

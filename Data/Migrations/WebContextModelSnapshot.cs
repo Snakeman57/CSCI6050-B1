@@ -25,9 +25,6 @@ namespace CineWeb.Data.Migrations
                     b.Property<int>("AccessFailedCount")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("BookingId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken()
                         .HasColumnType("TEXT");
@@ -80,9 +77,6 @@ namespace CineWeb.Data.Migrations
                     b.Property<string>("SecurityStamp")
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("ShowTimeId")
-                        .HasColumnType("INTEGER");
-
                     b.Property<bool>("TwoFactorEnabled")
                         .HasColumnType("INTEGER");
 
@@ -91,8 +85,6 @@ namespace CineWeb.Data.Migrations
                         .HasColumnType("TEXT");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("BookingId");
 
                     b.HasIndex("NormalizedEmail")
                         .HasDatabaseName("EmailIndex");
@@ -103,32 +95,39 @@ namespace CineWeb.Data.Migrations
 
                     b.HasIndex("RoleId");
 
-                    b.HasIndex("ShowTimeId");
-
                     b.ToTable("AspNetUsers", (string)null);
                 });
 
-            modelBuilder.Entity("CineWeb.Models.Booking", b =>
+            modelBuilder.Entity("CineWeb.Models.Item", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
+                    b.Property<string>("ID")
+                        .HasColumnType("TEXT");
+
+                    b.Property<DateTime>("DateCreated")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("Quantity")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int>("price")
+                    b.Property<int?>("ShowTimesID")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("Id");
+                    b.Property<string>("movieTicketID")
+                        .HasColumnType("TEXT");
 
-                    b.ToTable("Booking");
+                    b.HasKey("ID");
+
+                    b.HasIndex("ShowTimesID");
+
+                    b.HasIndex("movieTicketID");
+
+                    b.ToTable("Items");
                 });
 
             modelBuilder.Entity("CineWeb.Models.Movie", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("BookingId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Casts")
@@ -147,7 +146,7 @@ namespace CineWeb.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("MoviePromotionId")
+                    b.Property<int?>("MoviePromotionID")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Producer")
@@ -167,23 +166,26 @@ namespace CineWeb.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
+                    b.Property<int?>("TheaterID")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(60)
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
-                    b.HasIndex("BookingId");
+                    b.HasIndex("MoviePromotionID");
 
-                    b.HasIndex("MoviePromotionId");
+                    b.HasIndex("TheaterID");
 
                     b.ToTable("Movies");
                 });
 
             modelBuilder.Entity("CineWeb.Models.MoviePromotion", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -193,12 +195,12 @@ namespace CineWeb.Data.Migrations
                     b.Property<int>("PromoDeal")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("Promotion")
+                    b.Property<string>("PromoDescript")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
-                    b.ToTable("MoviePromotion");
+                    b.ToTable("Promotions");
                 });
 
             modelBuilder.Entity("CineWeb.Models.Role", b =>
@@ -216,17 +218,14 @@ namespace CineWeb.Data.Migrations
 
             modelBuilder.Entity("CineWeb.Models.ShowTime", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("BookingId")
+                    b.Property<int?>("MoviesID")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("MovieId")
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("TheaterId")
+                    b.Property<int?>("TheatersID")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime>("TimeEnd")
@@ -235,24 +234,19 @@ namespace CineWeb.Data.Migrations
                     b.Property<DateTime>("TimeStart")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
-                    b.HasIndex("BookingId");
+                    b.HasIndex("MoviesID");
 
-                    b.HasIndex("MovieId");
+                    b.HasIndex("TheatersID");
 
-                    b.HasIndex("TheaterId");
-
-                    b.ToTable("ShowTime");
+                    b.ToTable("ShowTimes");
                 });
 
             modelBuilder.Entity("CineWeb.Models.Theater", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
-
-                    b.Property<int?>("BookingId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Name")
@@ -264,11 +258,40 @@ namespace CineWeb.Data.Migrations
                     b.Property<int>("TheaterCapacity")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
-                    b.HasIndex("BookingId");
+                    b.ToTable("Theaters");
+                });
 
-                    b.ToTable("Theater");
+            modelBuilder.Entity("CineWeb.Models.Ticket", b =>
+                {
+                    b.Property<string>("ID")
+                        .HasColumnType("TEXT");
+
+                    b.Property<int>("SeatNumber")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("ShowTimesID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<int?>("TheatersID")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("UserId")
+                        .HasColumnType("TEXT");
+
+                    b.Property<double>("price")
+                        .HasColumnType("REAL");
+
+                    b.HasKey("ID");
+
+                    b.HasIndex("ShowTimesID");
+
+                    b.HasIndex("TheatersID");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Tickets");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -401,54 +424,71 @@ namespace CineWeb.Data.Migrations
 
             modelBuilder.Entity("CineWeb.Data.CineWebUser", b =>
                 {
-                    b.HasOne("CineWeb.Models.Booking", null)
-                        .WithMany("Users")
-                        .HasForeignKey("BookingId");
-
                     b.HasOne("CineWeb.Models.Role", null)
                         .WithMany("Users")
                         .HasForeignKey("RoleId");
+                });
 
-                    b.HasOne("CineWeb.Models.ShowTime", null)
-                        .WithMany("Users")
-                        .HasForeignKey("ShowTimeId");
+            modelBuilder.Entity("CineWeb.Models.Item", b =>
+                {
+                    b.HasOne("CineWeb.Models.ShowTime", "ShowTimes")
+                        .WithMany()
+                        .HasForeignKey("ShowTimesID");
+
+                    b.HasOne("CineWeb.Models.Ticket", "movieTicket")
+                        .WithMany()
+                        .HasForeignKey("movieTicketID");
+
+                    b.Navigation("ShowTimes");
+
+                    b.Navigation("movieTicket");
                 });
 
             modelBuilder.Entity("CineWeb.Models.Movie", b =>
                 {
-                    b.HasOne("CineWeb.Models.Booking", null)
-                        .WithMany("Movies")
-                        .HasForeignKey("BookingId");
-
                     b.HasOne("CineWeb.Models.MoviePromotion", null)
                         .WithMany("Movies")
-                        .HasForeignKey("MoviePromotionId");
+                        .HasForeignKey("MoviePromotionID");
+
+                    b.HasOne("CineWeb.Models.Theater", null)
+                        .WithMany("Movies")
+                        .HasForeignKey("TheaterID");
                 });
 
             modelBuilder.Entity("CineWeb.Models.ShowTime", b =>
                 {
-                    b.HasOne("CineWeb.Models.Booking", null)
+                    b.HasOne("CineWeb.Models.Movie", "Movies")
+                        .WithMany()
+                        .HasForeignKey("MoviesID");
+
+                    b.HasOne("CineWeb.Models.Theater", "Theaters")
                         .WithMany("ShowTimes")
-                        .HasForeignKey("BookingId");
+                        .HasForeignKey("TheatersID");
 
-                    b.HasOne("CineWeb.Models.Movie", "Movie")
-                        .WithMany()
-                        .HasForeignKey("MovieId");
+                    b.Navigation("Movies");
 
-                    b.HasOne("CineWeb.Models.Theater", "Theater")
-                        .WithMany()
-                        .HasForeignKey("TheaterId");
-
-                    b.Navigation("Movie");
-
-                    b.Navigation("Theater");
+                    b.Navigation("Theaters");
                 });
 
-            modelBuilder.Entity("CineWeb.Models.Theater", b =>
+            modelBuilder.Entity("CineWeb.Models.Ticket", b =>
                 {
-                    b.HasOne("CineWeb.Models.Booking", null)
-                        .WithMany("Theaters")
-                        .HasForeignKey("BookingId");
+                    b.HasOne("CineWeb.Models.ShowTime", "ShowTimes")
+                        .WithMany()
+                        .HasForeignKey("ShowTimesID");
+
+                    b.HasOne("CineWeb.Models.Theater", "Theaters")
+                        .WithMany("Tickets")
+                        .HasForeignKey("TheatersID");
+
+                    b.HasOne("CineWeb.Data.CineWebUser", "User")
+                        .WithMany()
+                        .HasForeignKey("UserId");
+
+                    b.Navigation("ShowTimes");
+
+                    b.Navigation("Theaters");
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
@@ -502,17 +542,6 @@ namespace CineWeb.Data.Migrations
                         .IsRequired();
                 });
 
-            modelBuilder.Entity("CineWeb.Models.Booking", b =>
-                {
-                    b.Navigation("Movies");
-
-                    b.Navigation("ShowTimes");
-
-                    b.Navigation("Theaters");
-
-                    b.Navigation("Users");
-                });
-
             modelBuilder.Entity("CineWeb.Models.MoviePromotion", b =>
                 {
                     b.Navigation("Movies");
@@ -523,9 +552,13 @@ namespace CineWeb.Data.Migrations
                     b.Navigation("Users");
                 });
 
-            modelBuilder.Entity("CineWeb.Models.ShowTime", b =>
+            modelBuilder.Entity("CineWeb.Models.Theater", b =>
                 {
-                    b.Navigation("Users");
+                    b.Navigation("Movies");
+
+                    b.Navigation("ShowTimes");
+
+                    b.Navigation("Tickets");
                 });
 #pragma warning restore 612, 618
         }

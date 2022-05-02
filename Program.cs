@@ -23,7 +23,7 @@ builder.Services.AddAuthorization(options =>
 });
 
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddSession();
 
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 
@@ -62,6 +62,7 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
+app.UseSession();
 
 app.UseAuthentication();
 app.UseAuthorization();

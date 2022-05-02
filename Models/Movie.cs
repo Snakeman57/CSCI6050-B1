@@ -4,7 +4,8 @@ namespace CineWeb.Models
 {
     public class Movie
     {
-        public int Id { get; set; }
+
+        public int ID { get; set; }
 
         [StringLength(60, MinimumLength = 3)]
         [Required]
@@ -31,10 +32,8 @@ namespace CineWeb.Models
 
         public string Review { get; set; }
         public int Rating { get; set; }
-
-
         [Required]
-        public TimeSpan RunningTime { get; set; }
+        public TimeSpan RunningTime { get; set; }        
         public Movie()
         {
 

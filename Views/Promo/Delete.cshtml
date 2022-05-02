@@ -6,6 +6,16 @@
 
 <h1>Delete</h1>
 
+<<<<<<< HEAD
+<h3>Are you sure you want to delete @Html.DisplayFor(model => model.PromoCode)?</h3>
+<div>
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.PromoDescript)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.PromoDescript)
+=======
 <h3>Are you sure you want to delete @Html.DisplayFor(model => model.Promotion)?</h3>
 <div>
     <dl class="row">
@@ -14,6 +24,7 @@
         </dt>
         <dd class="col-sm-10">
             @Html.DisplayFor(model => model.Promotion)
+>>>>>>> 93e733a5530dca2056f78f76a71997e066823721
         </dd>
         <dt class="col-sm-2">
             @Html.DisplayNameFor(model => model.PromoCode)
@@ -30,7 +41,11 @@
     </dl>
 
     <form asp-action="Delete">
+<<<<<<< HEAD
+        <input type="hidden" asp-for="ID" />
+=======
         <input type="hidden" asp-for="Id" />
+>>>>>>> 93e733a5530dca2056f78f76a71997e066823721
         <input type="submit" value="Delete" class="btn btn-danger" />
     </form>
 

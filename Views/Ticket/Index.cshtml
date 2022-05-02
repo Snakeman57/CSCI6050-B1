@@ -1,0 +1,33 @@
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <h3>Products List</h3>
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Photo</th>
+            <th>Price</th>
+            <th>Buy</th>
+        </tr>
+        @foreach (var tickets in ViewBag.tickets)
+        {
+            <tr>
+                <td>@tickets.ID</td>
+                <td>@tickets.ShowTimes</td>
+                <td>@tickets.Theaters</td>
+                <td>@tickets.SeatNumber</td>
+                <td>@tickets.price</td>
+                <td align="center">
+                    <a asp-controller="cart" asp-action="buy" asp-route-id="@tickets.ID">Buy Now</a>
+                </td>
+            </tr>
+        }
+    </table>
+
+</body>
+</html>
