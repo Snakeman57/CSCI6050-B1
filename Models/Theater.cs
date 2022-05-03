@@ -4,20 +4,18 @@ namespace CineWeb.Models
 {
     public class Theater
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
+        public int ID { get; set; } // db id
+        public string Name { get; set; } // user-friendly name
         [Range(1, 25)]
-        public int TheaterCapacity { get; set; }
-        public int Row { get; set; } //Number of rows. So seat 1-10 = row 1, seats 11-20 = row 2
-        public ICollection<ShowTime> ShowTimes { get; set; }
-        public ICollection<Movie> Movies { get; set; }
-        public ICollection<Ticket> Tickets { get; set; }
+        public byte NumCols { get; set; } // number of seats per row
+        public byte NumRows { get; set; } // number of rows parallel to the screen
 
 
-        public Theater(int theaterCapacity, string name)
+        public Theater(string name, byte rows, byte cols)
         {
             Name = name;
-            TheaterCapacity = theaterCapacity;
+            NumRows = rows;
+            NumCols = cols;
         }
 
         public Theater()

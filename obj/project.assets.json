@@ -10662,19 +10662,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/suggested/.nuget/packages/": {}
+    "C:\\Users\\msent\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/suggested/Projects/Web4050/CineWeb/CineWeb.csproj",
+      "projectUniqueName": "D:\\WorkEtSchool\\UGA\\2021-22.2-spring\\CSCI6050 Software Engineering\\B1\\site\\CineWeb.csproj",
       "projectName": "CineWeb",
-      "projectPath": "/Users/suggested/Projects/Web4050/CineWeb/CineWeb.csproj",
-      "packagesPath": "/Users/suggested/.nuget/packages/",
-      "outputPath": "/Users/suggested/Projects/Web4050/CineWeb/obj/",
+      "projectPath": "D:\\WorkEtSchool\\UGA\\2021-22.2-spring\\CSCI6050 Software Engineering\\B1\\site\\CineWeb.csproj",
+      "packagesPath": "C:\\Users\\msent\\.nuget\\packages\\",
+      "outputPath": "D:\\WorkEtSchool\\UGA\\2021-22.2-spring\\CSCI6050 Software Engineering\\B1\\site\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/suggested/.nuget/NuGet/NuGet.Config"
+        "C:\\Users\\msent\\AppData\\Roaming\\NuGet\\NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -10763,17 +10763,11 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
       }
     }
   },
   "logs": [
-    {
-      "code": "Undefined",
-      "level": "Warning",
-      "warningLevel": 1,
-      "message": "Problem reading the cache file /Users/suggested/Projects/Web4050/CineWeb/obj/project.nuget.cache : Invalid property identifier character: <. Path 'version', line 3, position 0."
-    },
     {
       "code": "NU1701",
       "level": "Warning",

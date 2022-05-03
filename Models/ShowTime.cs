@@ -10,21 +10,16 @@ namespace CineWeb.Models
 {
     public class ShowTime
     {
-
-        public int ID { get; set; }
-        public DateTime TimeStart { get; set; }
-        public DateTime TimeEnd { get; set; }
-        public Movie Movies { get; set; }
-        public Theater Theaters { get; set; }
-
-
-
-        public ShowTime (DateTime timeStart, DateTime timeEnd, Movie movie, Theater theater)
+        // composite id = TimeStart + AssocMovie + AssocTheater
+        public DateTime TimeStart { get; set; } // start time
+        public Movie AssocMovie { get; set; } // associated movie (aggregation)
+        public Theater AssocTheater { get; set; } // associated theater (aggregation)
+        
+        public ShowTime (DateTime timeStart, Movie movie, Theater theater)
         {
             TimeStart = timeStart;
-            Movies = movie;
-            TimeEnd = TimeStart + Movies.RunningTime;
-            Theaters = theater;
+            AssocMovie = movie;
+            AssocTheater = theater;
         }
 
         public ShowTime()
@@ -33,29 +28,3 @@ namespace CineWeb.Models
         }
     }
 }
-
-//         [NotMapped, Required, Range(1, 12)]
-//         public int bookingInteger { get; set; }
-
-//         public void BookSeats([Required, Range(1, 12)] int seatsRequested)
-//         {
-//             if ((Theater.TheaterCapacity - Users.Count) > seatsRequested)
-//             {
-//                 for (int i = 0; i < seatsRequested; i++)
-//                 {
-//                     Users.Add(new CineWebUser());
-//                 }
-//             }
-//         }
-
-//         public int SeatsLeft(int patronsBooked, int seatsTotal)
-//         {
-//             return seatsTotal - patronsBooked;
-//         }
-
-//         public int SeatsLeftNew()
-//         {
-//             return (Theater.TheaterCapacity - Users.Count);
-//         }
-//     }
-// }

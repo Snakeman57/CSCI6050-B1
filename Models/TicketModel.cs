@@ -1,4 +1,4 @@
-using CineWeb.Models;
+/* using CineWeb.Models;
 namespace CineWeb.Models
 {
     public class TicketModel
@@ -46,4 +46,4 @@ namespace CineWeb.Models
         }
 
     }
-}
+} */
