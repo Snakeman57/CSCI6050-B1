@@ -24,14 +24,22 @@ namespace CineWeb.Controllers
         {
             ShowTimeModel showModel = new ShowTimeModel();
             List<Ticket> availableTicket = new List<Ticket>();
+
             // ViewBag.showTickets = showModel.findAll();
-            ViewBag.showTickets = new Ticket()
+            for (int i = 1; i <= 10; i++)
             {
-                showTime = showModel.find(2),
-                Row = Row.A,
-                seatNumber = 4
-                
-            };
+                string name = "Ticket" + i.ToString();
+                availableTicket.Add(
+                    new Ticket()
+                    {
+                        showTime = showModel.find(1),
+                        Row = Row.A,
+                        seatNumber = i
+                    }
+                    );
+            }
+            ViewBag.showTickets = availableTicket;
+
 
             return View();
         }
