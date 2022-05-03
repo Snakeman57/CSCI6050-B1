@@ -1,11 +1,10 @@
 using CineWeb.Data;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
 
 namespace CineWeb.Models
 {
-    public class Ticket : DbContext {
+    public class Ticket {
         [Key]
         public uint ID { get; set; } // db id
         public uint ShowTimeId { get; set; } // associated showtime (aggregation)

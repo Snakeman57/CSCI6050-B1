@@ -2,13 +2,12 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
-using Microsoft.EntityFrameworkCore;
 using System.Linq;
 using System.Threading.Tasks;
 using CineWeb.Data;
 
 namespace CineWeb.Models {
-    public class ShowTime : DbContext {
+    public class ShowTime {
         [Key]
         public uint ID { get; set; } // db id
         public DateTime TimeStart { get; set; } // start time
