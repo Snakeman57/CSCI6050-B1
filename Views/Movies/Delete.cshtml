@@ -8,67 +8,55 @@
 
 <h3>Are you sure you want to delete @Html.DisplayFor(model => model.Title) from database?</h3>
 <div>
+    <div>
+        @Html.DisplayFor(model => model.Runtime) | @Html.DisplayFor(model => model.RatingMPAA)
+    </div>
+    <div>
+        <img src="@Model?.Runtime"/>
+    </div>
     <dl class="row">
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Title)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Title)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-        <dt class="col-sm-2">
+        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Category)
         </dt>
-        <dd class="col-sm-10">
+        <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Category)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Casts)
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Description)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Casts)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Description)
         </dd>
-        <dt class="col-sm-2">
+        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Director)
         </dt>
-        <dd class="col-sm-10">
+        <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Director)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Producer)
+        @*<dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Writers)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Producer)
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Writers)
         </dd>
-        <dt class="col-sm-2">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Stars)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Stars)
+        </dd>*@
+        <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Synopsis)
         </dt>
-        <dd class="col-sm-10">
+        <dd class = "col-sm-10">
             @Html.DisplayFor(model => model.Synopsis)
         </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Review)
+        @*<dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Reviews)
         </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Review)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.Rating)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.Rating)
-        </dd>
-        <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.RunningTime)
-        </dt>
-        <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.RunningTime)
-        </dd>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Reviews)
+        </dd>*@
     </dl>
 
     <form asp-action="Delete">

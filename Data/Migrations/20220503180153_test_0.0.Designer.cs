@@ -3,6 +3,7 @@ using System;
 using CineWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CineWeb.Data.Migrations
 {
     [DbContext(typeof(WebContext))]
-    partial class WebContextModelSnapshot : ModelSnapshot
+    [Migration("20220503180153_test_0.0")]
+    partial class test_00
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.4");
@@ -104,6 +106,10 @@ namespace CineWeb.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<string>("Casts")
+                        .IsRequired()
+                        .HasColumnType("TEXT");
+
                     b.Property<string>("Category")
                         .IsRequired()
                         .HasColumnType("TEXT");
@@ -119,27 +125,26 @@ namespace CineWeb.Data.Migrations
                     b.Property<int?>("MoviePromotionID")
                         .HasColumnType("INTEGER");
 
-                    b.Property<string>("PosterLink")
+                    b.Property<string>("Producer")
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("RatingMPAA")
-                        .IsRequired()
+                    b.Property<int>("Rating")
+                        .HasColumnType("INTEGER");
+
+                    b.Property<string>("Review")
                         .HasColumnType("TEXT");
 
-                    b.Property<TimeSpan>("Runtime")
+                    b.Property<TimeSpan>("RunningTime")
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Synopsis")
+                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.Property<string>("Title")
                         .IsRequired()
                         .HasMaxLength(60)
-                        .HasColumnType("TEXT");
-
-                    b.Property<string>("TrailerLink")
-                        .IsRequired()
                         .HasColumnType("TEXT");
 
                     b.HasKey("ID");

@@ -11,55 +11,60 @@
         <form asp-action="Edit">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <input type="hidden" asp-for="ID" />
-            <div class="form-group">
+            <div class="input-group-md mb-3">
                 <label asp-for="Title" class="control-label"></label>
                 <input asp-for="Title" class="form-control" />
                 <span asp-validation-for="Title" class="text-danger"></span>
             </div>
             <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
+                <label asp-for="Runtime" class="control-label"></label>
+                <textarea asp-for="Runtime" class="form-control" ></textarea>
+                <span asp-validation-for="Runtime" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3">
+                <label asp-for="RatingMPAA" class="control-label"></label>
+                <input asp-for="RatingMPAA" class="form-control" />
+                <span asp-validation-for="RatingMPAA" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 col-lg-5 col-xl-5 mb-3">
+                <label asp-for="PosterLink" class="control-label"></label>
+                <input asp-for="PosterLink" class="form-control" />
+                <span asp-validation-for="PosterLink" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 col-lg-5 col-xl-5 mb-3">
+                <label asp-for="TrailerLink" class="control-label"></label>
+                <input asp-for="TrailerLink" class="form-control" />
+                <span asp-validation-for="TrailerLink" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 col-lg-5 col-xl-5 mb-3">
                 <label asp-for="Category" class="control-label"></label>
                 <input asp-for="Category" class="form-control" />
                 <span asp-validation-for="Category" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Casts" class="control-label"></label>
-                <input asp-for="Casts" class="form-control" />
-                <span asp-validation-for="Casts" class="text-danger"></span>
+            <div  class="col-md-6 col-lg-5 col-xl-5 mb-3">
+                <label asp-for="Description" class="control-label"></label>
+                <textarea asp-for="Description" class="form-control" ></textarea>
+                <span asp-validation-for="Description" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-6 col-lg-5 col-xl-5 mb-3">
                 <label asp-for="Director" class="control-label"></label>
                 <input asp-for="Director" class="form-control" />
                 <span asp-validation-for="Director" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <label asp-for="Producer" class="control-label"></label>
-                <input asp-for="Producer" class="form-control" />
-                <span asp-validation-for="Producer" class="text-danger"></span>
+            <!--<div class="form-group">
+                <label asp-for="Writers" class="control-label"></label>
+                <input asp-for="Writers" class="form-control" />
+                <span asp-validation-for="Writers" class="text-danger"></span>
             </div>
-            <div class="form-group">
+            <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3">
+                <label asp-for="Stars" class="control-label"></label>
+                <input asp-for="Stars" class="form-control" />
+                <span asp-validation-for="Stars" class="text-danger"></span>
+            </div>-->
+            <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3">
                 <label asp-for="Synopsis" class="control-label"></label>
                 <input asp-for="Synopsis" class="form-control" />
                 <span asp-validation-for="Synopsis" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Review" class="control-label"></label>
-                <input asp-for="Review" class="form-control" />
-                <span asp-validation-for="Review" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Rating" class="control-label"></label>
-                <input asp-for="Rating" class="form-control" />
-                <span asp-validation-for="Rating" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="RunningTime" class="control-label"></label>
-                <input asp-for="RunningTime" class="form-control" />
-                <span asp-validation-for="RunningTime" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />

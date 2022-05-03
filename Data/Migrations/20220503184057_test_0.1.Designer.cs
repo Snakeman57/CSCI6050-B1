@@ -3,6 +3,7 @@ using System;
 using CineWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CineWeb.Data.Migrations
 {
     [DbContext(typeof(WebContext))]
-    partial class WebContextModelSnapshot : ModelSnapshot
+    [Migration("20220503184057_test_0.1")]
+    partial class test_01
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.4");
@@ -123,9 +125,8 @@ namespace CineWeb.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<string>("RatingMPAA")
-                        .IsRequired()
-                        .HasColumnType("TEXT");
+                    b.Property<int>("RatingMPAA")
+                        .HasColumnType("INTEGER");
 
                     b.Property<TimeSpan>("Runtime")
                         .HasColumnType("TEXT");

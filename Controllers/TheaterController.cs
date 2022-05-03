@@ -26,7 +26,7 @@ namespace CineWeb.Controllers
         }
 
         // GET: Theater/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(uint? id)
         {
             if (id == null)
             {
@@ -66,7 +66,7 @@ namespace CineWeb.Controllers
         }
 
         // GET: Theater/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(uint? id)
         {
             if (id == null)
             {
@@ -86,7 +86,7 @@ namespace CineWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(uint id, [Bind("ID,Name,TheaterCapacity,Row")] Theater theater)
+        public async Task<IActionResult> Edit(uint id, [Bind("ID,Name,NumRows,NumCols")] Theater theater)
         {
             if (id != theater.ID)
             {
@@ -117,7 +117,7 @@ namespace CineWeb.Controllers
         }
 
         // GET: Theater/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(uint? id)
         {
             if (id == null)
             {
@@ -137,7 +137,7 @@ namespace CineWeb.Controllers
         // POST: Theater/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(uint id)
         {
             var theater = await _context.Theaters.FindAsync(id);
             _context.Theaters.Remove(theater);

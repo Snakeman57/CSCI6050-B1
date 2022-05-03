@@ -27,23 +27,20 @@
                 @Html.DisplayNameFor(model => model.Movies[0].Title)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Movies[0].RatingMPAA)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.Movies[0].Category)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies[0].Description)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.Movies[0].Director)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movies[0].Producer)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movies[0].Synopsis)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movies[0].Rating)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Movies[0].RunningTime)
-            </th>
+            @*<th>
+                @Html.DisplayNameFor(model => model.Movies[0].Stars)
+            </th>*@
             <th></th>
         </tr>
     </thead>
@@ -54,26 +51,20 @@
                 @Html.DisplayFor(modelItem => item.Title)
             </td>
             <td>
+                @Html.DisplayFor(modelItem => item.RatingMPAA)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.Category)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Director)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Producer)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Synopsis)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Rating)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.RunningTime)
-            </td>
-             @* <td>
-               <img src="@item.MoviePicture" width="100" height="100" asp-append-version="true"/>
-            </td> *@
+            @*<td>
+                @Html.DisplayFor(modelItem => item.Stars)
+            </td>*@
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID"><button class="btn bg-primary text-white">Edit</button></a> 
                 <a asp-action="Details" asp-route-id="@item.ID"><button class="btn bg-primary text-white">Details</button></a> 

@@ -12,7 +12,6 @@ using Microsoft.AspNetCore.Authorization;
 namespace CineWeb.Controllers
 {
     // [Authorize(Policy = "Admin")]
-
     public class MoviesController : Controller
     {
         private readonly WebContext _context;
@@ -52,7 +51,7 @@ namespace CineWeb.Controllers
         }
 
         // GET: Movies/Details/5
-        public async Task<IActionResult> Details(int? id)
+        public async Task<IActionResult> Details(uint? id)
         {
             if (id == null)
             {
@@ -80,7 +79,7 @@ namespace CineWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,Title,Description,Category,Casts,Director,Producer,Synopsis,Review,Rating,RunningTime")] Movie movie)
+        public async Task<IActionResult> Create([Bind("ID,Title,Runtime,RatingMPAA,PosterLink,TrailerLink,Category,Description,Director,Writers,Stars,Synopsis")] Movie movie)
         {
             if (ModelState.IsValid)
             {
@@ -92,7 +91,7 @@ namespace CineWeb.Controllers
         }
 
         // GET: Movies/Edit/5
-        public async Task<IActionResult> Edit(int? id)
+        public async Task<IActionResult> Edit(uint? id)
         {
             if (id == null)
             {
@@ -112,7 +111,7 @@ namespace CineWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(uint id, [Bind("ID,Title,Description,Category,Casts,Director,Producer,Synopsis,Review,Rating,RunningTime")] Movie movie)
+        public async Task<IActionResult> Edit(uint id, [Bind("ID,Title,Runtime,RatingMPAA,PosterLink,TrailerLink,Category,Description,Director,Writers,Stars,Synopsis")] Movie movie)
         {
             if (id != movie.ID)
             {
@@ -143,7 +142,7 @@ namespace CineWeb.Controllers
         }
 
         // GET: Movies/Delete/5
-        public async Task<IActionResult> Delete(int? id)
+        public async Task<IActionResult> Delete(uint? id)
         {
             if (id == null)
             {
@@ -163,7 +162,7 @@ namespace CineWeb.Controllers
         // POST: Movies/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(int id)
+        public async Task<IActionResult> DeleteConfirmed(uint id)
         {
             var movie = await _context.Movies.FindAsync(id);
             _context.Movies.Remove(movie);

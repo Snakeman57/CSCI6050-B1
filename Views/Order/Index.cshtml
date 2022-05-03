@@ -1,0 +1,114 @@
+﻿@* @model CineWeb.Models.MovieCategoryView *@
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<body>
+    @* <form asp-controller="Movies" asp-action="Index" method="get">
+    <p>
+
+        <select asp-for="MovieCategory" asp-items="Model.Categories">
+            <option value="">All</option>
+        </select>
+
+        Title: <input type="text" asp-for="SearchString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form> *@
+    <!-- Movie Trailer Carousel  -->
+    <div class="container-fluid">
+        <div id="carouselExampleControls" class="carousel slide text-center carousel-btn" data-bs-ride="carousel">
+            <!-- Indicators -->
+            <div class="carousel-indicators">
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                    aria-current="true" aria-label="Slide 1"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                    aria-label="Slide 2"></button>
+                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                    aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner mt-2 mb-2">
+                <div class="carousel-item active ratio ratio-21x9">
+                    <iframe src="https://www.youtube.com/embed/dZOaI_Fn5o4" title="YouTube video player"
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="carousel-item ratio ratio-21x9">
+                    <iframe src="https://www.youtube.com/embed/JfVOs4VSpmA" title="YouTube video player"
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                <div class="carousel-item ratio ratio-21x9">
+                    <iframe src="https://www.youtube.com/embed/CaimKeDcudo" title="YouTube video player"
+                        frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen>
+                    </iframe>
+                </div>
+                
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControls" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+            <a class="btn2" asp-action="Book">Book Tickets Now!</a>
+        </div>         
+        <!-- Movie Trailer Carousel -->
+    </div>
+
+    <!-- Currently Showing -->
+    <nav class="px-2 pt-3 pb-1 bg-dark" aria-label="Coming soon movies">
+        <ul class="pagination pagination-lg justify-content-center">
+            <li class="page-item active"><a class="page-link" href="index.html">Currently Showing</a></li>
+            <li class="page-item"><a class="page-link" href="coming-soon.html">Coming Soon</a></li>
+        </ul>
+    </nav>
+    <div class="container mt-2">
+        <div class="row g-3 justify-content-center">
+            <div class="card col-md-6 col-lg-4 col-xl-3 px-0 mx-2 movie_card">
+                <img src="images/uncharted.jpg" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Uncharted</h5>
+                    <a href="#" class="btn btn-primary">Buy Ticket</a>
+                </div>
+            </div>
+            <div class="card col-md-6 col-lg-4 col-xl-3 px-0 mx-2 movie_card">
+                <img src="images/nightmare-alley.jpg" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Nightmare Alley</h5>
+                    <a href="#" class="btn btn-primary">Buy Ticket</a>
+                </div>
+            </div>
+            <div class="card col-md-6 col-lg-4 col-xl-3 px-0 mx-2 movie_card">
+                <img src="images/kingsman.jpeg" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title">The Kingsman</h5>
+                    <a href="#" class="btn btn-primary">Buy Ticket</a>
+                </div>
+            </div>
+            <div class="card col-md-6 col-lg-4 col-xl-3 px-0 mx-2 movie_card">
+                <img src="images/dune.jpeg" class="card-img-top" alt="...">
+                <div class="card-body text-center">
+                    <h5 class="card-title">Dune</h5>
+                    <a href="#" class="btn btn-primary">Buy Ticket</a>
+                </div>
+            </div>
+        </div>
+        <div class="container mt-5 text-center">
+            <div class="row">
+                <div class="col-12">
+                    <a class="btn btn-success btn-lg text-white" asp-action="Book">Book Movie</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Currently Showing -->
+</body>
+
+</html>
