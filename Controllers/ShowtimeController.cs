@@ -26,7 +26,7 @@ namespace CineWeb.Controllers
             return View(await _context.ShowTimes.ToListAsync());
         }
 
-        // GET: Promo/Details/5
+        // GET: Showtime/Details/5
         public async Task<IActionResult> Details(int? id)
         {
             if (id == null)
@@ -44,13 +44,13 @@ namespace CineWeb.Controllers
             return View(showtime);
         }
 
-        // GET: Promo/Create
+        // GET: Showtime/Create
         public IActionResult Create()
         {
             return View();
         }
 
-        // POST: Promo/Create
+        // POST: Showtime/Create
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -66,7 +66,7 @@ namespace CineWeb.Controllers
             return View(showtime);
         }
 
-        // GET: Promo/Edit/5
+        // GET: Showtime/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -82,7 +82,7 @@ namespace CineWeb.Controllers
             return View(showtime);
         }
 
-        // POST: Promo/Edit/5
+        // POST: Showtime/Edit/5
         // To protect from overposting attacks, enable the specific properties you want to bind to.
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
@@ -117,7 +117,7 @@ namespace CineWeb.Controllers
             return View(showtime);
         }
 
-        // GET: Promo/Delete/5
+        // GET: Showtime/Delete/5
         public async Task<IActionResult> Delete(int id)
         {
             if (id == null)
@@ -135,7 +135,7 @@ namespace CineWeb.Controllers
             return View(showtime);
         }
 
-        // POST: Promo/Delete/5
+        // POST: Showtime/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> DeleteConfirmed(int id)
