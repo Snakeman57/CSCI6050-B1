@@ -82,11 +82,12 @@ namespace CineWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("ID,Title,Description,Category,Casts,Director,Producer,Synopsis,Review,Rating,RunningTime")] Movie movie)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && !MovieExists(movie.Title))
             {
-                _context.Add(movie);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                    _context.Add(movie);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                
             }
             return View(movie);
         }
@@ -128,7 +129,7 @@ namespace CineWeb.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MovieExists(movie.ID))
+                    if (!MovieExists(movie.Title))
                     {
                         return NotFound();
                     }
@@ -171,9 +172,9 @@ namespace CineWeb.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MovieExists(int id)
+        private bool MovieExists(string title)
         {
-            return _context.Movies.Any(e => e.ID == id);
+            return _context.Movies.Any(t => t.Title == title);
         }
     }
 }

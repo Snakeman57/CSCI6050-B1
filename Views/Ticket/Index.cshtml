@@ -1,3 +1,4 @@
+@model CineWeb.Models.Ticket
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
@@ -17,7 +18,7 @@
         @foreach (var tickets in ViewBag.tickets)
         {
             <tr>
-                <td>@tickets.ID</td>
+                <td>@Html.DisplayFor(modelItem => modelItem.ID)</td>
                 <td>@tickets.ShowTimes</td>
                 <td>@tickets.Theaters</td>
                 <td>@tickets.SeatNumber</td>

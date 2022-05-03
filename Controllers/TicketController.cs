@@ -15,9 +15,9 @@ namespace CineWeb.Controllers
         }
         public async Task<IActionResult> Index()
         {
-            var ticketModel = new Ticket();
+            var ticketModel = new TicketModel();
             ViewBag.tickets = ticketModel.findAll();
-            return View(await _context.Tickets.ToListAsync());
+           return View(await _context.Tickets.ToListAsync());
         }
     }
 }

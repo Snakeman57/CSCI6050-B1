@@ -8,7 +8,7 @@ namespace CineWeb.Models
         public List<Movie>? Movies {get;set;}
         public string PromoDescript {get;set;}
         public string PromoCode {get;set;}
-        public int PromoDeal{get;set;}
+        public double PromoDeal{get;set;}
 
     }
 }

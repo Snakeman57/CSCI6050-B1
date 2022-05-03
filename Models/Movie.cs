@@ -2,6 +2,13 @@ using System.ComponentModel.DataAnnotations;
 
 namespace CineWeb.Models
 {
+    //  public enum Rating
+    // {
+    //     Freshman,
+    //     Sophomore,
+    //     Junior,
+    //     Senior
+    // }
     public class Movie
     {
 
@@ -33,15 +40,16 @@ namespace CineWeb.Models
         public string Review { get; set; }
         public int Rating { get; set; }
         [Required]
-        public TimeSpan RunningTime { get; set; }        
+        public TimeSpan RunningTime { get; set; }
         public Movie()
         {
 
         }
         public Movie(string title, TimeSpan runningTime)
         {
-            Title = Title;
+            Title = title;
             RunningTime = runningTime;
         }
+        
     }
 }
