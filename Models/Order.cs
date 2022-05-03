@@ -5,10 +5,10 @@ namespace CineWeb.Models
 {
     public class Order //item
     {
-        [Key]
-        public string ID{get;set;} // db id
+        
+        public string ID { get; set; } // db id
         public System.DateTime DateCreated { get; set; } // creation time
-        public CineWebUser? CineWebUserId { get; set; } // associated user (aggregation) // SHOULD BE REPLACED W/ USERID
+        public CineWebUser? User { get; set; } // associated user (aggregation) // SHOULD BE REPLACED W/ USERID
         public uint ShowTimeId { get; set; } // showtime start time
         public ICollection<Ticket> Tickets { get; set; } // associated tickets (composition)
         /*public double calcPrice() {
@@ -18,14 +18,17 @@ namespace CineWeb.Models
             }
             return tmp;
         }*/
-        public double percentType(string type) { // for promos by TicketType
+        public double percentType(string type)
+        { // for promos by TicketType
             int ct = 0;
-            foreach (Ticket i in Tickets) {
-                if (i.Type == type) {
+            foreach (Ticket i in Tickets)
+            {
+                if (i.Type == type)
+                {
                     ct++;
                 }
             }
-            return (double) ct / (double) Tickets.Count;
+            return (double)ct / (double)Tickets.Count;
         }
     }
 }

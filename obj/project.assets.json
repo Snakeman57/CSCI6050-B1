@@ -10662,19 +10662,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\msent\\.nuget\\packages\\": {}
+    "/Users/suggested/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\WorkEtSchool\\UGA\\2021-22.2-spring\\CSCI6050 Software Engineering\\B1\\site\\CineWeb.csproj",
+      "projectUniqueName": "/Users/suggested/Projects/Web4050/CineWeb/CineWeb.csproj",
       "projectName": "CineWeb",
-      "projectPath": "D:\\WorkEtSchool\\UGA\\2021-22.2-spring\\CSCI6050 Software Engineering\\B1\\site\\CineWeb.csproj",
-      "packagesPath": "C:\\Users\\msent\\.nuget\\packages\\",
-      "outputPath": "D:\\WorkEtSchool\\UGA\\2021-22.2-spring\\CSCI6050 Software Engineering\\B1\\site\\obj\\",
+      "projectPath": "/Users/suggested/Projects/Web4050/CineWeb/CineWeb.csproj",
+      "packagesPath": "/Users/suggested/.nuget/packages/",
+      "outputPath": "/Users/suggested/Projects/Web4050/CineWeb/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\msent\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        "/Users/suggested/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net6.0"
@@ -10763,7 +10763,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/6.0.201/RuntimeIdentifierGraph.json"
       }
     }
   },

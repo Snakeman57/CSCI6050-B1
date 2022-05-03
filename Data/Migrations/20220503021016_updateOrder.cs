@@ -4,7 +4,7 @@
 
 namespace CineWeb.Data.Migrations
 {
-    public partial class UpdateCart4 : Migration
+    public partial class updateOrder : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

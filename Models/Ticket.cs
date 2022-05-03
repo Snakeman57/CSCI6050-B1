@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace CineWeb.Models
 {
     public class Ticket {
-        [Key]
+        
         public uint ID { get; set; } // db id
         public uint ShowTimeId { get; set; } // associated showtime (aggregation)
         public byte[] SeatNumber { get; set; } // dependent on associated theater of associated showtime
