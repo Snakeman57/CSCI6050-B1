@@ -9,7 +9,7 @@ namespace CineWeb.Models
         public uint ID { get; set; } // db id
         public uint ShowTimeId { get; set; } // associated showtime (aggregation)
         public byte[] SeatNumber { get; set; } // dependent on associated theater of associated showtime
-        public string Type { get; set; } // id for associated ticket type (aggregation)
+        public TicketType Type { get; set; } // id for associated ticket type (aggregation)
 
         // composite id = ShowTime + SeatNumber
         /*protected override void OnModelCreating(ModelBuilder modelBuilder){

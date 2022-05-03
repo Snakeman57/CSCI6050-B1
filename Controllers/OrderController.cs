@@ -18,13 +18,19 @@ namespace CineWeb.Controllers
         public OrderController(WebContext context) {
             _context = context;
         }
+        // get order history by user
+        public async Task<IActionResult> History(string uid) {
+            if (uid == null) {
+                return NotFound();
+            }
+
+            var orders = from i in _context.Orders /*orderby i.ShowTimeId.TimeStart*/ select i;
+            orders = orders.Where(x => x.UserId.Id == uid);
+            return View(await orders.ToListAsync());
+        }
         // start new order
         public async Task<IActionResult> Index() {
             return View();
-        }
-        // get order history by user
-        public async Task<IActionResult> History() {
-
         }
     }
 }

@@ -11,10 +11,10 @@ namespace CineWeb.Models {
         [Key]
         public uint ID { get; set; } // db id
         public DateTime TimeStart { get; set; } // start time
-        public uint MovieId { get; set; } // associated movie id (aggregation)
-        public uint TheaterId { get; set; } // associated theater id (aggregation)
+        public Movie MovieId { get; set; } // associated movie id (aggregation)
+        public Theater TheaterId { get; set; } // associated theater id (aggregation)
 
-        public ShowTime (DateTime timeStart, uint movie, uint theater) {
+        public ShowTime (DateTime timeStart, Movie movie, Theater theater) {
             TimeStart = timeStart;
             MovieId = movie;
             TheaterId = theater;

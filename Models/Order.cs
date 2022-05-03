@@ -8,8 +8,8 @@ namespace CineWeb.Models
         
         public string ID { get; set; } // db id
         public System.DateTime DateCreated { get; set; } // creation time
-        public CineWebUser? User { get; set; } // associated user (aggregation) // SHOULD BE REPLACED W/ USERID
-        public uint ShowTimeId { get; set; } // showtime start time
+        public CineWebUser? UserId { get; set; } // associated user (aggregation) // SHOULD BE REPLACED W/ USERID
+        public ShowTime ShowTimeId { get; set; } // showtime start time
         public ICollection<Ticket> Tickets { get; set; } // associated tickets (composition)
         /*public double calcPrice() {
             double tmp = 0;
@@ -23,7 +23,7 @@ namespace CineWeb.Models
             int ct = 0;
             foreach (Ticket i in Tickets)
             {
-                if (i.Type == type)
+                if (i.Type.Name == type)
                 {
                     ct++;
                 }
