@@ -4,8 +4,7 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>ShowTime List</h1>
-
+<h1>Show Time List</h1>
 <p>
     <a asp-action="Create"><button class="btn bg-success text-white">Create New</button></a>
 </p>
@@ -13,10 +12,19 @@
     <thead>
         <tr>
             <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.TimeStart)
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.TimeEnd)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Movies)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Theaters)
             </th>
             <th></th>
         </tr>
@@ -25,15 +33,24 @@
 @foreach (var item in Model) {
         <tr>
             <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
                 @Html.DisplayFor(modelItem => item.TimeStart)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.TimeEnd)
             </td>
             <td>
-                <a asp-action="Edit" asp-route-id="@item.Id" class="btn bg-primary text-white">Edit</a>
-                <a asp-action="Details" asp-route-id="@item.Id" class="btn bg-primary text-white">Details</a>
-                <a asp-action="Delete" asp-route-id="@item.Id" class="btn bg-primary text-white">Delete</a>
+                @Html.DisplayFor(modelItem => item.Movies)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Theaters)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID" class="btn bg-primary text-white">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.ID" class="btn bg-primary text-white">Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.ID" class="btn bg-primary text-white">Delete</a>
             </td>
         </tr>
 }
