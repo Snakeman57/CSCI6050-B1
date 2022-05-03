@@ -597,7 +597,6 @@ C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\obj\Debug\net6.0\refint\CineWeb.dll
 C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\obj\Debug\net6.0\CineWeb.pdb
 C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\obj\Debug\net6.0\CineWeb.genruntimeconfig.cache
 C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\obj\Debug\net6.0\ref\CineWeb.dll
-C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\bin\Debug\net6.0\app.db
 C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\bin\Debug\net6.0\refs\Microsoft.AspNetCore.Antiforgery.dll
 C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\bin\Debug\net6.0\refs\Microsoft.AspNetCore.Authentication.Abstractions.dll
 C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\bin\Debug\net6.0\refs\Microsoft.AspNetCore.Authentication.Cookies.dll
@@ -888,3 +887,4 @@ C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\bin\Debug\net6.0\refs\System.Xml.XP
 C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\bin\Debug\net6.0\refs\WindowsBase.dll
 C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll
 C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Razor.RuntimeCompilation.dll
+C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\bin\Debug\net6.0\app.db

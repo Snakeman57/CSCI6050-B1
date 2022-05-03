@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CineWeb.Data.Migrations
 {
     [DbContext(typeof(WebContext))]
-    [Migration("20220503152544_UpdateCart")]
-    partial class UpdateCart
+    [Migration("20220503231213_UpdateCart1")]
+    partial class UpdateCart1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -236,14 +236,14 @@ namespace CineWeb.Data.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
+                    b.Property<double?>("Price")
+                        .HasColumnType("REAL");
+
                     b.Property<int>("Row")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("UserId")
                         .HasColumnType("TEXT");
-
-                    b.Property<double>("price")
-                        .HasColumnType("REAL");
 
                     b.Property<int>("seatNumber")
                         .HasColumnType("INTEGER");

@@ -16418,11 +16418,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Cart\\Index.cshtml",
-      "TargetPath": "Views\\Cart\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Promo\\Edit.cshtml",
       "TargetPath": "Views\\Promo\\Edit.cshtml",
       "FileKind": "mvc"
@@ -16440,6 +16435,11 @@
     {
       "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Account\\Index.cshtml",
       "TargetPath": "Views\\Account\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Ticket\\Cart.cshtml",
+      "TargetPath": "Views\\Ticket\\Cart.cshtml",
       "FileKind": "mvc"
     },
     {

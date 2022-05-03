@@ -49,7 +49,7 @@ namespace CineWeb.Models
             //     showTickets= new List<Ticket>() 
             // 
             this.movies = new List<Movie>() {
-                new Movie("random",TimeSpan.Parse("10:00:00")),
+                new Movie("thatthing",TimeSpan.Parse("10:00:00")),
                 new Movie("something",TimeSpan.Parse("16:00:00"))
             };
             this.theaters = new List<Theater>() {
@@ -78,26 +78,26 @@ namespace CineWeb.Models
             }
             };
             this.tick = new List<Ticket>() {
-                new Ticket(showtimes[0],Row.A,1),
-                new Ticket(showtimes[0],Row.A,2),
-                new Ticket(showtimes[0],Row.A,3),
-                new Ticket(showtimes[0],Row.A,4),
-                new Ticket(showtimes[0],Row.A,5),
-                new Ticket(showtimes[0],Row.A,6),
-                new Ticket(showtimes[0],Row.A,7),
-                new Ticket(showtimes[0],Row.A,8),
-                new Ticket(showtimes[0],Row.A,9),
-                new Ticket(showtimes[0],Row.A,10),
-                new Ticket(showtimes[1],Row.A,1),
-                new Ticket(showtimes[1],Row.A,2),
-                new Ticket(showtimes[1],Row.A,3),
-                new Ticket(showtimes[1],Row.A,4),
-                new Ticket(showtimes[1],Row.A,5),
-                new Ticket(showtimes[1],Row.A,6),
-                new Ticket(showtimes[1],Row.A,7),
-                new Ticket(showtimes[1],Row.A,8),
-                new Ticket(showtimes[1],Row.A,9),
-                new Ticket(showtimes[1],Row.A,10)
+                new Ticket(showtimes[0],Row.A,1,14.00),
+                new Ticket(showtimes[0],Row.A,2,14.00),
+                new Ticket(showtimes[0],Row.A,3,14.00),
+                new Ticket(showtimes[0],Row.A,4,14.00),
+                new Ticket(showtimes[0],Row.A,5,14.00),
+                new Ticket(showtimes[0],Row.A,6,14.00),
+                new Ticket(showtimes[0],Row.A,7,14.00),
+                new Ticket(showtimes[0],Row.A,8,14.00),
+                new Ticket(showtimes[0],Row.A,9,14.00),
+                new Ticket(showtimes[0],Row.A,10,14.00),
+                new Ticket(showtimes[1],Row.A,1,14.00),
+                new Ticket(showtimes[1],Row.A,2,14.00),
+                new Ticket(showtimes[1],Row.A,3,14.00),
+                new Ticket(showtimes[1],Row.A,4,14.00),
+                new Ticket(showtimes[1],Row.A,5,14.00),
+                new Ticket(showtimes[1],Row.A,6,14.00),
+                new Ticket(showtimes[1],Row.A,7,14.00),
+                new Ticket(showtimes[1],Row.A,8,14.00),
+                new Ticket(showtimes[1],Row.A,9,14.00),
+                new Ticket(showtimes[1],Row.A,10,14.00)
 
             };
 

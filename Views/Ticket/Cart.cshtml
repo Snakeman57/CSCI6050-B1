@@ -17,7 +17,7 @@
         @foreach (var order in ViewBag.cart)
         {
             <tr>
-                <td><a asp-controller="cart" asp-action="remove" asp-route-id="@order">Remove</a></td>
+                <td><a asp-controller="Ticket" asp-action="remove" asp-route-id="@order">Remove</a></td>
                 <td>@order.ID</td>
                 <td>@order.seatNumber</td>
                 <td>@order.Price</td>

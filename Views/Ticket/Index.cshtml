@@ -1,4 +1,4 @@
-@model CineWeb.Models.Ticket
+@model List<CineWeb.Models.Ticket>
 <html>
 
 <head>
@@ -22,13 +22,14 @@
     
 
         <tr>
+            <td>@tickets.ID</td>
             <td>@tickets.showTime.Theater.Name</td>
             <td>@tickets.Row</td>
             <td>@tickets.seatNumber</td>
             <td>@tickets.showTime.Movie.Title</td>
             @* <td>@tickets.price</td> *@
             <td align="center">
-                <a asp-controller="cart" asp-action="buy" asp-route-id="@tickets.ID">Buy Now</a>
+                <a asp-controller="Ticket" asp-action="buy" asp-route-id="@tickets.ID">Buy Now</a>
             </td>
 
         </tr>
