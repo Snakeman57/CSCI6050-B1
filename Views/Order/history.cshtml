@@ -6,17 +6,35 @@
 
 <h1>Order History</h1>
 
-@*<table class="table">
+<table class="table">
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.Orders[0].ShowTimeId)
+                @Html.DisplayNameFor(model => model.ShowTimeId.TimeStart)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Orders[0].ShowTimeId)
+                @Html.DisplayNameFor(model => model.ShowTimeId.MovieId.Title)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Orders[0].Tickets)
+                @Html.DisplayNameFor(model => model.Tickets)
             </th>
         </tr>
-    </thead>*@
+    </thead>
+    <tbody>
+        @foreach (var item in Model) {
+            <tr>
+                <td>
+                    @Html.DisplayFor(model => item.ShowTimeId.TimeStart)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.ShowTimeId.MovieId.Title)
+                </td>
+                <td>
+                    @Html.DisplayFor(model => item.Tickets)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
