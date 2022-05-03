@@ -34,7 +34,7 @@ namespace CineWeb.Controllers
             }
 
             var theater = await _context.Theater
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (theater == null)
             {
                 return NotFound();
@@ -58,9 +58,12 @@ namespace CineWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(theater);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (!TheaterExists(theater.Name))
+                {
+                    _context.Add(theater);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
             }
             return View(theater);
         }
@@ -88,7 +91,7 @@ namespace CineWeb.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Name,TheaterCapacity,Row")] Theater theater)
         {
-            if (id != theater.Id)
+            if (id != theater.ID)
             {
                 return NotFound();
             }
@@ -102,7 +105,7 @@ namespace CineWeb.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!TheaterExists(theater.Id))
+                    if (!TheaterExists(theater.Name))
                     {
                         return NotFound();
                     }
@@ -125,7 +128,7 @@ namespace CineWeb.Controllers
             }
 
             var theater = await _context.Theater
-                .FirstOrDefaultAsync(m => m.Id == id);
+                .FirstOrDefaultAsync(m => m.ID == id);
             if (theater == null)
             {
                 return NotFound();
@@ -145,9 +148,9 @@ namespace CineWeb.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TheaterExists(int id)
+        private bool TheaterExists(string name)
         {
-            return _context.Theater.Any(e => e.Id == id);
+            return _context.Theater.Any(e => e.Name == name);
         }
     }
 }

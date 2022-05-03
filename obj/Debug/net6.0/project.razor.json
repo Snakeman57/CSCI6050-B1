@@ -16328,6 +16328,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Ticket\\Index.cshtml",
+      "TargetPath": "Views\\Ticket\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Account\\Delete.cshtml",
       "TargetPath": "Views\\Account\\Delete.cshtml",
       "FileKind": "mvc"
@@ -16363,18 +16368,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\BookMovie\\Create.cshtml",
-      "TargetPath": "Views\\BookMovie\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Promo\\Create.cshtml",
       "TargetPath": "Views\\Promo\\Create.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\ShowTime\\Details.cshtml",
-      "TargetPath": "Views\\ShowTime\\Details.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16390,11 +16385,6 @@
     {
       "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Movies\\Index.cshtml",
       "TargetPath": "Views\\Movies\\Index.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\BookMovie\\Delete.cshtml",
-      "TargetPath": "Views\\BookMovie\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16428,13 +16418,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Promo\\Edit.cshtml",
-      "TargetPath": "Views\\Promo\\Edit.cshtml",
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Cart\\Index.cshtml",
+      "TargetPath": "Views\\Cart\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\ShowTime\\Index.cshtml",
-      "TargetPath": "Views\\ShowTime\\Index.cshtml",
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Promo\\Edit.cshtml",
+      "TargetPath": "Views\\Promo\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16458,18 +16448,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\BookMovie\\Details.cshtml",
-      "TargetPath": "Views\\BookMovie\\Details.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Shared\\_LoginPartial.cshtml",
       "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\ShowTime\\Delete.cshtml",
-      "TargetPath": "Views\\ShowTime\\Delete.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16490,11 +16470,6 @@
     {
       "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Account\\Edit.cshtml",
       "TargetPath": "Views\\Account\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\BookMovie\\Index.cshtml",
-      "TargetPath": "Views\\BookMovie\\Index.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16538,11 +16513,6 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\BookMovie\\Edit.cshtml",
-      "TargetPath": "Views\\BookMovie\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
       "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Areas\\Identity\\Pages\\Account\\ForgotPassword.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\ForgotPassword.cshtml",
       "FileKind": "mvc"
@@ -16550,11 +16520,6 @@
     {
       "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\_ViewImports.cshtml",
       "TargetPath": "Views\\_ViewImports.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\ShowTime\\Edit.cshtml",
-      "TargetPath": "Views\\ShowTime\\Edit.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -16570,11 +16535,6 @@
     {
       "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Movies\\Edit.cshtml",
       "TargetPath": "Views\\Movies\\Edit.cshtml",
-      "FileKind": "mvc"
-    },
-    {
-      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\ShowTime\\Create.cshtml",
-      "TargetPath": "Views\\ShowTime\\Create.cshtml",
       "FileKind": "mvc"
     },
     {

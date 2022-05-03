@@ -41,8 +41,9 @@ namespace CineWeb.Models
         }
         public Movie(string title, TimeSpan runningTime)
         {
-            Title = Title;
+            Title = title;
             RunningTime = runningTime;
         }
+        
     }
-}
+} 

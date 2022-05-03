@@ -1,0 +1,33 @@
+@model CineWeb.Models.Ticket
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+
+    <h3>Tickets List</h3>
+    <table cellpadding="2" cellspacing="2" border="1">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Photo</th>
+            <th>Price</th>
+            
+        </tr>
+       
+            <tr>
+                <td>@ViewBag.showTickets.showTime.Theater.Name</td>
+                <td>@ViewBag.showTickets.Row</td>
+                <td>@ViewBag.showTickets.seatNumber</td>
+                <td>@ViewBag.showTickets.showTime.Movie.Title</td>
+                @* <td>@tickets.price</td> *@
+                <td align="center">
+                    <a asp-controller="cart" asp-action="buy" asp-route-id="@ViewBag.showTickets.ID">Buy Now</a>
+                </td>
+            </tr>
+        
+    </table>
+
+</body>
+</html>

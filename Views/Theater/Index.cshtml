@@ -18,9 +18,6 @@
             <th>
                 @Html.DisplayNameFor(model => model.TheaterCapacity)
             </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Row)
-            </th>
             <th></th>
         </tr>
     </thead>
@@ -34,12 +31,9 @@
                 @Html.DisplayFor(modelItem => item.TheaterCapacity)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Row)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.Id" class="btn bg-primary text-white">Edit</a> 
-                <a asp-action="Details" asp-route-id="@item.Id" class="btn bg-primary text-white">Details</a> 
-                <a asp-action="Delete" asp-route-id="@item.Id" class="btn bg-primary text-white">Delete</a>
+                <a asp-action="Edit" asp-route-id="@item.ID" class="btn bg-primary text-white">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.ID" class="btn bg-primary text-white">Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.ID" class="btn bg-primary text-white">Delete</a>
             </td>
         </tr>
 }

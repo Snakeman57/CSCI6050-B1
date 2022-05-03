@@ -11,7 +11,7 @@ build_property.RootNamespace = CineWeb
 build_property.ProjectDir = C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
-build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
 build_property.MSBuildProjectDirectory = C:\Users\lpham\OneDrive\Desktop\4050\CineWeb
 build_property._RazorSourceGeneratorDebug = 
 
@@ -123,24 +123,8 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/BookMovie/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va01vdmllXENyZWF0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/BookMovie/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va01vdmllXERlbGV0ZS5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/BookMovie/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va01vdmllXERldGFpbHMuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/BookMovie/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va01vdmllXEVkaXQuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/BookMovie/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va01vdmllXEluZGV4LmNzaHRtbA==
+[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Cart/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Home/Index.cshtml]
@@ -203,26 +187,6 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/ShowTime/Create.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvd1RpbWVcQ3JlYXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/ShowTime/Delete.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvd1RpbWVcRGVsZXRlLmNzaHRtbA==
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/ShowTime/Details.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvd1RpbWVcRGV0YWlscy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/ShowTime/Edit.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvd1RpbWVcRWRpdC5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/ShowTime/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hvd1RpbWVcSW5kZXguY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
 [C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Theater/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhlYXRlclxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -241,6 +205,10 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Theater/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhlYXRlclxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Ticket/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/_ViewImports.cshtml]

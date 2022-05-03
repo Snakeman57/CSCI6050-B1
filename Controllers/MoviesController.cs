@@ -27,8 +27,8 @@ namespace CineWeb.Controllers
         {
             // Use LINQ to get list of Category.
             IQueryable<string> categoryQuery = from m in _context.Movies
-                                            orderby m.Category
-                                            select m.Category;
+                                               orderby m.Category
+                                               select m.Category;
             var movies = from m in _context.Movies
                          select m;
 
@@ -84,9 +84,12 @@ namespace CineWeb.Controllers
         {
             if (ModelState.IsValid)
             {
-                _context.Add(movie);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                if (!MovieExists(movie.Title))
+                {
+                    _context.Add(movie);
+                    await _context.SaveChangesAsync();
+                    return RedirectToAction(nameof(Index));
+                }
             }
             return View(movie);
         }
@@ -128,7 +131,7 @@ namespace CineWeb.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!MovieExists(movie.Id))
+                    if (!MovieExists(movie.Title))
                     {
                         return NotFound();
                     }
@@ -171,9 +174,9 @@ namespace CineWeb.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MovieExists(int id)
+        private bool MovieExists(string title)
         {
-            return _context.Movies.Any(e => e.Id == id);
+            return _context.Movies.Any(e => e.Title == title);
         }
     }
 }

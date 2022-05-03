@@ -23,7 +23,8 @@ builder.Services.AddAuthorization(options =>
 });
 
 builder.Services.AddControllersWithViews();
-
+builder.Services.AddSession();
+builder.Services.AddRazorPages().AddRazorRuntimeCompilation();
 
 builder.Services.AddTransient<IEmailSender, EmailSender>();
 
@@ -62,9 +63,9 @@ app.UseHttpsRedirection();
 app.UseStaticFiles();
 
 app.UseRouting();
-
 app.UseAuthentication();
 app.UseAuthorization();
+app.UseSession();
 
 app.MapControllerRoute(
     name: "default",
