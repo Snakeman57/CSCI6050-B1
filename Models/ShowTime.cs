@@ -12,9 +12,9 @@ namespace CineWeb.Models
     {
         // composite id = TimeStart + AssocMovie + AssocTheater
         public DateTime TimeStart { get; set; } // start time
-        public Movie AssocMovie { get; set; } // associated movie (aggregation)
-        public Theater AssocTheater { get; set; } // associated theater (aggregation)
-        
+        public int AssocMovie { get; set; } // associated movie id (aggregation)
+        public int AssocTheater { get; set; } // associated theater id (aggregation)
+
         public ShowTime (DateTime timeStart, Movie movie, Theater theater)
         {
             TimeStart = timeStart;

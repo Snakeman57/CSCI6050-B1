@@ -7,7 +7,7 @@ namespace CineWeb.Models
     {
         public string ID{get;set;} // db id
         public System.DateTime DateCreated { get; set; } // creation time
-        public CineWebUser? AssocUser { get; set; } // associated user (aggregation)
+        public CineWebUser? AssocUser { get; set; } // associated user (aggregation) // SHOULD BE REPLACED W/ USERID
         public ShowTime AssocShowTime { get; set; } // associated showtime (aggregation)
         public ICollection<Ticket> Tickets { get; set; } // associated tickets (composition)
         public double calcPrice() {
