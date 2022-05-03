@@ -1,4 +1,4 @@
-using CineWeb.Areas.Identity.Services;
+/* using CineWeb.Areas.Identity.Services;
 using CineWeb.Models;
 using Microsoft.AspNetCore.Mvc;
 using System;
@@ -70,4 +70,4 @@ namespace CineWeb.Controllers
         }
 
     }
-}
+} */

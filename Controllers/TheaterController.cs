@@ -86,7 +86,7 @@ namespace CineWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("ID,Name,TheaterCapacity,Row")] Theater theater)
+        public async Task<IActionResult> Edit(uint id, [Bind("ID,Name,TheaterCapacity,Row")] Theater theater)
         {
             if (id != theater.ID)
             {
@@ -145,7 +145,7 @@ namespace CineWeb.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool TheaterExists(int id)
+        private bool TheaterExists(uint id)
         {
             return _context.Theaters.Any(e => e.ID == id);
         }

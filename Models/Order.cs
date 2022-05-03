@@ -5,18 +5,19 @@ namespace CineWeb.Models
 {
     public class Order //item
     {
+        [Key]
         public string ID{get;set;} // db id
         public System.DateTime DateCreated { get; set; } // creation time
-        public CineWebUser? AssocUser { get; set; } // associated user (aggregation) // SHOULD BE REPLACED W/ USERID
-        public ShowTime AssocShowTime { get; set; } // associated showtime (aggregation)
+        public CineWebUser? CineWebUserId { get; set; } // associated user (aggregation) // SHOULD BE REPLACED W/ USERID
+        public uint ShowTimeId { get; set; } // showtime start time
         public ICollection<Ticket> Tickets { get; set; } // associated tickets (composition)
-        public double calcPrice() {
+        /*public double calcPrice() {
             double tmp = 0;
             foreach (Ticket i in Tickets) {
-                tmp += /*get type from id*/(i.Type).Price;
+                tmp += /*get type from id*//*(i.Type).Price;
             }
             return tmp;
-        }
+        }*/
         public double percentType(string type) { // for promos by TicketType
             int ct = 0;
             foreach (Ticket i in Tickets) {
