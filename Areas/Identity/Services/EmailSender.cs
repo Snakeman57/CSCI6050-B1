@@ -1,9 +1,8 @@
 using CineWeb.Areas.Identity.Services;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.Extensions.Options;
-using SendGrid;
-using SendGrid.Helpers.Mail;
-
+using System.Net;
+using System.Net.Mail;
 namespace WebPWrecover.Services;
 
 public class EmailSender : IEmailSender
@@ -21,32 +20,18 @@ public class EmailSender : IEmailSender
 
     public async Task SendEmailAsync(string toEmail, string subject, string message)
     {
-        if (string.IsNullOrEmpty(Options.SendGridKey))
-        {
-            throw new Exception("Null SendGridKey");
+        MailAddress from = new MailAddress("msentell7@gmial.com", "B1 cinemas");
+        MailAddress to = new MailAddress(toEmail);
+        MailMessage msg = new MailMessage(from, to);
+        msg.Subject = subject;
+        msg.Body = message;
+        SmtpClient client = new SmtpClient("localhost");
+        client.Credentials = CredentialCache.DefaultNetworkCredentials;
+        try {
+            client.Send(msg);
         }
-        await Execute(Options.SendGridKey, subject, message, toEmail);
+        catch(Exception e) {
+            Console.WriteLine("Error emailing: {0}", e.ToString());
+        }
     }
-
-    public async Task Execute(string apiKey, string subject, string message, string toEmail)
-    {
-        var client = new SendGridClient("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");
-        var msg = new SendGridMessage()
-        {
-            From = new EmailAddress("lvp1275@gmail.com", "WebCinema DataBase"),
-            Subject = subject,
-            PlainTextContent = message,
-            HtmlContent = message
-        };
-        msg.AddTo(new EmailAddress(toEmail));
-
-        // Disable click tracking.
-        // See https://sendgrid.com/docs/User_Guide/Settings/tracking.html
-        msg.SetClickTracking(false, false);
-        var response = await client.SendEmailAsync(msg);
-        _logger.LogInformation(response.IsSuccessStatusCode
-                               ? $"Email to {toEmail} queued successfully!"
-                               : $"Failure Email to {toEmail}");
-    }
-
 }
