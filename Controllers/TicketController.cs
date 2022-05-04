@@ -10,27 +10,22 @@ using Microsoft.EntityFrameworkCore;
 
 namespace CineWeb.Controllers
 {
-    // [Route("product")]
     public class TicketController : Controller
     {
-        // [Route("")]
-        // [Route("index")]
-        // [Route("~/")]
         private readonly WebContext _context;
+
 
         public TicketController(WebContext context)
         {
             _context = context;
         }
+
+
+
         public IActionResult Index()
         {
             ShowTimeModel showModel = new ShowTimeModel();
             List<Ticket> availableTicket = new List<Ticket>();
-            ViewBag.showTickets = availableTicket;
-            var cart = SessionHelper.GetObjectFromJson<List<Ticket>>(HttpContext.Session, "ticket");
-            // ViewBag.cart = cart;
-            // ViewBag.total = cart.Sum(item => item.Price);
-            // ViewBag.showTickets = showModel.findAll();
             for (int i = 1; i <= 10; i++)
             {
                 string name = "Ticket" + i.ToString();
@@ -45,59 +40,58 @@ namespace CineWeb.Controllers
                     }
                     );
             }
+            ViewBag.showTickets = availableTicket;
+            var cart = SessionHelper.GetObjectFromJson<List<Ticket>>(HttpContext.Session, "ticket");
             return View();
         }
-        public async Task<IActionResult> Buy(ShowTime show, Row row, int seat, double price)
+
+
+
+        public IActionResult Cart()
+        {
+            var cart = SessionHelper.GetObjectFromJson<List<Ticket>>(HttpContext.Session, "ticket");
+            // ViewBag.showCart = cart;
+            // ViewBag.total = cart.Sum(item => item.Price.Value);
+            return View();
+        }
+
+
+
+
+        [HttpPost]
+        public IActionResult Buy(ShowTime show, Row row, int seat, double price)
         {
             ShowTimeModel showTimeModel = new ShowTimeModel();
 
             if (SessionHelper.GetObjectFromJson<List<Ticket>>(HttpContext.Session, "ticket") == null)
             {
                 List<Ticket> cart = new List<Ticket>();
-
+                ViewBag.showCart = cart;
                 cart.Add(new Ticket()
-                {
+                {   ID = 1,
                     showTime = show,
                     Row = row,
                     seatNumber = seat,
                     Price = price
                 }
                 );
-                if (ModelState.IsValid)
-                {
-                    _context.Add(cart);
-                    await _context.SaveChangesAsync();
-                    return RedirectToAction(nameof(Index));
-                }
+               
 
                 SessionHelper.SetObjectAsJson(HttpContext.Session, "ticket", cart);
             }
-            // else
-            // {
-            //     List<Item> cart = SessionHelper.GetObjectFromJson<List<Item>>(HttpContext.Session, "cart");
-            //     int index = isExist(id);
-            //     if (index != -1)
-            //     {
-            //         cart[index].Quantity++;
-            //     }
-            //     else
-            //     {
-            //         cart.Add(new Item { Product = productModel.find(id), Quantity = 1 });
-            //     }
-            //     SessionHelper.SetObjectAsJson(HttpContext.Session, "cart", cart);
-            // }
-            return RedirectToAction("ticket");
+
+            return RedirectToPage("Cart");
         }
-        public async Task<IActionResult> Cart()
-        {
-            var cart = SessionHelper.GetObjectFromJson<List<Ticket>>(HttpContext.Session, "ticket");
-            ViewBag.cart = cart;
-            ViewBag.total = cart.Sum(item => item.Price.Value);
-            return View(await _context.Ticket.ToListAsync());
-        }
+
     }
 
 }
+
+
+
+
+
+
 
 // public IActionResult Book()
 // {

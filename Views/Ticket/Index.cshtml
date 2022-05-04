@@ -1,4 +1,7 @@
 @model List<CineWeb.Models.Ticket>
+@{
+    ViewData["Title"] = "Index";
+}
 <html>
 
 <head>
@@ -17,23 +20,21 @@
             <th>Price</th>
 
         </tr>
-@foreach (var tickets in ViewBag.showTickets)
-{
-    
+        @foreach (var tickets in ViewBag.showTickets)
+        {
+            <tr>
+                <td>@tickets.ID</td>
+                <td>@tickets.showTime.Theater.Name</td>
+                <td>@tickets.Row</td>
+                <td>@tickets.seatNumber</td>
+                <td>@tickets.showTime.Movie.Title</td>
+                @* <td>@tickets.price</td> *@
+                <td align="center">
+                    <a asp-controller="Ticket" asp-action="Cart" asp-route-id="@tickets.ID">Buy Now</a>
+                </td>
 
-        <tr>
-            <td>@tickets.ID</td>
-            <td>@tickets.showTime.Theater.Name</td>
-            <td>@tickets.Row</td>
-            <td>@tickets.seatNumber</td>
-            <td>@tickets.showTime.Movie.Title</td>
-            @* <td>@tickets.price</td> *@
-            <td align="center">
-                <a asp-controller="Ticket" asp-action="buy" asp-route-id="@tickets.ID">Buy Now</a>
-            </td>
-
-        </tr>
-}
+            </tr>
+        }
 
     </table>
 
