@@ -29,8 +29,8 @@ namespace CineWeb.Controllers
         }
         // start new order
         public async Task<IActionResult> Index(string movie) {
-            var movies = from i in _context.Movies where i.NowShowing==true select i.Title;
-            var showtimes = from i in _context.ShowTimes select i;
+            var movies = from i in _context.Movies where i.NowShowing==true select i.Title; //movie to look for showing content
+            var showtimes = from i in _context.ShowTimes select i;      // showtime select from context
             if (!string.IsNullOrEmpty(movie)) {
                 var id = from i in _context.Movies where i.Title==movie select i.ID;
                 foreach (uint i in id)
