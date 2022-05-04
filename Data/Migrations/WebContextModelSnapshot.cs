@@ -119,6 +119,9 @@ namespace CineWeb.Data.Migrations
                     b.Property<int?>("MoviePromotionID")
                         .HasColumnType("INTEGER");
 
+                    b.Property<bool>("NowShowing")
+                        .HasColumnType("INTEGER");
+
                     b.Property<string>("PosterLink")
                         .IsRequired()
                         .HasColumnType("TEXT");

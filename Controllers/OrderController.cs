@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
-using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
 using CineWeb.Data;
 using CineWeb.Models;
@@ -30,7 +29,14 @@ namespace CineWeb.Controllers
         }
         // start new order
         public async Task<IActionResult> Index() {
-            return View();
+            var movies = from i in _context.Movies select i;
+            movies = movies.Where(x => x.NowShowing == true);
+            var showtimes = from i in _context.ShowTimes select i;
+            var stVM = new stView {
+                films = new SelectList(await movies.Distinct().ToListAsync()),
+                shows = await showtimes.ToListAsync()
+            };
+            return View(stVM);
         }
     }
 }

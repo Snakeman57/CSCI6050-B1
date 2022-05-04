@@ -5,7 +5,6 @@ namespace CineWeb.Models
 {
     public class Order //item
     {
-        
         public string ID { get; set; } // db id
         public System.DateTime DateCreated { get; set; } // creation time
         public CineWebUser? UserId { get; set; } // associated user (aggregation) // SHOULD BE REPLACED W/ USERID

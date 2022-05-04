@@ -7,6 +7,7 @@ namespace CineWeb.Models
     {
         [Key]
         public uint ID { get; set; }
+        public bool NowShowing { get; set; }
 
         [StringLength(60, MinimumLength = 3)]
         [Required]

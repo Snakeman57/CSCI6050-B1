@@ -300,7 +300,6 @@
 /Users/suggested/Projects/Web4050/CineWeb/bin/Debug/net6.0/app.db
 D:\WorkEtSchool\UGA\2021-22.2-spring\CSCI6050 Software Engineering\B1\site\bin\Debug\net6.0\appsettings.Development.json
 D:\WorkEtSchool\UGA\2021-22.2-spring\CSCI6050 Software Engineering\B1\site\bin\Debug\net6.0\appsettings.json
-D:\WorkEtSchool\UGA\2021-22.2-spring\CSCI6050 Software Engineering\B1\site\bin\Debug\net6.0\app.db
 D:\WorkEtSchool\UGA\2021-22.2-spring\CSCI6050 Software Engineering\B1\site\bin\Debug\net6.0\CineWeb.staticwebassets.runtime.json
 D:\WorkEtSchool\UGA\2021-22.2-spring\CSCI6050 Software Engineering\B1\site\bin\Debug\net6.0\CineWeb.exe
 D:\WorkEtSchool\UGA\2021-22.2-spring\CSCI6050 Software Engineering\B1\site\bin\Debug\net6.0\CineWeb.deps.json
@@ -598,3 +597,4 @@ D:\WorkEtSchool\UGA\2021-22.2-spring\CSCI6050 Software Engineering\B1\site\obj\D
 D:\WorkEtSchool\UGA\2021-22.2-spring\CSCI6050 Software Engineering\B1\site\obj\Debug\net6.0\CineWeb.pdb
 D:\WorkEtSchool\UGA\2021-22.2-spring\CSCI6050 Software Engineering\B1\site\obj\Debug\net6.0\CineWeb.genruntimeconfig.cache
 D:\WorkEtSchool\UGA\2021-22.2-spring\CSCI6050 Software Engineering\B1\site\obj\Debug\net6.0\ref\CineWeb.dll
+D:\WorkEtSchool\UGA\2021-22.2-spring\CSCI6050 Software Engineering\B1\site\bin\Debug\net6.0\app.db
