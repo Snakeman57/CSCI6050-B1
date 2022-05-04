@@ -11,6 +11,7 @@ using System.Text.Encodings.Web;
 using System.Threading;
 using System.Threading.Tasks;
 using CineWeb.Data;
+using CineWeb.Models;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
@@ -71,7 +72,6 @@ namespace CineWeb.Areas.Identity.Pages.Account
         /// </summary>
         public class InputModel
         {
-
             [Required]
             [DataType(DataType.Text)]
             [Display(Name = "First name")]
@@ -87,36 +87,36 @@ namespace CineWeb.Areas.Identity.Pages.Account
             public DateTime DOB { get; set; }
 
             [Required]
-            [DataType(DataType.Text)]
-            [Display(Name = "Favorite Theater")]
-            public string FavTheater { get; set; }
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
+            [DataType(DataType.PhoneNumber)]
+            [Display(Name = "Phone Number")]
+            [RegularExpression(@"\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})",
+                   ErrorMessage = "Invalid Phone Number")]
+            public string PhoneNumber { get; set; }
+            
             [Required]
             [EmailAddress]
             [Display(Name = "Email")]
             public string Email { get; set; }
-
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
+            
             [Required]
             [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
             [DataType(DataType.Password)]
             [Display(Name = "Password")]
             public string Password { get; set; }
-
-            /// <summary>
-            ///     This API supports the ASP.NET Core Identity default UI infrastructure and is not intended to be used
-            ///     directly from your code. This API may change or be removed in future releases.
-            /// </summary>
+            
             [DataType(DataType.Password)]
             [Display(Name = "Confirm password")]
             [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
             public string ConfirmPassword { get; set; }
+            
+            [Display(Name = "Payment Card 1 (Optional)")]
+            public PayCard PaymentCard1 { get; set; }
+            
+            [Display(Name = "Payment Card 2 (Optional)")]
+            public PayCard PaymentCard2 { get; set; }
+            
+            [Display(Name = "Payment Card 3 (Optional)")]
+            public PayCard PaymentCard3 { get; set; }
         }
 
 
@@ -135,8 +135,8 @@ namespace CineWeb.Areas.Identity.Pages.Account
                 var user = CreateUser();
                 user.FirstName= Input.FirstName;
                 user.LastName=Input.LastName;
-                user.FavTheater=Input.FavTheater;
-                user.DOB=Input.DOB;
+                user.PhoneNumber=Input.PhoneNumber;
+                //user.DOB=Input.DOB;
 
                 await _userStore.SetUserNameAsync(user, Input.Email, CancellationToken.None);
                 await _emailStore.SetEmailAsync(user, Input.Email, CancellationToken.None);

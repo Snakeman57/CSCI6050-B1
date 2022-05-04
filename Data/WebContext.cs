@@ -13,6 +13,7 @@ public class WebContext : IdentityDbContext<CineWebUser>
     }
     public DbSet<Role> Roles { get; set; }
     public DbSet<CineWebUser> User { get; set; }
+    public DbSet<PayCard> PaymentCards { get; set; }
     public DbSet<MoviePromotion> Promotions { get; set; }
     public DbSet<Order> Orders { get; set; }
     public DbSet<ShowTime> ShowTimes { get; set; }

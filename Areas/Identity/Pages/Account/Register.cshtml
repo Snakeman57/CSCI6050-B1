@@ -60,41 +60,98 @@
         <br>
         <br>
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
-            <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
-              <label><b>Required:</b></label>
-            </div>
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3 mx-auto">
-                <label class="form-label" asp-for="Input.FirstName"></label>
+                <b><label class="form-label" asp-for="Input.FirstName"></label></b>
                 <input asp-for="Input.FirstName" class="form-control" placeholder="First Name" />
                 <span asp-validation-for="Input.FirstName" class="text-danger"></span>
             </div>
               <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3 mx-auto">
-                <label class="form-label" asp-for="Input.LastName"></label>
+                <b><label class="form-label" asp-for="Input.LastName"></label></b>
                 <input asp-for="Input.LastName" class="form-control" placeholder="Last Name" />
                 <span asp-validation-for="Input.LastName" class="text-danger"></span>
             </div>
             <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3 mx-auto">
-                <label class="form-label" asp-for="Input.FavTheater"></label>
-                <input asp-for="Input.FavTheater" class="form-control" />
-                <span asp-validation-for="Input.FavTheater" class="text-danger"></span>
+                <b><label class="form-label" asp-for="Input.PhoneNumber"></label></b>
+                <input asp-for="Input.PhoneNumber" class="form-control" placeholder="Phone Number" />
+                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
             </div>
             <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
-                <label class="form-label" asp-for="Input.Email"></label>
+                <b><label class="form-label" asp-for="Input.Email"></label></b>
                 <input placeholder="Email" asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
             <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
-                <label class="form-label" asp-for="Input.Password"></label>
+                <b><label class="form-label" asp-for="Input.Password"></label></b>
                 <input  placeholder="Password" asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
             <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
-                <label asp-for="Input.ConfirmPassword"></label>
+                <b><label asp-for="Input.ConfirmPassword"></label></b>
                 <input placeholder="Confirm Password" asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
-              <button id="registerSubmit" type="submit" class="col-12 btn btn-primary mt-3">Register</button>
+            <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
+                <b><label asp-for="Input.PaymentCard1" class="form-label"></label></b>
+                <label asp-for="Input.PaymentCard1.CardType" class="form-label"></label>
+                <input asp-for="Input.PaymentCard1.CardType" class="form-control" placeholder="Card Type" />
+                <label asp-for="Input.PaymentCard1.CardNumber" class="form-label"></label>
+                <input asp-for="Input.PaymentCard1.CardNumber" class="form-control" placeholder="Card Number" />
+                <label asp-for="Input.PaymentCard1.ExpirationDate" class="form-label"></label>
+                <input asp-for="Input.PaymentCard1.ExpirationDate" class="form-control" placeholder="Expiration Date" />
+                <label asp-for="Input.PaymentCard1.AddrStreet1" class="form-label"></label>
+                <input asp-for="Input.PaymentCard1.AddrStreet1" class="form-control" placeholder="Street 1" />
+                <label asp-for="Input.PaymentCard1.AddrStreet2" class="form-label"></label>
+                <input asp-for="Input.PaymentCard1.AddrStreet2" class="form-control" placeholder="Street 2" />
+                <label asp-for="Input.PaymentCard1.AddrCity" class="form-label"></label>
+                <input asp-for="Input.PaymentCard1.AddrCity" class="form-control" placeholder="City" />
+                <label asp-for="Input.PaymentCard1.AddrState" class="form-label"></label>
+                <input asp-for="Input.PaymentCard1.AddrState" class="form-control" placeholder="State" />
+                <label asp-for="Input.PaymentCard1.AddrZip" class="form-label"></label>
+                <input asp-for="Input.PaymentCard1.AddrZip" class="form-control" placeholder="Zip" />
+                <span asp-validation-for="Input.PaymentCard1" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
+                <b><label asp-for="Input.PaymentCard2" class="form-label"></label></b>
+                <label asp-for="Input.PaymentCard2.CardType" class="form-label"></label>
+                <input asp-for="Input.PaymentCard2.CardType" class="form-control" placeholder="Card Type" />
+                <label asp-for="Input.PaymentCard2.CardNumber" class="form-label"></label>
+                <input asp-for="Input.PaymentCard2.CardNumber" class="form-control" placeholder="Card Number" />
+                <label asp-for="Input.PaymentCard2.ExpirationDate" class="form-label"></label>
+                <input asp-for="Input.PaymentCard2.ExpirationDate" class="form-control" placeholder="Expiration Date" />
+                <label asp-for="Input.PaymentCard2.AddrStreet1" class="form-label"></label>
+                <input asp-for="Input.PaymentCard2.AddrStreet1" class="form-control" placeholder="Street 1" />
+                <label asp-for="Input.PaymentCard2.AddrStreet2" class="form-label"></label>
+                <input asp-for="Input.PaymentCard2.AddrStreet2" class="form-control" placeholder="Street 2" />
+                <label asp-for="Input.PaymentCard2.AddrCity" class="form-label"></label>
+                <input asp-for="Input.PaymentCard2.AddrCity" class="form-control" placeholder="City" />
+                <label asp-for="Input.PaymentCard2.AddrState" class="form-label"></label>
+                <input asp-for="Input.PaymentCard2.AddrState" class="form-control" placeholder="State" />
+                <label asp-for="Input.PaymentCard2.AddrZip" class="form-label"></label>
+                <input asp-for="Input.PaymentCard2.AddrZip" class="form-control" placeholder="Zip" />
+                <span asp-validation-for="Input.PaymentCard2" class="text-danger"></span>
+            </div>
+            <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
+                <b><label asp-for="Input.PaymentCard3" class="form-label"></label></b>
+                <label asp-for="Input.PaymentCard3.CardType" class="form-label"></label>
+                <input asp-for="Input.PaymentCard3.CardType" class="form-control" placeholder="Card Type" />
+                <label asp-for="Input.PaymentCard3.CardNumber" class="form-label"></label>
+                <input asp-for="Input.PaymentCard3.CardNumber" class="form-control" placeholder="Card Number" />
+                <label asp-for="Input.PaymentCard3.ExpirationDate" class="form-label"></label>
+                <input asp-for="Input.PaymentCard3.ExpirationDate" class="form-control" placeholder="Expiration Date" />
+                <label asp-for="Input.PaymentCard3.AddrStreet1" class="form-label"></label>
+                <input asp-for="Input.PaymentCard3.AddrStreet1" class="form-control" placeholder="Street 1" />
+                <label asp-for="Input.PaymentCard3.AddrStreet2" class="form-label"></label>
+                <input asp-for="Input.PaymentCard3.AddrStreet2" class="form-control" placeholder="Street 2" />
+                <label asp-for="Input.PaymentCard3.AddrCity" class="form-label"></label>
+                <input asp-for="Input.PaymentCard3.AddrCity" class="form-control" placeholder="City" />
+                <label asp-for="Input.PaymentCard3.AddrState" class="form-label"></label>
+                <input asp-for="Input.PaymentCard3.AddrState" class="form-control" placeholder="State" />
+                <label asp-for="Input.PaymentCard3.AddrZip" class="form-label"></label>
+                <input asp-for="Input.PaymentCard3.AddrZip" class="form-control" placeholder="Zip" />
+                <span asp-validation-for="Input.PaymentCard3" class="text-danger"></span>
+            </div>
+            <button id="registerSubmit" type="submit" class="col-12 btn btn-primary mt-3">Register</button>
               
             
         </form>
