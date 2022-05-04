@@ -1,21 +1,22 @@
-﻿@model CineWeb.Models.Theater
+﻿@model CineWeb.Models.ShowTime
 
 @{
     ViewData["Title"] = "Seat Selection";
 }
 
 <body>
+    <h2>@Model.MovieId.Title</h2>
     <form>
         <table>
-            @*@foreach (var i in Model.NumRows) {
-                <tr>
-                    @foreach (var j in Model.NumCols) {
-                        <td>
-                            do something
-                        </td>
+            @for(byte i = Model.TheaterId.NumRows; i > 0; i--){
+                @:<tr>
+                    @for(byte j = 1; j <= Model.TheaterId.NumCols; j++){
+                        @:<td>
+                            @:<button class="btn btn-primary" disabled="false">@Convert.ToChar(i + 64)@String.Format("{0:00}", j)</button>
+                        @:</td>
                     }
-                </tr>
-            }*@
+                @:</tr>
+            }
         </table>
     </form>
 </body>

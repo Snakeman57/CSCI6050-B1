@@ -1,4 +1,4 @@
-﻿@model CineWeb.Models.stView
+﻿@model CineWeb.Models.ShowSelector
 
 @{
     ViewData["Title"] = "Showtime Selection";
@@ -17,7 +17,7 @@
                     @Html.DropDownList("movie", Model.films, "Select a Film", new { @class = "form-control", onchange = @"form.submit()" })
                     <br/>
                     <label class="form-label" style="display:block; text-align:center; font-weight:bold;">Showtime Selection</label>
-                    @Html.DropDownList("Show", Model.shows, "Select a Showtime", new { @class = "form-control" })
+                    @Html.DropDownList("show", Model.shows, "Select a Showtime", new { @class = "form-control", onchange = @"form.submit()" })
                 </div>
                 <br/>
                 <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
@@ -29,14 +29,14 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (var i in Model.tickets)
+                            @foreach (TicketType i in Model.ttypes)
                             {
                                 <tr>
                                     <td>
                                         @Html.DisplayFor(m => i.Name)
                                     </td>
                                     <td>
-                                        @Html.TextBoxFor(m => i.Name, new { @type = "number", @min = "0", @max = "16", @placeholder = "0", @class="form-control" })
+                                        @Html.TextBox(i.Name, i.Name, new { @type = "number", @min = "0", @max = "16", @placeholder = "0", @class="form-control" })
                                     </td>
                                 </tr>
                             }
@@ -46,7 +46,7 @@
                 <br/>
             </form>
             <div>
-                <a asp-action="SelSeat"><button class="btn bg-primary text-white col-3 mx-auto" style="horizantal-align:center; justify-content: center; display: flex">Select Seats</button></a> 
+                <a asp-controller="Order" asp-action="SelSeat" asp-route-show="@Model.show"><button class="btn bg-primary text-white col-3 mx-auto" style="horizantal-align:center; justify-content: center; display: flex" disabled="@Model.!canGo">Select Seats</button></a> 
             </div>
         </div>
     </div>

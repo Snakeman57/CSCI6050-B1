@@ -28,29 +28,49 @@ namespace CineWeb.Controllers
             return View(await orders.ToListAsync());
         }
         // start new order
-        public async Task<IActionResult> Index(string movie) {
+        public async Task<IActionResult> Index(string movie, string show) {
+            string showtime = null;
             var movies = from i in _context.Movies where i.NowShowing==true select i.Title; // collect currently available movies
             var showtimes = from i in _context.ShowTimes where i.TimeStart>DateTime.Now select i; // collect upcoming showtimes
             if (!string.IsNullOrEmpty(movie)) { // if movie is selected, filter show times
-                var id = from i in _context.Movies where i.Title==movie select i.ID;
-                foreach (uint i in id)
-                    showtimes = showtimes.Where(x => x.MovieId.ID == i);
+                var id = from i in _context.Movies where i.Title==movie select i;
+                foreach (Movie i in id)
+                    showtimes = showtimes.Where(x => x.MovieId == i);
             }
-            else { // if movie is not selected, showtimes unavailable
+            else // if movie is not selected, showtimes unavailable
                 showtimes = showtimes.Where(x => false);
+            if (!string.IsNullOrEmpty(show)) {
+                var id = showtimes.Where(x => x.TimeStart==Convert.ToDateTime(show));
+                foreach (ShowTime i in id)
+                    showtime = i.ID.ToString();
             }
-            var sttmp = await showtimes.ToListAsync(); // begin conversion of showtimes to datetimes
-            var sttimes = from i in _context.ShowTimes where sttmp.Contains(i) select i.TimeStart; // end conversion of showtimes to datetimes
+            var stlist = await showtimes.ToListAsync(); // begin conversion of showtimes to datetimes
+            var sttimes = from i in _context.ShowTimes where stlist.Contains(i) select i.TimeStart; // end conversion of showtimes to datetimes
             var ttypes = from i in _context.TicketTypes select i; // collect ticket types
-            var stVM = new stView {
+            var selector = new ShowSelector {
                 films = new SelectList(await movies.ToListAsync()),
                 shows = new SelectList(await sttimes.ToListAsync()),
-                tickets = await ttypes.ToListAsync()
+                ttypes = await ttypes.ToListAsync(),
+                show = showtime,
+                canGo = !string.IsNullOrEmpty(showtime),
             };
-            return View(stVM);
+            return View(selector);
         }
-        public async Task<IActionResult> SelSeat(){
-            return View();
+        [Route("Order/{show}")]
+        public async Task<IActionResult> SelSeat(string show){
+            if (!string.IsNullOrEmpty(show)) {
+                var showtimes = from i in _context.ShowTimes where i.ID==uint.Parse(show) select i;
+                System.Diagnostics.Debug.WriteLine(showtimes.Count());
+                foreach (ShowTime i in showtimes)
+                    return View(i);
+            }
+            return NotFound();
+        }
+        public bool seatTaken(byte row, byte col, uint id){ 
+            byte[] seat = new byte[] {row, col};
+            var seats = from i in _context.Tickets where i.ShowTimeId==id where i.SeatNumber==seat select i;
+            foreach (var i in seats) return true;
+            return false;
         }
     }
 }
