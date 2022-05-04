@@ -2,7 +2,7 @@ namespace CineWeb.Models
 {
     public class SeatSelector
     {
-        public ShowTime show;
-        public Theater theater;
+        public ShowTime Show;
+        public ICollection<byte[]> SeatsTaken;
     }
 }

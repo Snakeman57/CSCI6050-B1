@@ -1,18 +1,18 @@
-﻿@model CineWeb.Models.ShowTime
+﻿@model CineWeb.Models.SeatSelector
 
 @{
     ViewData["Title"] = "Seat Selection";
 }
 
 <body>
-    <h2>@Model.MovieId.Title</h2>
+    <h2>@Model.Show.MovieId.Title</h2>
     <form>
         <table>
-            @for(byte i = Model.TheaterId.NumRows; i > 0; i--){
+            @for(byte i = Model.Show.TheaterId.NumRows; i > 0; i--){
                 @:<tr>
-                    @for(byte j = 1; j <= Model.TheaterId.NumCols; j++){
+                    @for(byte j = 1; j <= Model.Show.TheaterId.NumCols; j++){
                         @:<td>
-                            @:<button class="btn btn-primary" disabled="false">@Convert.ToChar(i + 64)@String.Format("{0:00}", j)</button>
+                            @:<button class="btn btn-primary" disabled="@Model.SeatsTaken.Contains(new byte[] {i, j})">@Convert.ToChar(i + 64)@String.Format("{0:00}", j)</button>
                         @:</td>
                     }
                 @:</tr>
