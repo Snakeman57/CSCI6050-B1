@@ -16,6 +16,7 @@ namespace CineWeb.Models
         public TimeSpan Runtime { get; set; }
 
         [Required]
+        [Display(Name = "Rating")]
         public string RatingMPAA { get; set; }
 
         [Required]

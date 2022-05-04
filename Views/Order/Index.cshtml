@@ -5,33 +5,50 @@
 }
 
 <body>
-    <form>
-        <label>Movie Selection</label>
-        @Html.DropDownList("movie", Model.films, "Select Movie", new { @class = "form-control", onchange = @"form.submit()" })
-        <label>Showtime Selection</label>
-        @Html.DropDownList("Show", Model.shows, "Select Showtime", new { @class = "form-control" })
-        <table class="table">
-            <thead>
-                <tr>
-                    <th>Ticket</th>
-                    <th>Quantity</th>
-                </tr>
-            </thead>
-            <tbody>
-                @foreach (var i in Model.tickets)
-                {
-                    <tr>
-                        <td>
-                            @Html.DisplayFor(m => i.Name)
-                        </td>
-                        <td>
-                            @Html.TextBoxFor(m => i.Name, new { @type = "number", @min = "0", @class="form-control" })
-                        </td>
-                    </tr>
-                }
-            </tbody>
-        </table>
-    </form>
-    <a asp-action="SelSeat"><button class="btn bg-primary text-white">Select Seats</button></a> 
+    <div class="container border p-3 mt-4 form-horizontal">
+        <div class="row">
+            <h2 class="text-center">Order Tickets Now!</h2>
+            <h5 class="text-muted text-center">Please select a film and showtime below.</h5>
+            <br>
+            <br>
+            <form>
+                <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
+                    <label class="form-label" style="display:block; text-align:center; font-weight:bold;">Film Selection</label>
+                    @Html.DropDownList("movie", Model.films, "Select a Film", new { @class = "form-control", onchange = @"form.submit()" })
+                    <br/>
+                    <label class="form-label" style="display:block; text-align:center; font-weight:bold;">Showtime Selection</label>
+                    @Html.DropDownList("Show", Model.shows, "Select a Showtime", new { @class = "form-control" })
+                </div>
+                <br/>
+                <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th>Ticket</th>
+                                <th>Quantity</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var i in Model.tickets)
+                            {
+                                <tr>
+                                    <td>
+                                        @Html.DisplayFor(m => i.Name)
+                                    </td>
+                                    <td>
+                                        @Html.TextBoxFor(m => i.Name, new { @type = "number", @min = "0", @max = "16", @placeholder = "0", @class="form-control" })
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <br/>
+            </form>
+            <div>
+                <a asp-action="SelSeat"><button class="btn bg-primary text-white col-3 mx-auto" style="horizantal-align:center; justify-content: center; display: flex">Select Seats</button></a> 
+            </div>
+        </div>
+    </div>
 </body>
 
