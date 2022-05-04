@@ -28,7 +28,7 @@ namespace CineWeb.Models
                         {
                            ID = (uint)i,
                            ShowTimeId = show.ID,
-                           SeatNumber = new byte[i],
+                           SeatNumber = new byte[2],
                            Type = tickets[i].Type
                         }
                     );

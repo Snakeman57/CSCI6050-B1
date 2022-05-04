@@ -19,6 +19,7 @@ public class WebContext : IdentityDbContext<CineWebUser>
     public DbSet<Movie> Movies { get; set; }
     public DbSet<Theater> Theaters { get; set; }
     public DbSet<Ticket> Tickets { get; set; }
+    public DbSet<TicketType> TicketTypes { get; set; }
     protected override void OnModelCreating(ModelBuilder builder)
     {
         base.OnModelCreating(builder);
