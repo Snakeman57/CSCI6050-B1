@@ -7,7 +7,7 @@
 <body>
     <form>
         @Html.DropDownList("movie", Model.films, "Select Movie", new { @class = "form-control", onchange = @"form.submit()" })
-        @Html.DropDownList("Show", new SelectList(Model.shows), "Select Showtime", new { @class = "form-control" })
+        @Html.DropDownList("Show", Model.shows, "Select Showtime", new { @class = "form-control" })
         <table class="table">
             <thead>
                 <tr>
