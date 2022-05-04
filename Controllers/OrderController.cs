@@ -49,5 +49,8 @@ namespace CineWeb.Controllers
             };
             return View(stVM);
         }
+        public async Task<IActionResult> SelSeat(){
+            return View();
+        }
     }
 }
