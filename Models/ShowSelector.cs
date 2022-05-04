@@ -6,6 +6,7 @@ namespace CineWeb.Models {
         public SelectList? shows { get; set; }
         public List<TicketType>? ttypes { get; set; }
         public string show { get; set; }
+        public uint tleft { get; set; } // tickets left available fo the selected show
         public bool canGo { get; set; }
     }
 }

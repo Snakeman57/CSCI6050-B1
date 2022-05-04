@@ -10,8 +10,14 @@ namespace CineWeb.Models {
     public class ShowTime {
         [Key]
         public uint ID { get; set; } // db id
+
+        [DataType(DataType.DateTime)]
         public DateTime TimeStart { get; set; } // start time
+
+        [Required]
         public Movie MovieId { get; set; } // associated movie id (aggregation)
+        
+        [Required]
         public Theater TheaterId { get; set; } // associated theater id (aggregation)
         public ICollection<Ticket> Tickets { get; set; }
 

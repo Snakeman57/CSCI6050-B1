@@ -28,10 +28,11 @@ namespace CineWeb.Controllers
             return View(await orders.ToListAsync());
         }
         // start new order
-        public async Task<IActionResult> Index(string movie, string show) {
+        public async Task<IActionResult> Index(string movie, string show, params uint[] tickets) {
             string showtime = null;
+            uint tleft = 0;
             var movies = from i in _context.Movies where i.NowShowing==true select i.Title; // collect currently available movies
-            var showtimes = from i in _context.ShowTimes where i.TimeStart>DateTime.Now select i; // collect upcoming showtimes
+            var showtimes = from i in _context.ShowTimes where i.TimeStart > DateTime.Now select i; // collect upcoming showtimes
             if (!string.IsNullOrEmpty(movie)) { // if movie is selected, filter show times
                 var id = from i in _context.Movies where i.Title==movie select i;
                 foreach (Movie i in id)
@@ -41,8 +42,9 @@ namespace CineWeb.Controllers
                 showtimes = showtimes.Where(x => false);
             if (!string.IsNullOrEmpty(show)) {
                 var id = showtimes.Where(x => x.TimeStart==Convert.ToDateTime(show));
-                foreach (ShowTime i in id)
+                foreach (ShowTime i in id) {
                     showtime = i.ID.ToString();
+                }
             }
             var stlist = await showtimes.ToListAsync(); // begin conversion of showtimes to datetimes
             var sttimes = from i in _context.ShowTimes where stlist.Contains(i) select i.TimeStart; // end conversion of showtimes to datetimes
@@ -51,13 +53,22 @@ namespace CineWeb.Controllers
                 films = new SelectList(await movies.ToListAsync()),
                 shows = new SelectList(await sttimes.ToListAsync()),
                 ttypes = await ttypes.ToListAsync(),
+                tleft = tleft,
                 show = showtime,
                 canGo = !string.IsNullOrEmpty(showtime),
             };
             return View(selector);
         }
+        private bool isFull(ShowTime s) {
+            return seatsRemaining(s) == 0;
+        }
+        private uint seatsRemaining(ShowTime s) {
+            var seats = from i in _context.Tickets where i.ShowTimeId==s.ID select i;
+            return Convert.ToUInt32(s.TheaterId.NumRows) * Convert.ToUInt32(s.TheaterId.NumCols) - Convert.ToUInt32(seats.Count());
+        }
+
         [Route("Order/{show}")]
-        public async Task<IActionResult> SelSeat(string show){
+        public async Task<IActionResult> SelSeat(string show) {
             if (!string.IsNullOrEmpty(show)) {
                 var showtimes = from i in _context.ShowTimes where i.ID==uint.Parse(show) select i;
                 foreach (ShowTime i in showtimes) {

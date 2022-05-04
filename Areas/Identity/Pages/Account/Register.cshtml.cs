@@ -87,10 +87,8 @@ namespace CineWeb.Areas.Identity.Pages.Account
             public DateTime DOB { get; set; }
 
             [Required]
-            [DataType(DataType.PhoneNumber)]
+            [Phone]
             [Display(Name = "Phone Number")]
-            [RegularExpression(@"\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})",
-                   ErrorMessage = "Invalid Phone Number")]
             public string PhoneNumber { get; set; }
             
             [Required]
