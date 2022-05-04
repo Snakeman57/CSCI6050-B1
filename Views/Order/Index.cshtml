@@ -1,7 +1,7 @@
 ﻿@model CineWeb.Models.stView
 
 @{
-    ViewData["Title"] = "Index";
+    ViewData["Title"] = "Showtime Selection";
 }
 
 <body>
@@ -15,7 +15,7 @@
                     <th>Quantity</th>
                 </tr>
             </thead>
-            @*<tbody>
+            <tbody>
                 @foreach (var i in Model.tickets)
                 {
                     <tr>
@@ -23,12 +23,13 @@
                             @Html.DisplayFor(m => i.Name)
                         </td>
                         <td>
-                            @Html.TextBoxFor(m => i.Name, new { @class="form-control" })
+                            @Html.TextBoxFor(m => i.Name, new { @type = "number", @min = "0", @class="form-control" })
                         </td>
                     </tr>
                 }
-            </tbody>*@
+            </tbody>
         </table>
     </form>
+    <a asp-action="SelSeat"><button class="btn bg-primary text-white">Select Seats</button></a> 
 </body>
 

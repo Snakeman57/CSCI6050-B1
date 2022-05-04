@@ -29,23 +29,34 @@ namespace CineWeb.Controllers
         }
         // start new order
         public async Task<IActionResult> Index(string movie) {
+<<<<<<< HEAD
             var movies = from i in _context.Movies where i.NowShowing==true select i.Title; //movie to look for showing content
             var showtimes = from i in _context.ShowTimes select i;      // showtime select from context
             if (!string.IsNullOrEmpty(movie)) {
+=======
+            var movies = from i in _context.Movies where i.NowShowing==true select i.Title; // collect currently available movies
+            var showtimes = from i in _context.ShowTimes where i.TimeStart>DateTime.Now select i; // collect upcoming showtimes
+            if (!string.IsNullOrEmpty(movie)) { // if movie is selected, filter show times
+>>>>>>> 550fae87c8e6c1f7cae6b7b317e68e88dd8b7d62
                 var id = from i in _context.Movies where i.Title==movie select i.ID;
                 foreach (uint i in id)
                     showtimes = showtimes.Where(x => x.MovieId.ID == i);
             }
-            else {
+            else { // if movie is not selected, showtimes unavailable
                 showtimes = showtimes.Where(x => false);
             }
-            //var ttypes = from i in _context.TicketType select i;
+            var sttmp = await showtimes.ToListAsync(); // begin conversion of showtimes to datetimes
+            var sttimes = from i in _context.ShowTimes where sttmp.Contains(i) select i.TimeStart; // end conversion of showtimes to datetimes
+            var ttypes = from i in _context.TicketTypes select i; // collect ticket types
             var stVM = new stView {
                 films = new SelectList(await movies.ToListAsync()),
-                shows = await showtimes.ToListAsync(),
-                //tickets = await ttypes.ToListAsync()
+                shows = new SelectList(await sttimes.ToListAsync()),
+                tickets = await ttypes.ToListAsync()
             };
             return View(stVM);
+        }
+        public async Task<IActionResult> SelSeat(){
+            return View();
         }
     }
 }

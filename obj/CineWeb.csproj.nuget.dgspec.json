@@ -1,27 +1,25 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\CineWeb.csproj": {}
+    "D:\\WorkEtSchool\\UGA\\2021-22.2-spring\\CSCI6050 Software Engineering\\B1\\site\\CineWeb.csproj": {}
   },
   "projects": {
-    "C:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\CineWeb.csproj": {
+    "D:\\WorkEtSchool\\UGA\\2021-22.2-spring\\CSCI6050 Software Engineering\\B1\\site\\CineWeb.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\CineWeb.csproj",
+        "projectUniqueName": "D:\\WorkEtSchool\\UGA\\2021-22.2-spring\\CSCI6050 Software Engineering\\B1\\site\\CineWeb.csproj",
         "projectName": "CineWeb",
-        "projectPath": "C:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\CineWeb.csproj",
-        "packagesPath": "C:\\Users\\lpham\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\obj\\",
+        "projectPath": "D:\\WorkEtSchool\\UGA\\2021-22.2-spring\\CSCI6050 Software Engineering\\B1\\site\\CineWeb.csproj",
+        "packagesPath": "C:\\Users\\msent\\.nuget\\packages\\",
+        "outputPath": "D:\\WorkEtSchool\\UGA\\2021-22.2-spring\\CSCI6050 Software Engineering\\B1\\site\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\lpham\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\msent\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net6.0"
         ],
         "sources": {
-          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -105,7 +103,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.201\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.202\\RuntimeIdentifierGraph.json"
         }
       }
     }
