@@ -59,16 +59,16 @@ namespace CineWeb.Controllers
         [Route("Order/{show}")]
         public async Task<IActionResult> SelSeat(string show){
             if (!string.IsNullOrEmpty(show)) {
-                ShowTime showtime = null;
                 var showtimes = from i in _context.ShowTimes where i.ID==uint.Parse(show) select i;
-                foreach (ShowTime i in showtimes)
-                    showtime = i;
-                var seats = from i in _context.Tickets where i.ShowTimeId==showtime.ID select i.SeatNumber;
-                var selector = new SeatSelector {
-                    Show = showtime,
-                    SeatsTaken = await seats.ToListAsync()
-                };
-                return View(selector);
+                foreach (ShowTime i in showtimes) {
+                    var showtime = i;
+                    var seats = from j in _context.Tickets where j.ShowTimeId==showtime.ID select j.SeatNumber;
+                    var selector = new SeatSelector {
+                        Show = showtime,
+                        SeatsTaken = await seats.ToListAsync()
+                    };
+                    return View(selector);
+                }
             }
             return NotFound();
         }
