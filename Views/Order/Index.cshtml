@@ -6,7 +6,9 @@
 
 <body>
     <form>
+        <label>Movie Selection</label>
         @Html.DropDownList("movie", Model.films, "Select Movie", new { @class = "form-control", onchange = @"form.submit()" })
+        <label>Showtime Selection</label>
         @Html.DropDownList("Show", Model.shows, "Select Showtime", new { @class = "form-control" })
         <table class="table">
             <thead>

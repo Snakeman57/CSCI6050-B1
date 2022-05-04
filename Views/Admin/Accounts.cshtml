@@ -1,0 +1,67 @@
+@model IEnumerable<CineWeb.Data.CineWebUser>
+
+@{
+    ViewData["Title"] = "Account Management";
+}
+
+<h1>Account List</h1>
+
+<p>
+    <a asp-action="Create"><button class="btn bg-success text-white">Create New</button></a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.FirstName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.LastName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DOB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FavTheater)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.PhoneNumber)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FavTheater)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            
+            <td>
+                @Html.DisplayFor(modelItem => item.PhoneNumber)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.Id" class="btn bg-primary text-white">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.Id" class="btn bg-primary text-white">Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.Id" class="btn bg-primary text-white">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
