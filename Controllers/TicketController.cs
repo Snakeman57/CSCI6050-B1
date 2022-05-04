@@ -19,5 +19,6 @@ namespace CineWeb.Controllers
             //ViewBag.tickets = ticketModel.findAll();
             return View(await _context.Tickets.ToListAsync());
         }
+        
     }
 }

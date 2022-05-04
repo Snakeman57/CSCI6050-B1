@@ -13,6 +13,7 @@ namespace CineWeb.Models {
         public DateTime TimeStart { get; set; } // start time
         public Movie MovieId { get; set; } // associated movie id (aggregation)
         public Theater TheaterId { get; set; } // associated theater id (aggregation)
+        public ICollection<Ticket> Tickets { get; set; }
 
         public ShowTime (DateTime timeStart, Movie movie, Theater theater) {
             TimeStart = timeStart;
