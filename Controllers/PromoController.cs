@@ -26,7 +26,7 @@ namespace CineWeb.Controllers
         }
 
         // GET: Promo/Details/5
-        public async Task<IActionResult> Details(string id)
+        public async Task<IActionResult> Details(int id)
         {
             if (id == null)
             {
@@ -66,7 +66,7 @@ namespace CineWeb.Controllers
         }
 
         // GET: Promo/Edit/5
-        public async Task<IActionResult> Edit(string id)
+        public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
             {
@@ -86,7 +86,7 @@ namespace CineWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(string id, [Bind("Id,Promotion,PromoCode,PromoDeal")] MoviePromotion moviePromotion)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Promotion,PromoCode,PromoDeal")] MoviePromotion moviePromotion)
         {
             if (id != moviePromotion.Id)
             {
@@ -117,7 +117,7 @@ namespace CineWeb.Controllers
         }
 
         // GET: Promo/Delete/5
-        public async Task<IActionResult> Delete(string id)
+        public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
             {
@@ -137,7 +137,7 @@ namespace CineWeb.Controllers
         // POST: Promo/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> DeleteConfirmed(string id)
+        public async Task<IActionResult> DeleteConfirmed(int id)
         {
             var moviePromotion = await _context.MoviePromotion.FindAsync(id);
             _context.MoviePromotion.Remove(moviePromotion);
@@ -145,7 +145,7 @@ namespace CineWeb.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool MoviePromotionExists(string id)
+        private bool MoviePromotionExists(int id)
         {
             return _context.MoviePromotion.Any(e => e.Id == id);
         }

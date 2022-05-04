@@ -3,6 +3,7 @@ using System;
 using CineWeb.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -10,9 +11,10 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CineWeb.Data.Migrations
 {
     [DbContext(typeof(WebContext))]
-    partial class WebContextModelSnapshot : ModelSnapshot
+    [Migration("20220504051750_UpdateCart2")]
+    partial class UpdateCart2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder.HasAnnotation("ProductVersion", "6.0.4");
@@ -120,8 +122,8 @@ namespace CineWeb.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("MoviePromotionId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("MoviePromotionId")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Producer")
                         .IsRequired()
@@ -154,9 +156,8 @@ namespace CineWeb.Data.Migrations
 
             modelBuilder.Entity("CineWeb.Models.MoviePromotion", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("Id")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("PromoCode")
                         .HasColumnType("TEXT");
@@ -194,8 +195,8 @@ namespace CineWeb.Data.Migrations
                     b.Property<int?>("MovieId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("TheaterId")
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("TheaterID")
+                        .HasColumnType("TEXT");
 
                     b.Property<DateTime?>("TimeEnd")
                         .HasColumnType("TEXT");
@@ -207,16 +208,15 @@ namespace CineWeb.Data.Migrations
 
                     b.HasIndex("MovieId");
 
-                    b.HasIndex("TheaterId");
+                    b.HasIndex("TheaterID");
 
                     b.ToTable("ShowTime");
                 });
 
             modelBuilder.Entity("CineWeb.Models.Theater", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("INTEGER");
+                    b.Property<string>("ID")
+                        .HasColumnType("TEXT");
 
                     b.Property<string>("Name")
                         .HasColumnType("TEXT");
@@ -224,14 +224,14 @@ namespace CineWeb.Data.Migrations
                     b.Property<int>("TheaterCapacity")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
                     b.ToTable("Theater");
                 });
 
             modelBuilder.Entity("CineWeb.Models.Ticket", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -250,7 +250,7 @@ namespace CineWeb.Data.Migrations
                     b.Property<int?>("showTimeID")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("Id");
+                    b.HasKey("ID");
 
                     b.HasIndex("UserId");
 
@@ -409,7 +409,7 @@ namespace CineWeb.Data.Migrations
 
                     b.HasOne("CineWeb.Models.Theater", "Theater")
                         .WithMany()
-                        .HasForeignKey("TheaterId");
+                        .HasForeignKey("TheaterID");
 
                     b.Navigation("Movie");
 

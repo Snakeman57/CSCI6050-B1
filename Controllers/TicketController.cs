@@ -32,7 +32,7 @@ namespace CineWeb.Controllers
                 availableTicket.Add(
                     new Ticket()
                     {
-                        ID = i,
+                        Id = i,
                         showTime = showModel.find(1),
                         Row = Row.A,
                         seatNumber = i,
@@ -68,7 +68,7 @@ namespace CineWeb.Controllers
                 List<Ticket> cart = new List<Ticket>();
                 ViewBag.showCart = cart;
                 cart.Add(new Ticket()
-                {   ID = 1,
+                {   Id = 1,
                     showTime = show,
                     Row = row,
                     seatNumber = seat,

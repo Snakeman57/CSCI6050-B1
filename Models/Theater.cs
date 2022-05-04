@@ -2,7 +2,7 @@ namespace CineWeb.Models
 {
     public class Theater
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public int TheaterCapacity { get; set; }
         public Theater(int theaterCapacity, string name)

@@ -9,7 +9,7 @@ namespace CineWeb.Models
         }
     public class Ticket
     {
-        public int ID { get; set; }
+        public int Id { get; set; }
         public CineWebUser? User { get; set; }
         public ShowTime showTime { get; set; }
         [Range(1, 12)]

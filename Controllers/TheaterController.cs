@@ -34,7 +34,7 @@ namespace CineWeb.Controllers
             }
 
             var theater = await _context.Theater
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (theater == null)
             {
                 return NotFound();
@@ -54,7 +54,7 @@ namespace CineWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,TheaterCapacity,Row")] Theater theater)
+        public async Task<IActionResult> Create([Bind("Id,Name,TheaterCapacity")] Theater theater)
         {
             if (ModelState.IsValid)
             {
@@ -89,9 +89,9 @@ namespace CineWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,TheaterCapacity,Row")] Theater theater)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,TheaterCapacity")] Theater theater)
         {
-            if (id != theater.ID)
+            if (id != theater.Id)
             {
                 return NotFound();
             }
@@ -128,7 +128,7 @@ namespace CineWeb.Controllers
             }
 
             var theater = await _context.Theater
-                .FirstOrDefaultAsync(m => m.ID == id);
+                .FirstOrDefaultAsync(m => m.Id == id);
             if (theater == null)
             {
                 return NotFound();
