@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace CineWeb.Data.Migrations
 {
     [DbContext(typeof(WebContext))]
-    [Migration("20220504052452_UpdateCart3")]
-    partial class UpdateCart3
+    [Migration("20220504055439_Update1")]
+    partial class Update1
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -122,7 +122,7 @@ namespace CineWeb.Data.Migrations
                         .IsRequired()
                         .HasColumnType("TEXT");
 
-                    b.Property<int?>("MoviePromotionID")
+                    b.Property<int?>("MoviePromotionId")
                         .HasColumnType("INTEGER");
 
                     b.Property<string>("Producer")
@@ -149,14 +149,14 @@ namespace CineWeb.Data.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("MoviePromotionID");
+                    b.HasIndex("MoviePromotionId");
 
                     b.ToTable("Movies");
                 });
 
             modelBuilder.Entity("CineWeb.Models.MoviePromotion", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -169,7 +169,7 @@ namespace CineWeb.Data.Migrations
                     b.Property<string>("Promotion")
                         .HasColumnType("TEXT");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("MoviePromotion");
                 });
@@ -196,7 +196,7 @@ namespace CineWeb.Data.Migrations
                     b.Property<int?>("MovieId")
                         .HasColumnType("INTEGER");
 
-                    b.Property<int?>("TheaterID")
+                    b.Property<int?>("TheaterId")
                         .HasColumnType("INTEGER");
 
                     b.Property<DateTime?>("TimeEnd")
@@ -209,14 +209,14 @@ namespace CineWeb.Data.Migrations
 
                     b.HasIndex("MovieId");
 
-                    b.HasIndex("TheaterID");
+                    b.HasIndex("TheaterId");
 
                     b.ToTable("ShowTime");
                 });
 
             modelBuilder.Entity("CineWeb.Models.Theater", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -226,14 +226,14 @@ namespace CineWeb.Data.Migrations
                     b.Property<int>("TheaterCapacity")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.ToTable("Theater");
                 });
 
             modelBuilder.Entity("CineWeb.Models.Ticket", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -252,7 +252,7 @@ namespace CineWeb.Data.Migrations
                     b.Property<int?>("showTimeID")
                         .HasColumnType("INTEGER");
 
-                    b.HasKey("ID");
+                    b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
@@ -400,7 +400,7 @@ namespace CineWeb.Data.Migrations
                 {
                     b.HasOne("CineWeb.Models.MoviePromotion", null)
                         .WithMany("Movies")
-                        .HasForeignKey("MoviePromotionID");
+                        .HasForeignKey("MoviePromotionId");
                 });
 
             modelBuilder.Entity("CineWeb.Models.ShowTime", b =>
@@ -411,7 +411,7 @@ namespace CineWeb.Data.Migrations
 
                     b.HasOne("CineWeb.Models.Theater", "Theater")
                         .WithMany()
-                        .HasForeignKey("TheaterID");
+                        .HasForeignKey("TheaterId");
 
                     b.Navigation("Movie");
 

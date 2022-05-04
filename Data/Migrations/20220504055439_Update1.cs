@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CineWeb.Data.Migrations
 {
-    public partial class UpdateCart : Migration
+    public partial class Update1 : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -44,7 +44,8 @@ namespace CineWeb.Data.Migrations
                 name: "MoviePromotion",
                 columns: table => new
                 {
-                    Id = table.Column<string>(type: "TEXT", nullable: false),
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
+                        .Annotation("Sqlite:Autoincrement", true),
                     Promotion = table.Column<string>(type: "TEXT", nullable: true),
                     PromoCode = table.Column<string>(type: "TEXT", nullable: true),
                     PromoDeal = table.Column<string>(type: "TEXT", nullable: true)
@@ -70,14 +71,14 @@ namespace CineWeb.Data.Migrations
                 name: "Theater",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Name = table.Column<string>(type: "TEXT", nullable: true),
                     TheaterCapacity = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Theater", x => x.ID);
+                    table.PrimaryKey("PK_Theater", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -96,7 +97,7 @@ namespace CineWeb.Data.Migrations
                     Review = table.Column<string>(type: "TEXT", nullable: true),
                     Rating = table.Column<int>(type: "INTEGER", nullable: false),
                     RunningTime = table.Column<TimeSpan>(type: "TEXT", nullable: false),
-                    MoviePromotionId = table.Column<string>(type: "TEXT", nullable: true)
+                    MoviePromotionId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -117,7 +118,7 @@ namespace CineWeb.Data.Migrations
                     TimeStart = table.Column<DateTime>(type: "TEXT", nullable: true),
                     TimeEnd = table.Column<DateTime>(type: "TEXT", nullable: true),
                     MovieId = table.Column<int>(type: "INTEGER", nullable: true),
-                    TheaterID = table.Column<int>(type: "INTEGER", nullable: true)
+                    TheaterId = table.Column<int>(type: "INTEGER", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -128,17 +129,17 @@ namespace CineWeb.Data.Migrations
                         principalTable: "Movies",
                         principalColumn: "Id");
                     table.ForeignKey(
-                        name: "FK_ShowTime_Theater_TheaterID",
-                        column: x => x.TheaterID,
+                        name: "FK_ShowTime_Theater_TheaterId",
+                        column: x => x.TheaterId,
                         principalTable: "Theater",
-                        principalColumn: "ID");
+                        principalColumn: "Id");
                 });
 
             migrationBuilder.CreateTable(
                 name: "Ticket",
                 columns: table => new
                 {
-                    ID = table.Column<int>(type: "INTEGER", nullable: false)
+                    Id = table.Column<int>(type: "INTEGER", nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     UserId = table.Column<string>(type: "TEXT", nullable: true),
                     showTimeID = table.Column<int>(type: "INTEGER", nullable: true),
@@ -148,7 +149,7 @@ namespace CineWeb.Data.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Ticket", x => x.ID);
+                    table.PrimaryKey("PK_Ticket", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Ticket_AspNetUsers_UserId",
                         column: x => x.UserId,
@@ -177,9 +178,9 @@ namespace CineWeb.Data.Migrations
                 column: "MovieId");
 
             migrationBuilder.CreateIndex(
-                name: "IX_ShowTime_TheaterID",
+                name: "IX_ShowTime_TheaterId",
                 table: "ShowTime",
-                column: "TheaterID");
+                column: "TheaterId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Ticket_showTimeID",
