@@ -1,9 +1,9 @@
 ﻿@model CineWeb.Models.stView
 
 @{
-    ViewData["Title"] = "Showtime Selection";
+    ViewData["Title"] = "Index";
 }
 
 <body>
-    @Html.DropDownListFor(model => model, new SelectList(Model.films, "Value", "Text"))
+    @Html.DropDownList("Film", Model.films, "Select Movie", new { @class = "form-control" })
 </body>
