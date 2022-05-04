@@ -15,7 +15,7 @@ namespace CineWeb.Models
         [Range(1, 12)]
         public int seatNumber { get; set; }
         public Row Row { get; set; } //Number of rows. So seat 1-10 = row 1, seats 11-20 = row 2
-        public double price { get; set; }
+        public double? Price { get; set; }
 
         public Ticket()
         {
@@ -25,11 +25,12 @@ namespace CineWeb.Models
         // {
         //     seatNumber = seat;
         // }
-        public Ticket(ShowTime show,Row row, int seat)
+        public Ticket(ShowTime show,Row row, int seat, double price)
         {
             showTime = show;
             Row = row;
             seatNumber = seat;
+            Price = price;
         }
         // }
     }
