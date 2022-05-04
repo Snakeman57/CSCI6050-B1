@@ -28,9 +28,17 @@ namespace CineWeb.Controllers
             return View(await orders.ToListAsync());
         }
         // start new order
-        public async Task<IActionResult> Index() {
+        public async Task<IActionResult> Index(string movie) {
             var movies = from i in _context.Movies where i.NowShowing==true select i.Title;
             var showtimes = from i in _context.ShowTimes select i;
+            if (!string.IsNullOrEmpty(movie)) {
+                var id = from i in _context.Movies where i.Title==movie select i.ID;
+                foreach (uint i in id)
+                    showtimes = showtimes.Where(x => x.MovieId.ID == i);
+            }
+            else {
+                showtimes = showtimes.Where(x => false);
+            }
             //var ttypes = from i in _context.TicketType select i;
             var stVM = new stView {
                 films = new SelectList(await movies.ToListAsync()),

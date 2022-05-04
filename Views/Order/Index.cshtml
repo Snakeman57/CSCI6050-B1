@@ -5,28 +5,30 @@
 }
 
 <body>
-    @Html.DropDownList("Film", Model.films, "Select Movie", new { @class = "form-control" })
-    @Html.DropDownList("Show", new SelectList(Model.shows), "Select Showtime", new { @class = "form-control" })
-    <table class="table">
-        <thead>
-            <tr>
-                <th>Ticket</th>
-                <th>Quantity</th>
-            </tr>
-        </thead>
-        @*<tbody>
-            @foreach (var i in Model.tickets)
-            {
+    <form>
+        @Html.DropDownList("movie", Model.films, "Select Movie", new { @class = "form-control", onchange = @"form.submit()" })
+        @Html.DropDownList("Show", new SelectList(Model.shows), "Select Showtime", new { @class = "form-control" })
+        <table class="table">
+            <thead>
                 <tr>
-                    <td>
-                        @Html.DisplayFor(m => i.Name)
-                    </td>
-                    <td>
-                        @Html.TextBoxFor(m => i.Name, new { @class="form-control" })
-                    </td>
+                    <th>Ticket</th>
+                    <th>Quantity</th>
                 </tr>
-            }
-        </tbody>*@
-    </table>
+            </thead>
+            @*<tbody>
+                @foreach (var i in Model.tickets)
+                {
+                    <tr>
+                        <td>
+                            @Html.DisplayFor(m => i.Name)
+                        </td>
+                        <td>
+                            @Html.TextBoxFor(m => i.Name, new { @class="form-control" })
+                        </td>
+                    </tr>
+                }
+            </tbody>*@
+        </table>
+    </form>
 </body>
 
