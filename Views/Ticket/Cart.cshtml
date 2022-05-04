@@ -1,9 +1,14 @@
-@model CineWeb.Models.Ticket
+@model List<CineWeb.Models.Ticket>
+@{
+    ViewData["Title"] = "Cart";
+}
 <html>
+
 <head>
     <meta name="viewport" content="width=device-width" />
-    <title>Index</title>
+    <title>Cart</title>
 </head>
+
 <body>
 
     <h3>Cart Page</h3>
@@ -14,15 +19,16 @@
             <th>Name</th>
             <th>Sub Total</th>
         </tr>
-        @foreach (var order in ViewBag.cart)
-        {
+     
             <tr>
-                <td><a asp-controller="Ticket" asp-action="remove" asp-route-id="@order">Remove</a></td>
-                <td>@order.ID</td>
-                <td>@order.seatNumber</td>
-                <td>@order.Price</td>
+                <td><a asp-controller="Ticket" asp-action="remove" asp-route-id="@ViewBag.showCart">Remove</a></td>
+                <td>@ViewBag.showCart.ID</td>
+                 @* <td>@order.showTime.Theater.Name</td>  *@
+                <td>@ViewBag.showCart.Row</td>
+                <td>@ViewBag.showCart.seatNumber</td>
+                <td>@ViewBag.showCart.showTime.Movie.Title</td>
             </tr>
-        }
+      
         <tr>
             <td align="right" colspan="6">Sum</td>
             <td>
@@ -34,4 +40,5 @@
     <a asp-controller="Ticket" asp-action="index">Continue Shopping</a>
 
 </body>
+
 </html>
