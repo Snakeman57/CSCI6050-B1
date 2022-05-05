@@ -12,32 +12,42 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.PromoDescript)
+                @Html.DisplayNameFor(model => model.Code)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PromoCode)
+                @Html.DisplayNameFor(model => model.Type)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.PromoDeal)
+                @Html.DisplayNameFor(model => model.Deal)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th colspan="3"></th>
         </tr>
     </thead>
     <tbody>
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.PromoDescript)
+                @Html.DisplayNameFor(model => model.Code)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PromoCode)
+                @Html.DisplayNameFor(model => model.Type)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.PromoDeal)
+                @Html.DisplayNameFor(model => model.Deal)
+            </td>
+            <td>
+                @Html.DisplayNameFor(model => model.Description)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID" class="btn bg-primary text-white">Edit</a> 
+            </td>
+            <td>
                 <a asp-action="Details" asp-route-id="@item.ID" class="btn bg-primary text-white">Details</a> 
+            </td>
+            <td>
                 <a asp-action="Delete" asp-route-id="@item.ID" class="btn bg-primary text-white">Delete</a>
             </td>
         </tr>

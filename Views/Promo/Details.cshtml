@@ -4,28 +4,28 @@
     ViewData["Title"] = "Details";
 }
 
-<h1> @Html.DisplayFor(model => model.PromoCode) Details</h1>
+<h1> @Html.DisplayFor(model => model.Code) Details</h1>
 
 <div>
     <hr />
     <dl class="row">
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PromoDescript)
+            @Html.DisplayNameFor(model => model.Description)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PromoDescript)
+            @Html.DisplayFor(model => model.Description)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PromoCode)
+            @Html.DisplayNameFor(model => model.Code)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PromoCode)
+            @Html.DisplayFor(model => model.Code)
         </dd>
         <dt class = "col-sm-2">
-            @Html.DisplayNameFor(model => model.PromoDeal)
+            @Html.DisplayNameFor(model => model.Deal)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.PromoDeal)
+            @Html.DisplayFor(model => model.Deal)
         </dd>
     </dl>
 </div>

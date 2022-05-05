@@ -14,15 +14,14 @@ namespace CineWeb.Models
         [Display(Name = "Start Time")]
         public ShowTime ShowTimeId { get; set; } // showtime start time
         public ICollection<Ticket> Tickets { get; set; } // associated tickets (composition)
-        /*public double calcPrice() {
+        public double calcPrice() {
             double tmp = 0;
             foreach (Ticket i in Tickets) {
-                tmp += /*get type from id*//*(i.Type).Price;
+                tmp += i.Type.Price;
             }
             return tmp;
-        }*/
-        public double percentType(string type)
-        { // for promos by TicketType
+        }
+        public double percentType(string type) { // for promos by TicketType
             int ct = 0;
             foreach (Ticket i in Tickets)
             {
@@ -32,6 +31,14 @@ namespace CineWeb.Models
                 }
             }
             return (double)ct / (double)Tickets.Count;
+        }
+        public bool hasAttr(string attr, string val) { // for promos by Attribute
+            switch (attr) {
+                case "Category": return ShowTimeId.MovieId.Category == val;
+                case "Director": return ShowTimeId.MovieId.Director == val;
+                case "Rating": return ShowTimeId.MovieId.RatingMPAA == val;
+            }
+            return false;
         }
     }
 }
