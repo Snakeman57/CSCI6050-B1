@@ -43,7 +43,7 @@ namespace CineWeb.Controllers
             // collect ticket types
             var ttypes = await (from i in _context.TicketTypes select i).ToListAsync();
             // store selected showtime
-            string showtime = string.IsNullOrEmpty(show) ? null : (showtimes.Where(x => x.TimeStart==Convert.ToDateTime(show))).FirstOrDefault().ID.ToString();
+            string showtime = string.IsNullOrEmpty(show) ? null : (showtimes.Where(x => x.TimeStart==Convert.ToDateTime(show))).FirstOrDefault()?.ID.ToString();
             // store selected tickets
             var ticketstr = "";
             if (tickets.Length > 0){

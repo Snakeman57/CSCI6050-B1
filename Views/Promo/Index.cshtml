@@ -15,13 +15,10 @@
                 @Html.DisplayNameFor(model => model.Code)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Type)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Deal)
-            </th>
-            <th>
                 @Html.DisplayNameFor(model => model.Description)
+            </th>
+            <th>
+                Valid Thru
             </th>
             <th colspan="3"></th>
         </tr>
@@ -30,19 +27,16 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayNameFor(model => model.Code)
+                @Html.DisplayFor(model => item.Code)
             </td>
             <td>
-                @Html.DisplayNameFor(model => model.Type)
+                @Html.DisplayFor(model => item.Description)
             </td>
             <td>
-                @Html.DisplayNameFor(model => model.Deal)
+                @Html.DisplayFor(model => item.Start) - @Html.DisplayFor(model => item.End)
             </td>
             <td>
-                @Html.DisplayNameFor(model => model.Description)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID" class="btn bg-primary text-white">Edit</a> 
+                <a asp-action="Edit" asp-route-id="@item.ID" style="pointer-events:none;"><button class="btn bg-primary text-white" disabled="true">Edit</button></a> 
             </td>
             <td>
                 <a asp-action="Details" asp-route-id="@item.ID" class="btn bg-primary text-white">Details</a> 

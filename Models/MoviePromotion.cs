@@ -10,6 +10,6 @@ namespace CineWeb.Models {
         public double Deal { get; set; } // percent/amt off
         public DateTime Start { get; set; } // promo valid from 
         public DateTime End { get; set; } // promo valid until
-
+        public MoviePromotion() {}
     }
 }

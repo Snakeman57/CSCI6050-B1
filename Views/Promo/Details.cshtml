@@ -25,11 +25,29 @@
             @Html.DisplayNameFor(model => model.Deal)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Deal)
+            @(Model.Type == "flat" ? String.Format("{0:C}", Model.Deal) : String.Format("{0:P0}.", Model.Deal))
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Type)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Type)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Artifacts)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Artifacts)
+        </dd>
+        <dt class = "col-sm-2">
+            Valid Thru
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Start) - @Html.DisplayFor(model => model.End)
         </dd>
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.ID"><button class="btn bg-primary text-white">Edit</button></a>
+    <a asp-action="Edit" asp-route-id="@Model?.ID" style="pointer-events:none;"><button class="btn bg-primary text-white" disabled="true">Edit</button></a> 
     <a asp-action="Index"><button class="btn bg-primary text-white">Back to List</button></a>
 </div>

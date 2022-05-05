@@ -55,7 +55,7 @@ namespace CineWeb.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("ID,PromoDescript,PromoCode,PromoDeal")] MoviePromotion moviePromotion)
+        public async Task<IActionResult> Create([Bind("ID,Description,Code,Type,Artifacts,Deal,Start,End")] MoviePromotion moviePromotion)
         {
             if (ModelState.IsValid)
             {

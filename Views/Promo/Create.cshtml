@@ -1,45 +1,72 @@
 @model CineWeb.Models.MoviePromotion
 
 @{
-    ViewData["Title"] = "Create";
+    ViewData["Title"] = "New Promo Code";
 }
 
-<h1>Add Movie Promotion Deal</h1>
-
-<div class="row">
-    <div class="col-md-4">
-        <form asp-action="Create">
-            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            @* <div class="form-group">
-                <label asp-for="ID" class="control-label"></label>
-                <input asp-for="ID" class="form-control" />
-                <span asp-validation-for="ID" class="text-danger"></span>
-            </div> *@
-            <div class="form-group">
-                <label asp-for="Description" class="control-label"></label>
-                <input asp-for="Description" class="form-control" />
-                <span asp-validation-for="Description" class="text-danger"></span>
+<body>
+    <div class="container border p-3 mt-4 form-horizontal">
+        <div class="row">
+            <h2 class="text-center">Add a New Promotional Code!</h2>
+            <h5 class="text-muted text-center">Please fill out the form below.</h5>
+            <br>
+            <br>
+            <form asp-action="Create">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                @* <div class="form-group">
+                    <label asp-for="ID" class="control-label"></label>
+                    <input asp-for="ID" class="form-control" />
+                    <span asp-validation-for="ID" class="text-danger"></span>
+                </div> *@
+                <div class="form-group">
+                    <label asp-for="Description" class="control-label"></label>
+                    <input asp-for="Description" class="form-control" />
+                    <span asp-validation-for="Description" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Code" class="control-label"></label>
+                    <input asp-for="Code" class="form-control" />
+                    <span asp-validation-for="Code" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label for="Type">Promotion Type</label>
+                    <select name="Type" id="Type" class="form-control">
+                        <option>Select a Promotion Type</option>
+                        <option value="flat">Flat Amount</option>
+                        <option value="total">By Total</option>
+                        <option value="ticket">By Ticket</option>
+                        <option value="attribute">By Attribute</option>
+                    </select>
+                    <span asp-validation-for="Type" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Deal" class="control-label"></label>
+                    <input asp-for="Deal" class="form-control" />
+                    <span asp-validation-for="Deal" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Start" class="control-label"></label>
+                    <input asp-for="Start" class="form-control" />
+                    <span asp-validation-for="Start" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="End" class="control-label"></label>
+                    <input asp-for="End" class="form-control" />
+                    <span asp-validation-for="End" class="text-danger"></span>
+                </div>
+                <br/>
+                <div>
+                    <input type="submit" value="Create" class="btn btn-primary col-3 mx-auto text-white" style="horizantal-align:center; justify-content: center; display: flex" />
+                </div>
+                <br/>
+            </form>
+            <div>
+                <a asp-action="Index" class="btn btn-primary col-3 mx-auto text-white" style="horizantal-align:center; justify-content: center; display: flex">Back to List</a>
             </div>
-            <div class="form-group">
-                <label asp-for="Code" class="control-label"></label>
-                <input asp-for="Code" class="form-control" />
-                <span asp-validation-for="Code" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Deal" class="control-label"></label>
-                <input asp-for="Deal" class="form-control" />
-                <span asp-validation-for="Deal" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <input type="submit" value="Create" class="btn bg-primary text-white" />
-            </div>
-        </form>
+        </div>
     </div>
-</div>
+</body>
 
-<div>
-    <a asp-action="Index" class="btn bg-primary text-white">Back to List</a>
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
