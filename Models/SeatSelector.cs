@@ -12,5 +12,13 @@ namespace CineWeb.Models
 
         [Display(Name = "Seats Taken")]
         public ICollection<byte[]> SeatsTaken;
+        public uint[] Tickets; // tickets avaiable
+        public uint Total() {
+            uint tmp = 0;
+            foreach (uint i in Tickets) {
+                tmp += i;
+            }
+            return tmp;
+        }
     }
 }

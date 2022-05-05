@@ -29,16 +29,15 @@
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach (TicketType i in Model.ttypes)
-                            {
-                                <tr>
-                                    <td>
-                                        @Html.DisplayFor(m => i.Name)
-                                    </td>
-                                    <td>
-                                        @Html.TextBox(i.Name, i.Name, new { @type = "number", @min = "0", @max = "16", @placeholder = "0", @class="form-control" })
-                                    </td>
-                                </tr>
+                            @for(int i = 0; i < Model.ttypes.Count; i++) {
+                                @:<tr>
+                                    @:<td>
+                                        @Html.DisplayFor(m => Model.ttypes[i].Name)
+                                    @:</td>
+                                    @:<td>
+                                        @Html.TextBox("tickets[" + i + "]", Model.ttypes[i].Name, new { @type = "number", @min = "0", @max = "16", @class="form-control", onchange = @"form.submit()" })
+                                    @:</td>
+                                @:</tr>
                             }
                         </tbody>
                     </table>
@@ -46,7 +45,7 @@
                 <br/>
             </form>
             <div>
-                <a asp-controller="Order" asp-action="SelSeat" asp-route-show="@Model.show"><button class="btn bg-primary text-white col-3 mx-auto" style="horizantal-align:center; justify-content: center; display: flex" disabled="@Model.!canGo">Select Seats</button></a> 
+                <a asp-action="SelSeat" asp-route-show="@Model.show" asp-route-tickets="@Model.tickets"><button class="btn bg-primary text-white col-3 mx-auto" style="horizantal-align:center; justify-content: center; display: flex" disabled="@Model.!canGo">Select Seats</button></a>
             </div>
         </div>
     </div>
