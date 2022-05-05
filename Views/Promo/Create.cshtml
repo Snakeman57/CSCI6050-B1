@@ -3,7 +3,23 @@
 @{
     ViewData["Title"] = "New Promo Code";
 }
+<head>
+    <script>
+        function addArtifacts() {
+            let artifacts = document.getElementById("artif");
+            switch (document.getElementById("Type").value) {
+                case "ticket":
+                case "attribute":
+                    artifacts.innerHTML = "<label asp-for=\"Artifacts\" class=\"control-label\">Additional Info</label><input asp-for=\"Artifacts\" class=\"form-control\" /><span asp-validation-for=\"Artifacts\" class=\"text-danger\"></span>";
+                    break;
+                default:
+                    artifacts.innerHTML = "";
+                    break;
+            }
 
+        }
+    </script>
+</head>
 <body>
     <div class="container border p-3 mt-4 form-horizontal">
         <div class="row">
@@ -30,15 +46,15 @@
                 </div>
                 <div class="form-group">
                     <label for="Type">Promotion Type</label>
-                    <select name="Type" id="Type" class="form-control">
-                        <option>Select a Promotion Type</option>
-                        <option value="flat">Flat Amount</option>
+                    <select name="Type" id="Type" class="form-control" onchange="addArtifacts()">
                         <option value="total">By Total</option>
+                        <option value="flat">Flat Amount</option>
                         <option value="ticket">By Ticket</option>
                         <option value="attribute">By Attribute</option>
                     </select>
                     <span asp-validation-for="Type" class="text-danger"></span>
                 </div>
+                <div class="form-group" id="artif"></div>
                 <div class="form-group">
                     <label asp-for="Deal" class="control-label"></label>
                     <input asp-for="Deal" class="form-control" />
