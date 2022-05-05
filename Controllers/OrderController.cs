@@ -71,14 +71,22 @@ namespace CineWeb.Controllers
         public async Task<IActionResult> SelSeat(string show) {
             if (!string.IsNullOrEmpty(show)) {
                 var showtimes = from i in _context.ShowTimes where i.ID==uint.Parse(show) select i;
-                foreach (ShowTime i in showtimes) {
-                    var showtime = i;
-                    var seats = from j in _context.Tickets where j.ShowTimeId==showtime.ID select j.SeatNumber;
-                    var selector = new SeatSelector {
-                        Show = showtime,
-                        SeatsTaken = await seats.ToListAsync()
-                    };
-                    return View(selector);
+                var movies = from i in _context.ShowTimes where i.ID==uint.Parse(show) select i.MovieId;
+                var theaters = from i in _context.ShowTimes where i.ID==uint.Parse(show) select i.TheaterId;
+                var seats = from i in _context.Tickets where i.ShowTimeId==uint.Parse(show) select i.SeatNumber;
+                foreach (Movie i in movies) {
+                    var movie = i;
+                    foreach (Theater j in theaters) {
+                        var theater = j;
+                        foreach (ShowTime k in showtimes) {
+                            var showtime = new ShowTime(k, movie, theater);
+                            var selector = new SeatSelector {
+                                Show = showtime,
+                                SeatsTaken = await seats.ToListAsync()
+                            };
+                            return View(selector);
+                        }
+                    }
                 }
             }
             return NotFound();

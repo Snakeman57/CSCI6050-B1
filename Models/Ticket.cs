@@ -16,7 +16,7 @@ namespace CineWeb.Models
             modelBuilder.Entity<Ticket>()
                 .HasKey(t => new { t.ShowTimeId, t.SeatNumber });
         }*/
-        public static ICollection<Ticket> GenerateTickets(ShowTime show, int capacity)
+        /*public static ICollection<Ticket> GenerateTickets(ShowTime show, int capacity)
         {
             List<Ticket> tickets = new List<Ticket>();
             for (int i = 1; i <= capacity; i++)
@@ -36,7 +36,7 @@ namespace CineWeb.Models
             }
 
             return tickets;
-        }
+        }*/
 
     }
 }

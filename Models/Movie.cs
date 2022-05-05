@@ -43,5 +43,18 @@ namespace CineWeb.Models
             Title = title;
             Runtime = runtime;
         }
+        public Movie(Movie origin) {
+            ID = origin.ID;
+            NowShowing = origin.NowShowing;
+            Title = origin.Title;
+            Runtime = origin.Runtime;
+            RatingMPAA = origin.RatingMPAA;
+            PosterLink = origin.PosterLink;
+            TrailerLink = origin.TrailerLink;
+            Category = origin.Category;
+            Description = origin.Description;
+            Director = origin.Director;
+            Synopsis = origin.Synopsis;
+        }
     }
 }

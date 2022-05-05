@@ -13,17 +13,18 @@ namespace CineWeb.Models
         [Range(1, 255)]
         public byte NumRows { get; set; } // number of rows parallel to the screen
 
-
+        public Theater() { }
         public Theater(string name, byte rows, byte cols)
         {
             Name = name;
             NumRows = rows;
             NumCols = cols;
         }
-
-        public Theater()
-        {
-
+        public Theater(Theater origin) {
+            ID = origin.ID;
+            Name = origin.Name;
+            NumRows = origin.NumRows;
+            NumCols = origin.NumCols;
         }
     }
 }
