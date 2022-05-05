@@ -8,16 +8,18 @@ namespace CineWeb.Models
     public class SeatSelector
     {
         [Required]
-        public ShowTime Show;
+        public ShowTime Show; // related showtime
 
         [Display(Name = "Seats Taken")]
-        public ICollection<byte[]> SeatsTaken;
+        public ICollection<byte[]> SeatsTaken; // unavailable seats
+        public ICollection<byte[]> Seats; // seats of the current order
         public uint[] Tickets; // tickets avaiable
-        public uint Total() {
+        public uint Available() {
             uint tmp = 0;
             foreach (uint i in Tickets) {
                 tmp += i;
             }
+            tmp -= (uint)Seats.Count;
             return tmp;
         }
     }

@@ -53,8 +53,11 @@ namespace CineWeb.Controllers
             }
             else {
                 ticketstr = "0";
+                tickets = new uint[ttypes.Count];
+                for(int i = 0; i < tickets.Length; i++)
+                    tickets[i] = 0;
             }
-            // make readable foe page
+            // make readable for page
             var selector = new ShowSelector {
                 films = new SelectList(await movies.ToListAsync()),
                 shows = new SelectList(await sttimes.ToListAsync()),
@@ -67,22 +70,27 @@ namespace CineWeb.Controllers
             return View(selector);
         }
         /// SEAT SELECTION
-        public async Task<IActionResult> SelSeat([FromQuery (Name = "show")] string show, [FromQuery (Name = "tickets")] string ticketstr) {
+        public async Task<IActionResult> SelSeat([FromQuery (Name = "show")] string show, [FromQuery (Name = "tickets")] string ticketstr, params byte[][] seats) {
             if (!string.IsNullOrEmpty(show)) {
+                // define showtime info
                 var movie = (from i in _context.ShowTimes where i.ID==uint.Parse(show) select i.MovieId).FirstOrDefault();
                 var theater = (from i in _context.ShowTimes where i.ID==uint.Parse(show) select i.TheaterId).FirstOrDefault();
                 var showtime = new ShowTime((from i in _context.ShowTimes where i.ID==uint.Parse(show) select i).FirstOrDefault(),
                     movie, 
                     theater);
-                var seats = (from i in _context.Tickets where i.ShowTimeId==uint.Parse(show) select i.SeatNumber);
+                // find existing tickets and invalidate those seats
+                var badseats = await (from i in _context.Tickets where i.ShowTimeId==uint.Parse(show) select i.SeatNumber).ToListAsync();
+                // retain ticket info for cuurent order-in-progress
                 var ticketstrs = ticketstr.Split(',').ToList();
                 var tickets = new List<uint>();
                 foreach (string i in ticketstrs) {
                     tickets.Add(Convert.ToUInt32(i));
                 }
+                // make readable for page
                 var selector = new SeatSelector {
                     Show = showtime,
-                    SeatsTaken = await seats.ToListAsync(),
+                    SeatsTaken = badseats,
+                    Seats = seats,
                     Tickets = tickets.ToArray(),
                 };
                 return View(selector);

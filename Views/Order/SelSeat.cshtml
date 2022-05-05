@@ -5,22 +5,32 @@
 }
 
 <body>
-    <h2 class="text-center">Select Your Seats for @Model.Show.MovieId.Title</h2>
-    <form>
-        <table style="margin-left: auto; margin-right: auto;">
-            <tbody>
-                @for(byte i = Model.Show.TheaterId.NumRows; i > 0; i--){
-                    @:<tr>
-                        @for(byte j = 1; j <= Model.Show.TheaterId.NumCols; j++){
-                            @:<td>
-                                @:<button class="btn btn-primary" style="width:100%; height:100%;" disabled="@Model.SeatsTaken.Contains(new byte[] {i, j})">@Convert.ToChar(i + 64)@String.Format("{0:00}", j)</button>
-                            @:</td>
+    <div class="container border p-3 mt-4 form-horizontal" style="width:auto;">
+        <div class="row">
+            <h2 class="text-center">Selecting Seats for @Model.Show.MovieId.Title!</h2>
+            <h5 class="text-muted text-center">Please select your seats from the grid below. (@Model.Available() remaining)</h5>
+            <br/>
+            <br/>
+            <form>
+                <table style="margin-left: auto; margin-right: auto;">
+                    <tbody>
+                        @for(byte i = Model.Show.TheaterId.NumRows; i > 0; i--){
+                            @:<tr>
+                                @for(byte j = 1; j <= Model.Show.TheaterId.NumCols; j++){
+                                    @:<td>
+                                        @:<button name="seats[@Model.Seats.Count]" value=@(new byte[] {i, j}) onClick="form.submit()" class="btn btn-primary" style="width:100%; height:100%;" disabled="@(Model.SeatsTaken.Contains(new byte[] {i, j}) || Model.Seats.Contains(new byte[] {i, j}))">@Convert.ToChar(i + 64)@String.Format("{0:00}", j)</button>
+                                    @:</td>
+                                }
+                            @:</tr>
                         }
-                    @:</tr>
-                }
-            </tbody>
-        </table>
-    </form>
-    <p>Seats Remaining: @Model.Total()</p>
+                    </tbody>
+                </table>
+                <br/>
+            </form>
+            <div>
+                <a asp-action="Checkout" asp-route-show="@Model.Show.ID" asp-route-seats="@Model.Seats" asp-route-tickets="@Model.Tickets"><button class="btn bg-primary text-white col-3 mx-auto" style="horizantal-align:center; justify-content: center; display: flex" disabled="@Model.!canGo">Confirm Selection</button></a>
+            </div>
+        </div>
+    </div>
 </body>
 
