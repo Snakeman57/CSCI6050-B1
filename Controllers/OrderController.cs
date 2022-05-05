@@ -33,19 +33,12 @@ namespace CineWeb.Controllers
             uint tleft = 0;
             var movies = from i in _context.Movies where i.NowShowing==true select i.Title; // collect currently available movies
             var showtimes = from i in _context.ShowTimes where i.TimeStart > DateTime.Now select i; // collect upcoming showtimes
-            if (!string.IsNullOrEmpty(movie)) { // if movie is selected, filter show times
-                var id = from i in _context.Movies where i.Title==movie select i;
-                foreach (Movie i in id)
-                    showtimes = showtimes.Where(x => x.MovieId == i);
-            }
+            if (!string.IsNullOrEmpty(movie)) // if movie is selected, filter show times
+                showtimes = showtimes.Where(x => x.MovieId == (from i in _context.Movies where i.Title==movie select i).FirstOrDefault());
             else // if movie is not selected, showtimes unavailable
                 showtimes = showtimes.Where(x => false);
-            if (!string.IsNullOrEmpty(show)) {
-                var id = showtimes.Where(x => x.TimeStart==Convert.ToDateTime(show));
-                foreach (ShowTime i in id) {
-                    showtime = i.ID.ToString();
-                }
-            }
+            if (!string.IsNullOrEmpty(show))
+                showtime = (showtimes.Where(x => x.TimeStart==Convert.ToDateTime(show))).FirstOrDefault().ID.ToString();
             var stlist = await showtimes.ToListAsync(); // begin conversion of showtimes to datetimes
             var sttimes = from i in _context.ShowTimes where stlist.Contains(i) select i.TimeStart; // end conversion of showtimes to datetimes
             var ttypes = from i in _context.TicketTypes select i; // collect ticket types
@@ -70,24 +63,17 @@ namespace CineWeb.Controllers
         [Route("Order/{show}")]
         public async Task<IActionResult> SelSeat(string show) {
             if (!string.IsNullOrEmpty(show)) {
-                var showtimes = from i in _context.ShowTimes where i.ID==uint.Parse(show) select i;
-                var movies = from i in _context.ShowTimes where i.ID==uint.Parse(show) select i.MovieId;
-                var theaters = from i in _context.ShowTimes where i.ID==uint.Parse(show) select i.TheaterId;
-                var seats = from i in _context.Tickets where i.ShowTimeId==uint.Parse(show) select i.SeatNumber;
-                foreach (Movie i in movies) {
-                    var movie = i;
-                    foreach (Theater j in theaters) {
-                        var theater = j;
-                        foreach (ShowTime k in showtimes) {
-                            var showtime = new ShowTime(k, movie, theater);
-                            var selector = new SeatSelector {
-                                Show = showtime,
-                                SeatsTaken = await seats.ToListAsync()
-                            };
-                            return View(selector);
-                        }
-                    }
-                }
+                var movie = (from i in _context.ShowTimes where i.ID==uint.Parse(show) select i.MovieId).FirstOrDefault();
+                var theater = (from i in _context.ShowTimes where i.ID==uint.Parse(show) select i.TheaterId).FirstOrDefault();
+                var showtime = new ShowTime((from i in _context.ShowTimes where i.ID==uint.Parse(show) select i).FirstOrDefault(),
+                    movie, 
+                    theater);
+                var seats = (from i in _context.Tickets where i.ShowTimeId==uint.Parse(show) select i.SeatNumber);
+                var selector = new SeatSelector {
+                    Show = showtime,
+                    SeatsTaken = await seats.ToListAsync()
+                };
+                return View(selector);
             }
             return NotFound();
         }
