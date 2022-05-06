@@ -30,7 +30,6 @@ namespace CineWeb.Models {
                     chain.Add(this);
                 }
                 catch (InvalidCastException e) {
-                    chain.Add(OrderRef);
                     chain.Add(this);
                 }
             }
@@ -92,7 +91,7 @@ namespace CineWeb.Models {
     public class PromoByTType : AppliedPromo { // percent off certain tickets
         public string Type { get; set; }
         override public double calcPrice() {
-            return OrderRef.calcPrice() - OrderRef.calcPrice() * OrderRef.percentType(Type) * PercentOff;
+            return OrderRef.calcPrice() - OrderRef.calcPrice() * percentType(Type) * PercentOff;
         }
         public PromoByTType(Order order, double deal, string type) {
             OrderRef = order;
@@ -105,7 +104,7 @@ namespace CineWeb.Models {
         public string Attr { get; set;} // attribute to check
         public string Val { get; set; } // value to compare
         override public double calcPrice() {
-            if (OrderRef.hasAttr(Attr, Val))
+            if (hasAttr(Attr, Val))
                 return OrderRef.calcPrice() - OrderRef.calcPrice() * PercentOff;
             else
                 return OrderRef.calcPrice();

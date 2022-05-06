@@ -61,9 +61,9 @@ namespace CineWeb.Models
         }
         virtual public bool hasAttr(string attr, string val) { // for promos by Attribute
             switch (attr) {
-                case "Category": return ShowTimeId.MovieId.Category == val;
-                case "Director": return ShowTimeId.MovieId.Director == val;
-                case "Rating": return ShowTimeId.MovieId.RatingMPAA == val;
+                case "Category": return ShowTimeId.MovieId.Category.Contains(val);
+                case "Director": return ShowTimeId.MovieId.Director.Contains(val);
+                case "Rating": return ShowTimeId.MovieId.RatingMPAA.Contains(val);
             }
             return false;
         }

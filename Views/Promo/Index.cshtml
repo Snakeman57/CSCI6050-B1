@@ -32,8 +32,17 @@
             <td>
                 @Html.DisplayFor(model => item.Description)
             </td>
-            <td>
-                @Html.DisplayFor(model => item.Start) - @Html.DisplayFor(model => item.End)
+            <td> 
+                @{
+                    if (item.Start < DateTime.Now && DateTime.Now < item.End) {
+                        @:<b>
+                            @:@Html.DisplayFor(model => item.Start) - @Html.DisplayFor(model => item.End)
+                        @:</b>
+                    }
+                    else {
+                        @:@Html.DisplayFor(model => item.Start) - @Html.DisplayFor(model => item.End)
+                    }
+                }
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.ID" style="pointer-events:none;"><button class="btn bg-primary text-white" disabled="true">Edit</button></a> 
