@@ -65,8 +65,8 @@
     <!-- Currently Showing -->
     <nav class="px-2 pt-3 pb-1 bg-dark" aria-label="Coming soon movies">
         <ul class="pagination pagination-lg justify-content-center">
-            <li class="page-item active"><a class="page-link" href="index.html">Currently Showing</a></li>
-            <li class="page-item"><a class="page-link" href="coming-soon.html">Coming Soon</a></li>
+            <li class="page-item active"><a class="page-link" href="#">Currently Showing</a></li>
+            <li class="page-item"><a class="page-link" href="#">Coming Soon</a></li>
         </ul>
     </nav>
     <div class="container mt-2">
@@ -75,28 +75,28 @@
                 <img src="https://assets-prd.ignimgs.com/2022/01/13/uncharted-poster-full-1642086040683.jpg" class="card-img-top" alt="...">
                 <div class="card-body text-center">
                     <h5 class="card-title">Uncharted</h5>
-                    <a href="#" class="btn btn-primary">Buy Ticket</a>
+                    <a asp-controller="Order" asp-action="Index" asp-route-movie="Uncharted" class="btn btn-primary">Buy Ticket</a>
                 </div>
             </div>
             <div class="card col-md-6 col-lg-4 col-xl-3 px-0 mx-2 movie_card">
                 <img src="https://m.media-amazon.com/images/M/MV5BOTI4NDhhNGEtZjQxZC00ZTRmLThmZTctOGJmY2ZlOTc0ZGY0XkEyXkFqcGdeQXVyMTkxNjUyNQ@@._V1_FMjpg_UX1000_.jpg" class="card-img-top" alt="...">
                 <div class="card-body text-center">
                     <h5 class="card-title">Nightmare Alley</h5>
-                    <a href="#" class="btn btn-primary">Buy Ticket</a>
+                    <a  asp-controller="Order" asp-action="Index" asp-route-movie="Nightmare Alley" class="btn btn-primary">Buy Ticket</a>
                 </div>
             </div>
             <div class="card col-md-6 col-lg-4 col-xl-3 px-0 mx-2 movie_card">
                 <img src="https://static.wikia.nocookie.net/kingsman-the-secret-service/images/e/e3/The_King%27s_Man_main_poster.jpg/revision/latest?cb=20200621202303" class="card-img-top" alt="...">
                 <div class="card-body text-center">
                     <h5 class="card-title">The King's Man</h5>
-                    <a href="#" class="btn btn-primary">Buy Ticket</a>
+                    <a  asp-controller="Order" asp-action="Index" asp-route-movie="The King's Man" class="btn btn-primary">Buy Ticket</a>
                 </div>
             </div>
             <div class="card col-md-6 col-lg-4 col-xl-3 px-0 mx-2 movie_card">
                 <img src="https://imageio.forbes.com/specials-images/imageserve/61116cea2313e8bae55a536a/-Dune-/0x0.jpg?fit=bounds&format=jpg&width=960" class="card-img-top" alt="...">
                 <div class="card-body text-center">
                     <h5 class="card-title">Dune</h5>
-                    <a href="#" class="btn btn-primary">Buy Ticket</a>
+                    <a  asp-controller="Order" asp-action="Index" asp-route-movie="Dune: Part One" class="btn btn-primary">Buy Ticket</a>
                 </div>
             </div>
         </div>
