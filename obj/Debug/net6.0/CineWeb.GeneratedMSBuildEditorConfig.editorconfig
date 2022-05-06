@@ -8,249 +8,249 @@ build_property.PlatformNeutralAssembly =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = CineWeb
 build_property.RootNamespace = CineWeb
-build_property.ProjectDir = C:\Users\lpham\OneDrive\Desktop\4050\CineWeb\
+build_property.ProjectDir = D:\WorkEtSchool\UGA\2021-22.2-spring\CSCI6050 Software Engineering\B1\site\
 build_property.RazorLangVersion = 6.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = 
-build_property.MSBuildProjectDirectory = C:\Users\lpham\OneDrive\Desktop\4050\CineWeb
+build_property.MSBuildProjectDirectory = D:\WorkEtSchool\UGA\2021-22.2-spring\CSCI6050 Software Engineering\B1\site
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Areas/Identity/Pages/Account/ForgotPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxGb3Jnb3RQYXNzd29yZC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Areas/Identity/Pages/Account/Login.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Areas/Identity/Pages/Account/Login.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Areas/Identity/Pages/Account/Logout.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Areas/Identity/Pages/Account/Logout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxMb2dvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Areas/Identity/Pages/Account/Manage/ChangePassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcQ2hhbmdlUGFzc3dvcmQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Areas/Identity/Pages/Account/Manage/Index.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Areas/Identity/Pages/Account/Manage/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Areas/Identity/Pages/Account/Manage/_ManageNav.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX01hbmFnZU5hdi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Areas/Identity/Pages/Account/Manage/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxNYW5hZ2VcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Areas/Identity/Pages/Account/Register.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Areas/Identity/Pages/Account/Register.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3Rlci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Areas/Identity/Pages/Account/RegisterConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZWdpc3RlckNvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Areas/Identity/Pages/Account/ResendEmailConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNlbmRFbWFpbENvbmZpcm1hdGlvbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Areas/Identity/Pages/Account/ResetPassword.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Areas/Identity/Pages/Account/ResetPassword.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Areas/Identity/Pages/Account/ResetPasswordConfirmation.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxSZXNldFBhc3N3b3JkQ29uZmlybWF0aW9uLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Areas/Identity/Pages/Account/_StatusMessage.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfU3RhdHVzTWVzc2FnZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Areas/Identity/Pages/Account/_ViewImports.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Areas/Identity/Pages/Account/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcQWNjb3VudFxfVmlld0ltcG9ydHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Areas/Identity/Pages/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZhbGlkYXRpb25TY3JpcHRzUGFydGlhbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Areas/Identity/Pages/_ViewImports.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Areas/Identity/Pages/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Areas/Identity/Pages/_ViewStart.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Areas/Identity/Pages/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = QXJlYXNcSWRlbnRpdHlcUGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Account/Create.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Account/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Account/Delete.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Account/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Account/Details.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Account/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Account/Edit.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Account/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Account/Index.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Account/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Admin/Accounts.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Admin/Accounts.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWNjb3VudHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Admin/Create.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Admin/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Admin/Delete.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Admin/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Admin/Details.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Admin/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Admin/Edit.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Admin/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Admin/Index.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Admin/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Admin/Movies.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Admin/Movies.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTW92aWVzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Cart/Create.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Cart/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Cart/Index.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Cart/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Home/Index.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Movies/Create.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Movies/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXENyZWF0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Movies/Delete.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Movies/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXERlbGV0ZS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Movies/Details.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Movies/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXERldGFpbHMuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Movies/Edit.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Movies/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXEVkaXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Movies/Index.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Movies/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Order/Checkout.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Order/Checkout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ2hlY2tvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Order/CheckoutConfirm.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Order/CheckoutConfirm.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ2hlY2tvdXRDb25maXJtLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Order/History.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Order/History.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSGlzdG9yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Order/Index.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Order/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Order/Payment.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Order/Payment.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcUGF5bWVudC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Order/SelSeat.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Order/SelSeat.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcU2VsU2VhdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Promo/Create.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Promo/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbW9cQ3JlYXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Promo/Delete.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Promo/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbW9cRGVsZXRlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Promo/Details.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Promo/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbW9cRGV0YWlscy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Promo/Edit.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Promo/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbW9cRWRpdC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Promo/Index.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Promo/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJvbW9cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Shared/Error.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Shared/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Shared/_LoginPartial.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Shared/_LoginPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Mb2dpblBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Shared/_ValidationScriptsPartial.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Theater/Create.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Theater/Create.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhlYXRlclxDcmVhdGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Theater/Delete.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Theater/Delete.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhlYXRlclxEZWxldGUuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Theater/Details.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Theater/Details.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhlYXRlclxEZXRhaWxzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Theater/Edit.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Theater/Edit.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhlYXRlclxFZGl0LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Theater/Index.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Theater/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGhlYXRlclxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Ticket/Index.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Ticket/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVGlja2V0XEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/_ViewImports.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/_ViewStart.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Shared/_Layout.cshtml]
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-zmcvr6e3kt

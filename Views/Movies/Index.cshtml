@@ -1,3 +1,8 @@
+@using Microsoft.AspNetCore.Identity
+@using CineWeb.Data
+@inject SignInManager<CineWebUser> SignInManager
+@inject UserManager<CineWebUser> UserManager
+
 @model CineWeb.Models.MovieCategoryView
 
 @{
@@ -70,12 +75,17 @@
                     <button class="btn bg-primary text-white"  @(item.NowShowing ? "" : "disabled")>Book</button>
                 </a> 
             </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.ID"><button class="btn bg-danger text-white">Edit</button></a> 
-            </td>
-            <td>
-                <a asp-action="Delete" asp-route-id="@item.ID"><button class="btn bg-danger text-white">Delete</button></a>
-            </td>
+            @if (SignInManager.IsSignedIn(User)) {
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.ID"><button class="btn bg-danger text-white">Edit</button></a> 
+                </td>
+                <td>
+                    <a asp-action="Delete" asp-route-id="@item.ID"><button class="btn bg-danger text-white">Delete</button></a>
+                </td>
+            }
+            else {
+                <td colspan="2"></td>
+            }
         </tr>
 }
     </tbody>
