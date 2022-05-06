@@ -163,7 +163,15 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTW92aWVzXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+<<<<<<< HEAD
 [C:/Users/lpham/OneDrive/Desktop/4050/CineWeb/Views/Order/History.cshtml]
+=======
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Order/Checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcQ2hlY2tvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/WorkEtSchool/UGA/2021-22.2-spring/CSCI6050 Software Engineering/B1/site/Views/Order/History.cshtml]
+>>>>>>> 8016dab53ee76fbd5a643eddc615d420a37e07fd
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcSGlzdG9yeS5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 

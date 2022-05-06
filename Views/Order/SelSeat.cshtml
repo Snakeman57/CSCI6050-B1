@@ -3,7 +3,30 @@
 @{
     ViewData["Title"] = "Seat Selection";
 }
-
+<head>
+    <script>
+        var seats = "|";
+        function doAddSeat(x, y) {
+            document.getElementById(x + "," + y).disabled = true;
+            let display = document.getElementById("seat_display");
+            seats += x + "," + y + "|";
+            if (!display.innerHTML.includes("|"))
+                display.innerHTML = "Chosen: | " + x + ", " + y + " |";
+            else
+                display.innerHTML += " " + x + ", " + y + " |" ;
+            if (display.innerHTML.split(",").length - 1 == @Model.Available()){
+                document.getElementById("btn_checkout").disabled = false;
+                document.getElementById("a_checkout").style.pointerEvents = "auto";
+                for(let i = @Model.Show.TheaterId.NumRows; i > 0; i--)
+                    for(let j = @Model.Show.TheaterId.NumCols; j > 0; j--)
+                        document.getElementById(i + "," + j).disabled = true;
+            }
+        }
+        function getSeats() {
+            return seats;
+        }
+    </script>
+</head>
 <body>
     <div class="container border p-3 mt-4 form-horizontal" style="width:auto;">
         <div class="row">
@@ -11,24 +34,25 @@
             <h5 class="text-muted text-center">Please select your seats from the grid below. (@Model.Available() remaining)</h5>
             <br/>
             <br/>
-            <form>
-                <table style="margin-left: auto; margin-right: auto;">
-                    <tbody>
-                        @for(byte i = Model.Show.TheaterId.NumRows; i > 0; i--){
-                            @:<tr>
-                                @for(byte j = 1; j <= Model.Show.TheaterId.NumCols; j++){
-                                    @:<td>
-                                        @:<button name="seats[@Model.Seats.Count]" value=@(new byte[] {i, j}) onClick="form.submit()" class="btn btn-primary" style="width:100%; height:100%;" disabled="@(Model.SeatsTaken.Contains(new byte[] {i, j}) || Model.Seats.Contains(new byte[] {i, j}))">@Convert.ToChar(i + 64)@String.Format("{0:00}", j)</button>
-                                    @:</td>
-                                }
-                            @:</tr>
-                        }
-                    </tbody>
-                </table>
-                <br/>
-            </form>
+            <table style="margin-left: auto; margin-right: auto;">
+                <input name="show" id="show" value="@Model.Show.ID" type="hidden" />
+                <input name="tickets" id="tickets" value="@Model.TicketStr()" type="hidden" />
+                <tbody>
+                    @for(byte i = Model.Show.TheaterId.NumRows; i > 0; i--){
+                        @:<tr>
+                            @for(byte j = 1; j <= Model.Show.TheaterId.NumCols; j++){
+                                @:<td>
+                                    @:<button name="seats[@(i - 1)][@j]" id="@i,@j", onClick="doAddSeat(@i,@j)" class="btn btn-primary" style="width:100%; height:100%;" @(Model.Seats.Contains(new byte [2] {i, j}) ? "disabled" : "")>@Convert.ToChar(i + 64)@String.Format("{0:00}", j)</button>
+                                @:</td>
+                            }
+                        @:</tr>
+                    }
+                </tbody>
+            </table>
+            <div id="seat_display" class="text-center mt-4"></div>
             <div>
-                <a asp-action="Checkout" asp-route-show="@Model.Show.ID" asp-route-seats="@Model.Seats" asp-route-tickets="@Model.Tickets"><button class="btn bg-primary text-white col-3 mx-auto" style="horizantal-align:center; justify-content: center; display: flex" disabled="true">Confirm Selection</button></a>
+                <a id="a_checkout" asp-action="Checkout" asp-route-show="@Model.Show.ID" asp-route-tickets="getSeats()" asp-route-tickets="@Model.Tickets" style="pointer-events:none;"><button id="btn_checkout" class="btn bg-primary text-white col-3 mx-auto  mt-4" style="horizantal-align:center; justify-content: center; display: flex" disabled>Proceed to Checkout</button></a>
+                <button onClick="location.reload()" class="btn bg-primary text-white col-3 mx-auto  mt-4" style="horizantal-align:center; justify-content: center; display: flex">Reset Selection</button>
             </div>
         </div>
     </div>

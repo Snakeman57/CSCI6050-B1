@@ -35,7 +35,7 @@
                                         @Html.DisplayFor(m => Model.ttypes[i].Name)
                                     @:</td>
                                     @:<td>
-                                        @Html.TextBox("tickets[" + i + "]", Model.ttypes[i].Name, new { @type = "number", @min = "0", @max = "16", @class="form-control", onchange = @"form.submit()" })
+                                        @Html.TextBox(Model.ttypes[i].Name, Model.ttypes[i].Name, new { @type = "number", @min = "0", @placeholder = Model.tlocal.Length < Model.ttypes.Count ? 0 : Model.tlocal[i], @max = "16", @class="form-control", onchange = @"form.submit()" })
                                     @:</td>
                                 @:</tr>
                             }
@@ -45,7 +45,7 @@
                 <br/>
             </form>
             <div>
-                <a asp-action="SelSeat" asp-route-show="@Model.show" asp-route-tickets="@Model.tickets" style="@(Model.canGo ? "" : "pointer-events:none;")"><button class="btn bg-primary text-white col-3 mx-auto" style="horizantal-align:center; justify-content: center; display: flex" disabled="@(!Model.canGo)">Select Seats</button></a>
+                <a asp-action="SelSeat" asp-route-show="@Model.show" asp-route-tickets="@Model.texport" style="@(Model.canGo ? "" : "pointer-events:none;")"><button class="btn bg-primary text-white col-3 mx-auto" style="horizantal-align:center; justify-content: center; display: flex" disabled="@(!Model.canGo)">Select Seats</button></a>
             </div>
         </div>
     </div>
