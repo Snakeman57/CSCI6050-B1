@@ -16296,6 +16296,307 @@
     "CSharpLanguageVersion": 1000
   },
   "RootNamespace": "CineWeb",
-  "Documents": [],
+  "Documents": [
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Promo\\Index.cshtml",
+      "TargetPath": "Views\\Promo\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Theater\\Delete.cshtml",
+      "TargetPath": "Views\\Theater\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Admin\\Index.cshtml",
+      "TargetPath": "Views\\Admin\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Admin\\Accounts.cshtml",
+      "TargetPath": "Views\\Admin\\Accounts.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Order\\Payment.cshtml",
+      "TargetPath": "Views\\Order\\Payment.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\_ViewStart.cshtml",
+      "TargetPath": "Views\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Areas\\Identity\\Pages\\Account\\Register.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Register.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Account\\Create.cshtml",
+      "TargetPath": "Views\\Account\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Ticket\\Index.cshtml",
+      "TargetPath": "Views\\Ticket\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Account\\Delete.cshtml",
+      "TargetPath": "Views\\Account\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Theater\\Index.cshtml",
+      "TargetPath": "Views\\Theater\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Promo\\Details.cshtml",
+      "TargetPath": "Views\\Promo\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Order\\Index.cshtml",
+      "TargetPath": "Views\\Order\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Logout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Theater\\Edit.cshtml",
+      "TargetPath": "Views\\Theater\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Areas\\Identity\\Pages\\Account\\Manage\\_ViewImports.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Admin\\Details.cshtml",
+      "TargetPath": "Views\\Admin\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Promo\\Create.cshtml",
+      "TargetPath": "Views\\Promo\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Areas\\Identity\\Pages\\Account\\Login.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Login.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Areas\\Identity\\Pages\\Account\\ResetPasswordConfirmation.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\ResetPasswordConfirmation.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Movies\\Index.cshtml",
+      "TargetPath": "Views\\Movies\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Promo\\Delete.cshtml",
+      "TargetPath": "Views\\Promo\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Admin\\Create.cshtml",
+      "TargetPath": "Views\\Admin\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Cart\\Create.cshtml",
+      "TargetPath": "Views\\Cart\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Admin\\Delete.cshtml",
+      "TargetPath": "Views\\Admin\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Admin\\Edit.cshtml",
+      "TargetPath": "Views\\Admin\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Cart\\Index.cshtml",
+      "TargetPath": "Views\\Cart\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Promo\\Edit.cshtml",
+      "TargetPath": "Views\\Promo\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Order\\CheckoutConfirm.cshtml",
+      "TargetPath": "Views\\Order\\CheckoutConfirm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Account\\Index.cshtml",
+      "TargetPath": "Views\\Account\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Account\\Details.cshtml",
+      "TargetPath": "Views\\Account\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Shared\\_LoginPartial.cshtml",
+      "TargetPath": "Views\\Shared\\_LoginPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ViewStart.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ValidationScriptsPartial.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Order\\Checkout.cshtml",
+      "TargetPath": "Views\\Order\\Checkout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\RegisterConfirmation.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Account\\Edit.cshtml",
+      "TargetPath": "Views\\Account\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Order\\History.cshtml",
+      "TargetPath": "Views\\Order\\History.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Movies\\Delete.cshtml",
+      "TargetPath": "Views\\Movies\\Delete.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Theater\\Create.cshtml",
+      "TargetPath": "Views\\Theater\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Areas\\Identity\\Pages\\_ViewImports.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Home\\Index.cshtml",
+      "TargetPath": "Views\\Home\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Theater\\Details.cshtml",
+      "TargetPath": "Views\\Theater\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Order\\SelSeat.cshtml",
+      "TargetPath": "Views\\Order\\SelSeat.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Areas\\Identity\\Pages\\Account\\Manage\\ChangePassword.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\ChangePassword.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Areas\\Identity\\Pages\\Account\\_StatusMessage.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\_StatusMessage.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Movies\\Create.cshtml",
+      "TargetPath": "Views\\Movies\\Create.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Areas\\Identity\\Pages\\Account\\ForgotPassword.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\ForgotPassword.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\_ViewImports.cshtml",
+      "TargetPath": "Views\\_ViewImports.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Movies\\Details.cshtml",
+      "TargetPath": "Views\\Movies\\Details.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Areas\\Identity\\Pages\\Account\\ResetPassword.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\ResetPassword.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Movies\\Edit.cshtml",
+      "TargetPath": "Views\\Movies\\Edit.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\Index.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Shared\\_Layout.cshtml",
+      "TargetPath": "Views\\Shared\\_Layout.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Admin\\Movies.cshtml",
+      "TargetPath": "Views\\Admin\\Movies.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Areas\\Identity\\Pages\\Account\\ResendEmailConfirmation.cshtml",
+      "TargetPath": "Areas\\Identity\\Pages\\Account\\ResendEmailConfirmation.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Shared\\Error.cshtml",
+      "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    }
+  ],
   "SerializationFormat": "0.2"
 }
