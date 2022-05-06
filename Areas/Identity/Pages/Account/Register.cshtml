@@ -61,39 +61,39 @@
         <br>
         <form id="registerForm" asp-route-returnUrl="@Model.ReturnUrl" method="post">
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-            <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3 mx-auto">
+            <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
                 <b><label class="form-label" asp-for="Input.FirstName"></label></b>
                 <input asp-for="Input.FirstName" class="form-control" placeholder="First Name" />
                 <span asp-validation-for="Input.FirstName" class="text-danger"></span>
             </div>
-              <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3 mx-auto">
+              <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
                 <b><label class="form-label" asp-for="Input.LastName"></label></b>
                 <input asp-for="Input.LastName" class="form-control" placeholder="Last Name" />
                 <span asp-validation-for="Input.LastName" class="text-danger"></span>
             </div>
-            <div class="col-md-6 col-lg-5 col-xl-5 input-group-md mb-3 mx-auto">
+            <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
                 <b><label class="form-label" asp-for="Input.PhoneNumber"></label></b>
                 <input asp-for="Input.PhoneNumber" class="form-control" placeholder="Phone Number" />
                 <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
             </div>
-            <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
+            <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
                 <b><label class="form-label" asp-for="Input.Email"></label></b>
                 <input placeholder="Email" asp-for="Input.Email" class="form-control" autocomplete="username" aria-required="true" />
                 <span asp-validation-for="Input.Email" class="text-danger"></span>
             </div>
-            <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
+            <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
                 <b><label class="form-label" asp-for="Input.Password"></label></b>
                 <input  placeholder="Password" asp-for="Input.Password" class="form-control" autocomplete="new-password" aria-required="true" />
                 <span asp-validation-for="Input.Password" class="text-danger"></span>
             </div>
-            <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
+            <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
                 <b><label asp-for="Input.ConfirmPassword"></label></b>
                 <input placeholder="Confirm Password" asp-for="Input.ConfirmPassword" class="form-control" autocomplete="new-password" aria-required="true" />
                 <span asp-validation-for="Input.ConfirmPassword" class="text-danger"></span>
             </div>
             <br/>
             <br/>
-            <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
+            <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
                 <b><label asp-for="Input.PaymentCard1" class="form-label"></label></b>
                 <label asp-for="Input.PaymentCard1.CardType" class="form-label"></label>
                 <input asp-for="Input.PaymentCard1.CardType" class="form-control" placeholder="Card Type" />
@@ -116,7 +116,7 @@
             </div>
             <br/>
             <br/>
-            <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
+            <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
                 <b><label asp-for="Input.PaymentCard2" class="form-label"></label></b>
                 <label asp-for="Input.PaymentCard2.CardType" class="form-label"></label>
                 <input asp-for="Input.PaymentCard2.CardType" class="form-control" placeholder="Card Type" />
@@ -139,7 +139,7 @@
             </div>
             <br/>
             <br/>
-            <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto">
+            <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
                 <b><label asp-for="Input.PaymentCard3" class="form-label"></label></b>
                 <label asp-for="Input.PaymentCard3.CardType" class="form-label"></label>
                 <input asp-for="Input.PaymentCard3.CardType" class="form-control" placeholder="Card Type" />

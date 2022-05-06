@@ -14,6 +14,33 @@ namespace CineWeb.Models
         [Display(Name = "Start Time")]
         public ShowTime ShowTimeId { get; set; } // showtime start time
         public ICollection<Ticket> Tickets { get; set; } // associated tickets (composition)
+        public string TicketStr() {
+            var ticketarr = new uint[3] {0, 0, 0};
+            foreach (Ticket i in Tickets) {
+                switch (i.Type.Name) {
+                    case "Adult":
+                        ticketarr[0]++;
+                        break;
+                    case "Child":
+                        ticketarr[1]++;
+                        break;
+                    case "Senior":
+                        ticketarr[2]++;
+                        break;
+                }
+            }
+            var ticketstr = "";
+            foreach (uint i in ticketarr)
+                ticketstr += i + ",";
+            ticketstr = ticketstr.Substring(0, ticketstr.Length - 1);
+            return ticketstr;
+        }
+        public string SeatStr() {
+            var seatstr= "|";
+            foreach (Ticket i in Tickets)
+                seatstr += i.SeatNumber[0] + "," + i.SeatNumber[1] + "|";
+            return seatstr;
+        }
         public double calcPrice() {
             double tmp = 0;
             foreach (Ticket i in Tickets) {

@@ -4,10 +4,45 @@ namespace CineWeb.Models {
     public class AppliedPromo : Order { // promo for application to orders
         protected Order OrderRef { get; set; } // order to affect (aggregation)
         public double PercentOff { get; set; } // how much to affect order by
-        public AppliedPromo() { }
+        public AppliedPromo() {
+        }
         public AppliedPromo(Order order) {
             OrderRef = order;
             PercentOff = 0;
+            fromOrderRef();
+        }
+        protected void fromOrderRef() {
+            if (OrderRef != null){
+                DateCreated = OrderRef.DateCreated;
+                UserId = OrderRef.UserId;
+                ShowTimeId = OrderRef.ShowTimeId;
+                Tickets = OrderRef.Tickets;
+            }
+        }
+        public double calcDiff() {
+            return -1 * Math.Abs(OrderRef.calcPrice() - calcPrice());
+        }
+        public List<Order> promoChain(){
+            var chain = new List<Order>();
+            if (calcPrice() != OrderRef.calcPrice()){
+                try {
+                    chain = ((AppliedPromo)OrderRef).promoChain();
+                    chain.Add(this);
+                }
+                catch (InvalidCastException e) {
+                    chain.Add(OrderRef);
+                    chain.Add(this);
+                }
+            }
+            else {
+                try {
+                    chain = ((AppliedPromo)OrderRef).promoChain();
+                }
+                catch (InvalidCastException e) {
+                    chain.Add(OrderRef);
+                }
+            }
+            return chain;
         }
         public static AppliedPromo NewPromo(Order order, MoviePromotion origin) {
             if (origin.Start < DateTime.Now && origin.End > DateTime.Now) {
@@ -41,6 +76,7 @@ namespace CineWeb.Models {
         public PromoByFlat(Order order, double deal) {
             OrderRef = order;
             PercentOff = deal;
+            fromOrderRef();
         }
     }
     public class PromoByTotal : AppliedPromo { // percent off total
@@ -50,6 +86,7 @@ namespace CineWeb.Models {
         public PromoByTotal(Order order, double deal) {
             OrderRef = order;
             PercentOff = deal;
+            fromOrderRef();
         }
     }
     public class PromoByTType : AppliedPromo { // percent off certain tickets
@@ -61,6 +98,7 @@ namespace CineWeb.Models {
             OrderRef = order;
             PercentOff = deal;
             Type = type;
+            fromOrderRef();
         }
     }
     public class PromoByAttr : AppliedPromo { // percent off movies w/ certain attributes
@@ -77,6 +115,7 @@ namespace CineWeb.Models {
             PercentOff = deal;
             Attr = attr;
             Val = val;
+            fromOrderRef();
         }
     }
 }

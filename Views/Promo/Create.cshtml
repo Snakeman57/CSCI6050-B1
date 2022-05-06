@@ -29,22 +29,22 @@
             <br>
             <form asp-action="Create">
                 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
-                @* <div class="form-group">
+                @* <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
                     <label asp-for="ID" class="control-label"></label>
                     <input asp-for="ID" class="form-control" />
                     <span asp-validation-for="ID" class="text-danger"></span>
                 </div> *@
-                <div class="form-group">
+                <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
                     <label asp-for="Description" class="control-label"></label>
                     <input asp-for="Description" class="form-control" />
                     <span asp-validation-for="Description" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
                     <label asp-for="Code" class="control-label"></label>
                     <input asp-for="Code" class="form-control" />
                     <span asp-validation-for="Code" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
                     <label for="Type">Promotion Type</label>
                     <select name="Type" id="Type" class="form-control" onchange="addArtifacts()">
                         <option value="total">By Total</option>
@@ -55,17 +55,17 @@
                     <span asp-validation-for="Type" class="text-danger"></span>
                 </div>
                 <div class="form-group" id="artif"></div>
-                <div class="form-group">
+                <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
                     <label asp-for="Deal" class="control-label"></label>
                     <input asp-for="Deal" class="form-control" />
                     <span asp-validation-for="Deal" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
                     <label asp-for="Start" class="control-label"></label>
                     <input asp-for="Start" class="form-control" />
                     <span asp-validation-for="Start" class="text-danger"></span>
                 </div>
-                <div class="form-group">
+                <div class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
                     <label asp-for="End" class="control-label"></label>
                     <input asp-for="End" class="form-control" />
                     <span asp-validation-for="End" class="text-danger"></span>

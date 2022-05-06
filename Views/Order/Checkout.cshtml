@@ -1,5 +1,5 @@
-﻿@model CineWeb.Models.Order
-@using System.Globalization
+﻿@using System.Globalization
+@model CineWeb.Models.Order
 
 @{
     ViewData["Title"] = "Checkout";
@@ -32,6 +32,9 @@
                         </td>
                     </tr>
                     <tr>
+                        <td colspan="3"><br/></td>
+                    </tr>
+                    <tr>
                         <td colspan="3" class="text-center">
                             @Html.DisplayNameFor(m => m.Tickets)
                         <hr />
@@ -55,6 +58,27 @@
                             <hr />
                         </td>
                     </tr>
+                    @{
+                        List<Order> tmp;
+                        try {
+                            tmp = ((AppliedPromo)Model).promoChain();
+                            foreach (Order i in tmp) {
+                                @:<tr>
+                                    @:<td></td>
+                                    @:<td style="text-align:right;">Promo</td>
+                                    @:<td style="text-align:right;">
+                                        try {
+                                            @String.Format("{0:C}", ((AppliedPromo)i).calcDiff())
+                                        }
+                                        catch (InvalidCastException e) {
+                                            @Html.DisplayFor(m => ((AppliedPromo)Model).PercentOff)
+                                        }
+                                    @:</td>
+                                @:</tr>
+                            }
+                        }
+                        catch (InvalidCastException e) {}
+                    }
                     <tr>
                         <td></td>
                         <td style="text-align:right;">
@@ -67,8 +91,19 @@
                 </tbody>
             </table>
         </div>
-        <button class="btn bg-primary text-white col-3 mx-auto  mt-4" style="horizantal-align:center; justify-content:center; display:flex">Apply Promotion</button>
-        <button class="btn bg-success text-white col-3 mx-auto  mt-4" style="horizantal-align:center; justify-content:center; display:flex">Confirm Purchase</button>
+        <b><p class="text-center my-2">Add Promotion</p></b>
+        <form>
+            <input name="show" id="show" value="@Model.ShowTimeId.ID" type="hidden" />
+            <input name="tickets" id="tickets" value="@Model.TicketStr()" type="hidden" />
+            <input name="seats" id="seats" value="@Model.SeatStr()" type="hidden" />
+            <div class="col-md-6 col-lg-5 col-xl-5 mb-3 mx-auto ">
+                <input name="promo" class="form-control" />
+            </div>
+                <button class="btn bg-primary text-white col-3 mx-auto  mt-2" style="horizantal-align:center; justify-content:center; display:flex">Apply Promotion</button>
+
+        </form>
+        <b><p class="text-center mt-4">Confirm Payment Method</p></b>
+        <button class="btn bg-success text-white col-3 mx-auto  mt-2" style="horizantal-align:center; justify-content:center; display:flex">Confirm Purchase</button>
     </div>
 </body>
 

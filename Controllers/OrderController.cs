@@ -115,7 +115,7 @@ namespace CineWeb.Controllers
             return NotFound();
         }
         /// CHECKOUT
-        public async Task<IActionResult> Checkout([FromQuery (Name = "show")] string show, [FromQuery (Name = "tickets")] string ticketstr, [FromQuery (Name = "seats")] string seatstr) {
+        public async Task<IActionResult> Checkout([FromQuery (Name = "show")] string show, [FromQuery (Name = "tickets")] string ticketstr, [FromQuery (Name = "seats")] string seatstr, [FromQuery (Name = "promo")] string promocode) {
             // define showtime info
             var movie = (from i in _context.ShowTimes where i.ID==uint.Parse(show) select i.MovieId).FirstOrDefault();
             var theater = (from i in _context.ShowTimes where i.ID==uint.Parse(show) select i.TheaterId).FirstOrDefault();
@@ -147,6 +147,9 @@ namespace CineWeb.Controllers
                 ShowTimeId = showtime,
                 Tickets = tickets,
             };
+            if(!string.IsNullOrEmpty(promocode)){
+                order = AppliedPromo.NewPromo(order, (from i in _context.Promotions where i.Code == promocode select i).FirstOrDefault());
+            }
             return View(order);
         }
     }
