@@ -71,3 +71,50 @@ namespace CineWeb.Controllers
 
     }
 } */
+using CineWeb.Models;
+using Microsoft.AspNetCore.Mvc;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using Stripe;
+
+
+namespace CineWeb.Controllers
+{
+    public class CartController : Controller
+    {
+        public ActionResult OrderStatus()
+        {
+            return View();
+        }
+
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        public ActionResult Index()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Charge(string stripeToken, string stripeEmail)
+        {
+            Stripe.StripeConfiguration.SetApiKey("Publishable key");
+            Stripe.StripeConfiguration.ApiKey = "Secret key";
+
+            var myCharge = new Stripe.ChargeCreateOptions();
+            // always set these properties
+            myCharge.Amount = 500;
+            myCharge.Currency = "USD";
+            myCharge.ReceiptEmail = stripeEmail;
+            myCharge.Description = "Sample Charge";
+            myCharge.Source = stripeToken;
+            myCharge.Capture = true;
+            var chargeService = new Stripe.ChargeService();
+            Charge stripeCharge = chargeService.Create(myCharge);
+            return View();
+        }
+    }
+}
