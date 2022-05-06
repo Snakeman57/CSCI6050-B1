@@ -98,23 +98,23 @@ namespace CineWeb.Controllers
             return View();
         }
 
-        [HttpPost]
-        public ActionResult Charge(string stripeToken, string stripeEmail)
-        {
-            Stripe.StripeConfiguration.SetApiKey("Publishable key");
-            Stripe.StripeConfiguration.ApiKey = "Secret key";
+        // [HttpPost]
+        // public ActionResult Charge(string stripeToken, string stripeEmail)
+        // {
+        //     Stripe.StripeConfiguration.SetApiKey("Publishable key");
+        //     Stripe.StripeConfiguration.ApiKey = "Secret key";
 
-            var myCharge = new Stripe.ChargeCreateOptions();
-            // always set these properties
-            myCharge.Amount = 500;
-            myCharge.Currency = "USD";
-            myCharge.ReceiptEmail = stripeEmail;
-            myCharge.Description = "Sample Charge";
-            myCharge.Source = stripeToken;
-            myCharge.Capture = true;
-            var chargeService = new Stripe.ChargeService();
-            Charge stripeCharge = chargeService.Create(myCharge);
-            return View();
-        }
+        //     var myCharge = new Stripe.ChargeCreateOptions();
+        //     // always set these properties
+        //     myCharge.Amount = 500;
+        //     myCharge.Currency = "USD";
+        //     myCharge.ReceiptEmail = stripeEmail;
+        //     myCharge.Description = "Sample Charge";
+        //     myCharge.Source = stripeToken;
+        //     myCharge.Capture = true;
+        //     var chargeService = new Stripe.ChargeService();
+        //     Charge stripeCharge = chargeService.Create(myCharge);
+        //     return View();
+        // }
     }
 }
