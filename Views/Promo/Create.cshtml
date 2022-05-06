@@ -1,7 +1,10 @@
 @model CineWeb.Models.MoviePromotion
+@using System.Globalization
 
 @{
     ViewData["Title"] = "New Promo Code";
+    Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US",false);
+}
 }
 <head>
     <script>

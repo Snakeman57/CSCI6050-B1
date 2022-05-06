@@ -148,7 +148,7 @@ namespace CineWeb.Controllers
                 Tickets = tickets,
             };
             if(!string.IsNullOrEmpty(promocode)){
-                order = AppliedPromo.NewPromo(order, (from i in _context.Promotions where i.Code == promocode select i).FirstOrDefault());
+                order = AppliedPromo.NewPromo(order, (from i in _context.Promotions where i.Code==promocode select i).FirstOrDefault());
             }
             return View(order);
         }

@@ -59,18 +59,18 @@ namespace CineWeb.Models {
             }
             return new AppliedPromo(order);
         }
-        public double calcPrice() {
+        override public double calcPrice() {
             return OrderRef.calcPrice();
         }
-        public double percentType(string type) {
+        override public double percentType(string type) {
             return OrderRef.percentType(type);
         }
-        public bool hasAttr(string attr, string val) {
+        override public bool hasAttr(string attr, string val) {
             return OrderRef.hasAttr(attr, val);
         }
     }
     public class PromoByFlat : AppliedPromo { // flat amt off
-        public double calcPrice() {
+        override public double calcPrice() {
             return OrderRef.calcPrice() - PercentOff;
         }
         public PromoByFlat(Order order, double deal) {
@@ -80,8 +80,8 @@ namespace CineWeb.Models {
         }
     }
     public class PromoByTotal : AppliedPromo { // percent off total
-        public double calcPrice() {
-            return OrderRef.calcPrice() - OrderRef.calcPrice() * PercentOff;
+        override public double calcPrice() {
+            return OrderRef.calcPrice() - (OrderRef.calcPrice() * PercentOff);
         }
         public PromoByTotal(Order order, double deal) {
             OrderRef = order;
@@ -91,7 +91,7 @@ namespace CineWeb.Models {
     }
     public class PromoByTType : AppliedPromo { // percent off certain tickets
         public string Type { get; set; }
-        public double calcPrice() {
+        override public double calcPrice() {
             return OrderRef.calcPrice() - OrderRef.calcPrice() * OrderRef.percentType(Type) * PercentOff;
         }
         public PromoByTType(Order order, double deal, string type) {
@@ -104,7 +104,7 @@ namespace CineWeb.Models {
     public class PromoByAttr : AppliedPromo { // percent off movies w/ certain attributes
         public string Attr { get; set;} // attribute to check
         public string Val { get; set; } // value to compare
-        public double calcPrice() {
+        override public double calcPrice() {
             if (OrderRef.hasAttr(Attr, Val))
                 return OrderRef.calcPrice() - OrderRef.calcPrice() * PercentOff;
             else

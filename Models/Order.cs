@@ -41,14 +41,14 @@ namespace CineWeb.Models
                 seatstr += i.SeatNumber[0] + "," + i.SeatNumber[1] + "|";
             return seatstr;
         }
-        public double calcPrice() {
+        virtual public double calcPrice() {
             double tmp = 0;
             foreach (Ticket i in Tickets) {
                 tmp += i.Type.Price;
             }
             return tmp;
         }
-        public double percentType(string type) { // for promos by TicketType
+        virtual public double percentType(string type) { // for promos by TicketType
             int ct = 0;
             foreach (Ticket i in Tickets)
             {
@@ -59,7 +59,7 @@ namespace CineWeb.Models
             }
             return (double)ct / (double)Tickets.Count;
         }
-        public bool hasAttr(string attr, string val) { // for promos by Attribute
+        virtual public bool hasAttr(string attr, string val) { // for promos by Attribute
             switch (attr) {
                 case "Category": return ShowTimeId.MovieId.Category == val;
                 case "Director": return ShowTimeId.MovieId.Director == val;

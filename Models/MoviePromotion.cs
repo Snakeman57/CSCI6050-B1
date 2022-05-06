@@ -1,4 +1,5 @@
 using System.ComponentModel.DataAnnotations;
+using System.Globalization;
 
 namespace CineWeb.Models {
     public class MoviePromotion { // database class for promotional codes
@@ -15,6 +16,8 @@ namespace CineWeb.Models {
         public DateTime Start { get; set; } // promo valid from 
         [Required]
         public DateTime End { get; set; } // promo valid until
-        public MoviePromotion() {}
+        public MoviePromotion() {
+            Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US",false);
+        }
     }
 }
