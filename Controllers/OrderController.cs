@@ -155,33 +155,9 @@ namespace CineWeb.Controllers
             }
             return View(order);
         }
-<<<<<<< HEAD
-         [HttpPost]
-        public ActionResult Charge(string stripeToken, string stripeEmail)
-        {
-            Stripe.StripeConfiguration.SetApiKey("Publishable key");
-            Stripe.StripeConfiguration.ApiKey = "Secret key";
-
-            var myCharge = new Stripe.ChargeCreateOptions();
-            // always set these properties
-            myCharge.Amount = 500;
-            myCharge.Currency = "USD";
-            myCharge.ReceiptEmail = stripeEmail;
-            myCharge.Description = "Sample Charge";
-            myCharge.Source = stripeToken;
-            myCharge.Capture = true;
-            var chargeService = new Stripe.ChargeService();
-            Charge stripeCharge = chargeService.Create(myCharge);
-            return View();
-        }
         [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> CheckoutConfirm([Bind("ID,DateCreated,UserId,ShowTimeId,Tickets")] CineWeb.Models.Order order)
-=======
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CheckoutConfirm([Bind("ID,DateCreated,UserId,ShowTimeId,Tickets")] Order order)
->>>>>>> d17d2553283d53808838405506a65627cbd6fa6b
         {
             if (ModelState.IsValid)
             {
