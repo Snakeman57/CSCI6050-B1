@@ -16448,6 +16448,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Views\\Order\\CheckoutConfirm.cshtml",
+      "TargetPath": "Views\\Order\\CheckoutConfirm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\Users\\lpham\\OneDrive\\Desktop\\4050\\CineWeb\\Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
       "TargetPath": "Areas\\Identity\\Pages\\Account\\Manage\\_ManageNav.cshtml",
       "FileKind": "mvc"

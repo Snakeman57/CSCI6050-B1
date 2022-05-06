@@ -46,17 +46,17 @@
                     </tr>
                     @foreach (var i in Model.Tickets)
                     {
-                        <tr>
-                            <td>
+                            <tr>
+                                <td>
                                 @Html.DisplayFor(model => i.Type.Name)
-                            </td>
-                            <td style="text-align:right;">
+                                </td>
+                                <td style="text-align:right;">
                                 @Convert.ToChar(@i.SeatNumber[0] + 64)@String.Format("{0:00}", @i.SeatNumber[1])
-                            </td>
-                            <td style="text-align:right;">
+                                </td>
+                                <td style="text-align:right;">
                                 @String.Format("{0:C}", i.Type.Price)
-                            </td>
-                        </tr>
+                                </td>
+                            </tr>
                     }
                     <tr>
                         <td colspan="3">
@@ -71,7 +71,6 @@
                             foreach (Order i in tmp)
                             {
                                 @:<tr>
-<<<<<<< HEAD
                                 @:<td></td>
                                 @:<td style="text-align:right;">Promo</td>
                                 @:<td style="text-align:right;">
@@ -81,21 +80,9 @@
                                 }
                                 catch (InvalidCastException e)
                                 {
-                                    @Html.DisplayFor(m => ((AppliedPromo)Model).PercentOff)
+                                    @:INVALID
                                 }
                                 @:</td>
-=======
-                                    @:<td></td>
-                                    @:<td style="text-align:right;">Promo</td>
-                                    @:<td style="text-align:right;">
-                                        try {
-                                            @String.Format("{0:C}", ((AppliedPromo)i).calcDiff())
-                                        }
-                                        catch (InvalidCastException e) {
-                                            @:INVALID
-                                        }
-                                    @:</td>
->>>>>>> d17d2553283d53808838405506a65627cbd6fa6b
                                 @:</tr>
                             }
                         }
@@ -127,31 +114,26 @@
                 style="horizantal-align:center; justify-content:center; display:flex">Apply Promotion</button>
 
         </form>
-<<<<<<< HEAD
-        <b>
-            <p class="text-center mt-4">Confirm Payment Method</p>
-        </b>
-        <form action="/Order/Checkout/Charge" method="POST">
-           
+        <b><p class="text-center mt-4">Confirm Payment Method</p></b>
+        <a asp-action="CheckoutConfirm" asp-route-ID="@Model.ID" asp-route-DateCreated="@Model.DateCreated" asp-route-UserId="@Model.UserId" asp-route-ShowTimeId="@Model.ShowTimeId" asp-route-Tickets="@Model.Tickets" style=@(SignInManager.IsSignedIn(User) ? "pointer-events:auto;" : "pointer-events:none;")>
+            <button class="btn bg-success text-white col-3 mx-auto  mt-2" style="horizantal-align:center; justify-content:center; display:flex" @(SignInManager.IsSignedIn(User) ? "" : "disabled")>
+                <form action="/Order/Checkout/Charge" method="POST">
+
             <script src="//checkout.stripe.com/v2/checkout.js" class="stripe-button"  data-locale="auto" style="btn bg-success text-white col-3 mx-auto  mt-2"
                 data-key="@ViewBag.StripePublishKey" ><button>Confirm Purchase</button>
                 </script>
         </form>
-        @* Payment*@
-        
-=======
-        <b><p class="text-center mt-4">Confirm Payment Method</p></b>
-        <a asp-action="CheckoutConfirm" asp-route-ID="@Model.ID" asp-route-DateCreated="@Model.DateCreated" asp-route-UserId="@Model.UserId" asp-route-ShowTimeId="@Model.ShowTimeId" asp-route-Tickets="@Model.Tickets" style=@(SignInManager.IsSignedIn(User) ? "pointer-events:auto;" : "pointer-events:none;")>
-            <button class="btn bg-success text-white col-3 mx-auto  mt-2" style="horizantal-align:center; justify-content:center; display:flex" @(SignInManager.IsSignedIn(User) ? "" : "disabled")>Confirm Purchase</button>
         </a>
-        @if (!SignInManager.IsSignedIn(User)) {
-            <div class="col-md-6 col-lg-5 col-xl-9 input-group-md my-4 mx-auto">
-                <h5 class="text-muted text-center mt-4">Sorry! You must be logged in to confirm your purchase. Please use the link below to log in. When you're done, simply refresh this page.</h5>
-                <a asp-area="Identity" asp-page="/Account/Login" target="_blank">
-                    <button class="btn btn-primary text-white col-3 mx-auto  mt-2" style="horizantal-align:center; justify-content:center; display:flex">Log In</button>
-                </a>
-            </div>
+
+        @* Payment*@
+        @if (!SignInManager.IsSignedIn(User))
+        {
+                <div class="col-md-6 col-lg-5 col-xl-9 input-group-md my-4 mx-auto">
+                    <h5 class="text-muted text-center mt-4">Sorry! You must be logged in to confirm your purchase. Please use the link below to log in. When you're done, simply refresh this page.</h5>
+                    <a asp-area="Identity" asp-page="/Account/Login" target="_blank">
+                        <button class="btn btn-primary text-white col-3 mx-auto  mt-2" style="horizantal-align:center; justify-content:center; display:flex">Log In</button>
+                    </a>
+                </div>
         }
->>>>>>> d17d2553283d53808838405506a65627cbd6fa6b
     </div>
 </body>

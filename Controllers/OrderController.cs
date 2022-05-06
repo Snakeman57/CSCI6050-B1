@@ -155,7 +155,6 @@ namespace CineWeb.Controllers
             }
             return View(order);
         }
-<<<<<<< HEAD
          [HttpPost]
         public ActionResult Charge(string stripeToken, string stripeEmail)
         {
@@ -173,10 +172,10 @@ namespace CineWeb.Controllers
             var chargeService = new Stripe.ChargeService();
             Charge stripeCharge = chargeService.Create(myCharge);
             return View();
-=======
+        }
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> CheckoutConfirm([Bind("ID,DateCreated,UserId,ShowTimeId,Tickets")] Order order)
+        public async Task<IActionResult> CheckoutConfirm([Bind("ID,DateCreated,UserId,ShowTimeId,Tickets")] CineWeb.Models.Order order)
         {
             if (ModelState.IsValid)
             {
@@ -189,7 +188,6 @@ namespace CineWeb.Controllers
                 tickets = order.TicketStr(),
                 seats = order.SeatStr(),
             });
->>>>>>> d17d2553283d53808838405506a65627cbd6fa6b
         }
     }
 }
