@@ -49,15 +49,15 @@ namespace CineWeb.Models
             return tmp;
         }
         virtual public double percentType(string type) { // for promos by TicketType
-            int ct = 0;
-            foreach (Ticket i in Tickets)
-            {
-                if (i.Type.Name == type)
-                {
-                    ct++;
+            double ttl = 0;
+            double ct = 0;
+            foreach (Ticket i in Tickets) {
+                ttl += i.Type.Price;
+                if (i.Type.Name == type) {
+                    ct += i.Type.Price;
                 }
             }
-            return (double)ct / (double)Tickets.Count;
+            return ct / ttl;
         }
         virtual public bool hasAttr(string attr, string val) { // for promos by Attribute
             switch (attr) {

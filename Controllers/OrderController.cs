@@ -154,5 +154,21 @@ namespace CineWeb.Controllers
             }
             return View(order);
         }
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> CheckoutConfirm([Bind("ID,DateCreated,UserId,ShowTimeId,Tickets")] Order order)
+        {
+            if (ModelState.IsValid)
+            {
+                _context.Add(order);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("Home/Index");
+            }
+            return RedirectToAction("Order/Checkout", new {
+                show = order.ShowTimeId.ID,
+                tickets = order.TicketStr(),
+                seats = order.SeatStr(),
+            });
+        }
     }
 }

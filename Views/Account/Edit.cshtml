@@ -15,8 +15,8 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Email" class="control-label">Email: @Html.DisplayFor(model => model.Email)</label>
-                <br/>
             </div>
+            <br/>
             <div class="form-group">
                 <label asp-for="FirstName" class="control-label"></label>
                 <input asp-for="FirstName" class="form-control" />
@@ -46,7 +46,7 @@
                 <label asp-for="PasswordConfirm" class="control-label"></label>
                 <input asp-for="PasswordConfirm" class="form-control" />
                 <span asp-validation-for="PasswordConfirm" class="text-danger"></span>
-            </div>*@
+            </div>
             <div class="form-group">
                 <label asp-for="PaymentCard1" class="control-label"></label>
                 <input asp-for="PaymentCard1.CardType" class="form-control" />
@@ -82,10 +82,12 @@
                 <input asp-for="PaymentCard3.AddrState" class="form-control" />
                 <input asp-for="PaymentCard3.AddrZip" class="form-control" />
                 <span asp-validation-for="PaymentCard3" class="text-danger"></span>
-            </div>
+            </div>*@
+            <br/>
             <div class="form-group">
                 <input type="submit" value="Save" class="btn btn-primary" />
             </div>
+            <br/>
         </form>
     </div>
 </div>
