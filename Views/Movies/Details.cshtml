@@ -1,3 +1,8 @@
+@using Microsoft.AspNetCore.Identity
+@using CineWeb.Data
+@inject SignInManager<CineWebUser> SignInManager
+@inject UserManager<CineWebUser> UserManager
+
 @model CineWeb.Models.Movie
 
 @{
@@ -59,9 +64,9 @@
     </dl>
 </div>
 <div>
-    <a asp-action="Edit" asp-route-id="@Model?.ID"><button class="btn bg-primary text-white">Edit</button></a>
-    <a asp-controller="Order" asp-action="Index" asp-route-movie="@Model?.Title" style=@(Model.NowShowing ? "pointer-events:auto;" : "pointer-events:none;")>
-        <button class="btn bg-primary text-white" @(Model.NowShowing ? "" : "disabled")>Book tickets</button>
-    </a>
+    @if (SignInManager.IsSignedIn(User)) {
+        <a asp-action="Edit" asp-route-id="@Model?.ID"><button class="btn bg-primary text-white">Edit</button></a>
+    }
+    <a asp-controller="Order" asp-action="Index" asp-route-movie="@Model?.Title" style=@(Model.NowShowing ? "pointer-events:auto;" : "pointer-events:none;")><button class="btn bg-primary text-white" @(Model.NowShowing ? "" : "disabled")>Book tickets</button></a>
     <a asp-action="Index"><button class="btn bg-primary text-white">Back to List </button></a>
 </div>
