@@ -1,7 +1,9 @@
-﻿@model CineWeb.Models.Checkout
+﻿@model CineWeb.Models.Order
+@using System.Globalization
 
 @{
     ViewData["Title"] = "Checkout";
+    Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US",false);
 }
 
 <body>
@@ -11,6 +13,43 @@
             <h5 class="text-muted text-center">Please confirm your purchase below.</h5>
             <br>
             <br>
+            <table class="col-md-6 col-lg-5 col-xl-9 input-group-md mb-3 mx-auto">
+                <thead>
+                    <tr>
+                        <th colspan="3" class="text-center">
+                            @Html.DisplayFor(m => m.ShowTimeId.MovieId.Title)
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            @Html.DisplayNameFor(m => m.ShowTimeId.TimeStart)
+                        </td>
+                        <td style="text-align:right;">
+                            @Html.DisplayFor(m => m.ShowTimeId.TimeStart)
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" class="text-center">
+                            @Html.DisplayNameFor(m => m.Tickets)
+                        </td>
+                    </tr>
+                    @foreach (var i in Model.Tickets) {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(model => i.Type.Name)
+                            </td>
+                            <td style="text-align:right;">
+                                @Convert.ToChar(@i.SeatNumber[0] + 64)@String.Format("{0:00}", @i.SeatNumber[1])
+                            </td>
+                            <td style="text-align:right;">
+                                @String.Format("{0:C}", i.Type.Price)
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
         </div>
     </div>
 </body>

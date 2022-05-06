@@ -1,7 +1,9 @@
 @model CineWeb.Models.MoviePromotion
+@using System.Globalization
 
 @{
     ViewData["Title"] = "Details";
+    Thread.CurrentThread.CurrentCulture = new CultureInfo("en-US",false);
 }
 
 <h1> @Html.DisplayFor(model => model.Code) Details</h1>

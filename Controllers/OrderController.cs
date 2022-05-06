@@ -32,7 +32,7 @@ namespace CineWeb.Controllers
             var tickets = new uint[3] {Adult, Child, Senior}; // this should be changed to work dyamically, but I couldn't figure it out
             uint tleft = 0; // might drop this
             // collect currently available movies
-            var movies = from i in _context.Movies where i.NowShowing==true select i.Title;
+            var movies = await (from i in _context.Movies where i.NowShowing==true select i.Title).ToListAsync();
             // collect upcoming showtimes
             var showtimes = from i in _context.ShowTimes where i.TimeStart > DateTime.Now select i;
             if (!string.IsNullOrEmpty(movie)) // if movie is selected, filter show times
@@ -40,7 +40,7 @@ namespace CineWeb.Controllers
             else // if movie is not selected, showtimes unavailable
                 showtimes = showtimes.Where(x => false);
             var stlist = await showtimes.ToListAsync(); // begin conversion of showtimes to datetimes
-            var sttimes = from i in _context.ShowTimes where stlist.Contains(i) select i.TimeStart; // end conversion of showtimes to datetimes
+            var sttimes = await (from i in _context.ShowTimes where stlist.Contains(i) select i.TimeStart).ToListAsync(); // end conversion of showtimes to datetimes
             // collect ticket types
             var ttypes = await (from i in _context.TicketTypes select i).ToListAsync();
             // store selected showtime
@@ -63,8 +63,8 @@ namespace CineWeb.Controllers
             }
             // make readable for page
             var selector = new ShowSelector {
-                films = new SelectList(await movies.ToListAsync()),
-                shows = new SelectList(await sttimes.ToListAsync()),
+                films = new SelectList(movies),
+                shows = new SelectList(sttimes),
                 ttypes = ttypes,
                 tleft = tleft,
                 show = showtime,
@@ -75,7 +75,7 @@ namespace CineWeb.Controllers
             return View(selector);
         }
         /// SEAT SELECTION
-        public async Task<IActionResult> SelSeat([FromQuery (Name = "show")] string show, [FromQuery (Name = "tickets")] string ticketstr, params byte[][] seats) {
+        public async Task<IActionResult> SelSeat([FromQuery (Name = "show")] string show, [FromQuery (Name = "tickets")] string ticketstr, [FromQuery (Name = "seats")] string seatstr) {
             if (!string.IsNullOrEmpty(show)) {
                 // define showtime info
                 var movie = (from i in _context.ShowTimes where i.ID==uint.Parse(show) select i.MovieId).FirstOrDefault();
@@ -84,7 +84,15 @@ namespace CineWeb.Controllers
                     movie, 
                     theater);
                 // find existing tickets and invalidate those seats
-                var badseats = await (from i in _context.Tickets where i.ShowTimeId==uint.Parse(show) select i.SeatNumber).ToListAsync();
+                var badseats = await (from i in _context.Tickets where i.ShowTimeId.ID==uint.Parse(show) select i.SeatNumber).ToListAsync();
+                // generate seats
+                byte[][] seats = null;
+                if (!string.IsNullOrEmpty(seatstr)) {
+                    var seatstrs = seatstr.Substring(1, seatstr.Length - 2).Split("|");
+                    seats = new byte[seatstrs.Length][];
+                    for(var i = 0; i < seats.Length; i++)
+                        seats[i] = new byte[2] {Convert.ToByte(seatstrs[i].Split(",")[0]), Convert.ToByte(seatstrs[i].Split(",")[1])};
+                }
                 // retain ticket info for cuurent order-in-progress
                 var ticketstrs = ticketstr.Split(',').ToList();
                 /*var tickets = new List<uint>();
@@ -107,8 +115,39 @@ namespace CineWeb.Controllers
             return NotFound();
         }
         /// CHECKOUT
-        public async Task<IActionResult> Checkout() {
-            return View();
+        public async Task<IActionResult> Checkout([FromQuery (Name = "show")] string show, [FromQuery (Name = "tickets")] string ticketstr, [FromQuery (Name = "seats")] string seatstr) {
+            // define showtime info
+            var movie = (from i in _context.ShowTimes where i.ID==uint.Parse(show) select i.MovieId).FirstOrDefault();
+            var theater = (from i in _context.ShowTimes where i.ID==uint.Parse(show) select i.TheaterId).FirstOrDefault();
+            var showtime = new ShowTime((from i in _context.ShowTimes where i.ID==uint.Parse(show) select i).FirstOrDefault(),
+                movie, 
+                theater);
+            // generate seats
+            var seatstrs = seatstr.Substring(1, seatstr.Length - 2).Split("|");
+            var seats = new byte[seatstrs.Length][];
+            for(var i = 0; i < seats.Length; i++){
+                seats[i] = new byte[2] {Convert.ToByte(seatstrs[i].Split(",")[0]), Convert.ToByte(seatstrs[i].Split(",")[1])};
+            }
+            // generate tickets
+            var ttypes = await (from i in _context.TicketTypes select i).ToListAsync();
+            var ticketstrs = ticketstr.Split(',').ToList();
+            var ticketarr = new uint[3] {0, 0, 0};
+            var tickets = new List<Ticket>();
+            var k = 0;
+            for(var i = 0; i < ticketarr.Length; i++) {
+                ticketarr[i] = Convert.ToUInt32(ticketstrs.ToArray()[i]);
+                for(var j = 0; j < ticketarr[i]; j++){
+                    tickets.Add(new Ticket(showtime, seats[k], ttypes.ToArray()[i]));
+                    k++;
+                }
+            }
+            // make readable for page
+            var order = new Order {
+                DateCreated = DateTime.Now,
+                ShowTimeId = showtime,
+                Tickets = tickets,
+            };
+            return View(order);
         }
     }
 }

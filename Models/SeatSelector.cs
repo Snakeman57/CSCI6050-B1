@@ -20,7 +20,7 @@ namespace CineWeb.Models
             foreach (uint i in Tickets) {
                 tmp += i;
             }
-            tmp -= (uint)Seats.Count;
+            tmp -= Seats == null ? 0 : (uint)Seats.Count;
             return tmp;
         }
         public string TicketStr() {
