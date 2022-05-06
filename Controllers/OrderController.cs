@@ -28,7 +28,8 @@ namespace CineWeb.Controllers
             return View(await orders.ToListAsync());
         }
         /// NEW ORDER
-        public async Task<IActionResult> Index(string movie, string show, params uint[] tickets) {
+        public async Task<IActionResult> Index(string movie, string show, uint Adult, uint Child, uint Senior) {
+            var tickets = new uint[3] {Adult, Child, Senior}; // this should be changed to work dyamically, but I couldn't figure it out
             uint tleft = 0; // might drop this
             // collect currently available movies
             var movies = from i in _context.Movies where i.NowShowing==true select i.Title;
@@ -46,9 +47,12 @@ namespace CineWeb.Controllers
             string showtime = string.IsNullOrEmpty(show) ? null : (showtimes.Where(x => x.TimeStart==Convert.ToDateTime(show))).FirstOrDefault()?.ID.ToString();
             // store selected tickets
             var ticketstr = "";
-            if (tickets.Length > 0){
-                foreach (uint i in tickets)
+            var ttotal = 0;
+            if (tickets.Length == ttypes.Count){
+                foreach (uint i in tickets){
                     ticketstr += i + ",";
+                    ttotal += Convert.ToInt32(i);
+                }
                 ticketstr = ticketstr.Substring(0, ticketstr.Length - 1);
             }
             else {
@@ -64,8 +68,9 @@ namespace CineWeb.Controllers
                 ttypes = ttypes,
                 tleft = tleft,
                 show = showtime,
-                tickets = ticketstr,
-                canGo = !string.IsNullOrEmpty(showtime),
+                texport = ticketstr,
+                tlocal = tickets,
+                canGo = !string.IsNullOrEmpty(showtime) && ttotal > 0,
             };
             return View(selector);
         }
@@ -82,20 +87,28 @@ namespace CineWeb.Controllers
                 var badseats = await (from i in _context.Tickets where i.ShowTimeId==uint.Parse(show) select i.SeatNumber).ToListAsync();
                 // retain ticket info for cuurent order-in-progress
                 var ticketstrs = ticketstr.Split(',').ToList();
-                var tickets = new List<uint>();
+                /*var tickets = new List<uint>();
                 foreach (string i in ticketstrs) {
                     tickets.Add(Convert.ToUInt32(i));
-                }
+                }*/
+                var tickets = new uint[3] {0, 0, 0};
+                for(var i = 0; i < tickets.Length; i++)
+                    tickets[i] = Convert.ToUInt32(ticketstrs.ToArray()[i]);
                 // make readable for page
                 var selector = new SeatSelector {
                     Show = showtime,
                     SeatsTaken = badseats,
                     Seats = seats,
-                    Tickets = tickets.ToArray(),
+                    Tickets = tickets,
                 };
+                selector.CanGo = selector.Available() == 0;
                 return View(selector);
             }
             return NotFound();
+        }
+        /// CHECKOUT
+        public async Task<IActionResult> Checkout() {
+            return View();
         }
     }
 }
